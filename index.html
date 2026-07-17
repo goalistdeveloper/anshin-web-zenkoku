@@ -3,14 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安診Web｜整骨院・接骨院専門のホームページ制作【全国対応・オンライン完結】</title>
-<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で制作から毎月の更新まで丸ごとおまかせ。打ち合わせはZoomで30分から、全国どこでも対応します。">
+<title>安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】</title>
+<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で先生のそばで伴走します。">
+<meta name="robots" content="index,follow">
+<!-- [仮] 本番ドメイン確定後に置き換え -->
+<link rel="canonical" href="https://anshin-web.example.jp/">
+
+<!-- OGP（現行anshin-hp.comの構成に準拠。画像は現行サイトのOGP画像を流用） -->
+<meta property="og:site_name" content="安診Web｜整骨院・接骨院専門のホームページ制作">
+<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】">
+<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で伴走します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anshin-web.example.jp/">
+<meta property="og:image" content="assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png">
+
+<!-- favicon（現行anshin-hp.comのファビコンを流用） -->
+<link rel="icon" type="image/png" href="assets/img/favicon-anshin-web-mark.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-anshin-web-mark.png">
+
 <!-- ============================================================
-     LPモック v1（docs/lp-plan.md 準拠）
-     ・画像はすべてプレースホルダー
-     ・コピーは仮案。未決事項（作戦会議の頻度・公開日数・顔出し）は
-       [仮] マーク付きで暫定値を入れている
+     LPモック v3（docs/lp-plan.md 対面圏版 準拠／2026-07-17 大幅ブラッシュアップ）
+     ・画像／動画／ロゴは現行anshin-hp.comの実アセットを流用（assets/img/）
+     ・担当者写真は本人提供（牛谷梓さん）、白背景合成済み
+     ・コピーは仮案。未決事項は [仮] マーク付きで暫定値を入れている
+     ・SEO/AIO: OGP・favicon・JSON-LD（ProfessionalService/FAQPage/VideoObject）を実装
 ============================================================ -->
+
+<!-- 構造化データ：AIO（生成AIの回答エンジン）・リッチリザルト対策 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "安診Web",
+  "description": "整骨院・接骨院専門のホームページ制作。撮影・更新・Googleマップ対策まで、月1回の訪問で丸ごと代行します。",
+  "areaServed": [
+    { "@type": "State", "name": "東京都" },
+    { "@type": "State", "name": "埼玉県" },
+    { "@type": "State", "name": "神奈川県" },
+    { "@type": "State", "name": "千葉県" }
+  ],
+  "priceRange": "¥33,000〜¥99,000",
+  "telephone": "+81-3-4361-2643",
+  "image": "assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png",
+  "url": "https://anshin-web.example.jp/",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "HPリニューアルプラン",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "99000",
+        "priceCurrency": "JPY"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Googleマップ対策プラン",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "33000",
+        "priceCurrency": "JPY"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "訪問エリア外ですが、相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています。エリア外の場合もまずはご相談ください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "今、他社のHP/MEO運用サービスと契約中ですが相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "まずはお話だけでも可能です。現在のご契約状況を伺った上で、無理のないご提案をいたします。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Googleマップの口コミ返信や投稿は、広告のルールに違反しませんか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "厚生労働省のあはき柔整広告ガイドラインに沿った表現でのみ作成しますので安心です。効果を断定する表現は使用しません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "今のホームページのURL（ドメイン）はどうなりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "現在のURLをそのまま引き継ぐことも、新しく取得することも可能です。引き継ぎの手続きはすべてこちらで対応します。" }
+    },
+    {
+      "@type": "Question",
+      "name": "パソコンが苦手でも運用できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "公開後の更新はすべてこちらで対応します。先生にお願いするのは、変更したい内容をご連絡いただくことだけです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "契約期間の縛りはありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "お申し込みから6ヶ月間のご契約をお願いしています。7ヶ月目以降は自動更新となり、前月末日までのお申し出でいつでも解約いただけます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "表示されている料金以外に費用はかかりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "かかりません。サポート内容はすべて月額費用に含まれています。" }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "安診Webが、先生の「一番近い相談相手」であり続ける理由",
+  "description": "安診Web発足の背景と、対面・訪問にこだわる理由についての紹介動画。",
+  "thumbnailUrl": "assets/img/staff-message-video-poster.png",
+  "contentUrl": "assets/img/staff-message-video-taimen-houmon-kodawari.mp4",
+  "uploadDate": "2026-01-01"
+}
+</script>
+
 <style>
   :root {
     --green-deep: #1F7A55;
@@ -19,6 +134,7 @@
     --green-line: #CDE8DB;
     --cta-orange: #F59E0B;
     --cta-orange-dark: #D97706;
+    --red-accent: #C81E1E;
     --text-main: #1F2933;
     --text-sub: #52606D;
     --white: #FFFFFF;
@@ -45,6 +161,7 @@
   }
   h2 { font-size: clamp(24px, 4vw, 34px); line-height: 1.45; margin-bottom: 36px; }
   h2 .em { color: var(--green-deep); }
+  .em-red { color: var(--red-accent); }
   .lead { color: var(--text-sub); margin: -20px 0 36px; }
 
   /* ---------- ボタン ---------- */
@@ -55,13 +172,23 @@
   .btn:hover { transform: translateY(-2px); }
   .btn-cta {
     background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark));
-    color: #fff; padding: 18px 44px; font-size: 18px;
+    color: #fff; padding: 17px 40px; font-size: 17px; position: relative; z-index: 1;
     box-shadow: 0 6px 18px rgba(217, 119, 6, .35);
   }
   .btn-cta small { display: block; font-size: 12px; font-weight: 500; opacity: .95; }
   .btn-sub {
     background: var(--white); color: var(--green-deep); border: 2px solid var(--green-deep);
     padding: 16px 36px; font-size: 15px;
+  }
+  .cta-with-badge { position: relative; display: inline-block; padding-top: 22px; }
+  .cta-badge {
+    display: inline-block; background: var(--green-deep); color: #fff;
+    font-size: 12px; font-weight: 800; padding: 7px 18px; border-radius: 999px;
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; white-space: nowrap;
+  }
+  .cta-badge::after {
+    content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 0; height: 0;
+    border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid var(--green-deep);
   }
 
   /* ---------- ヘッダー ---------- */
@@ -70,33 +197,48 @@
     backdrop-filter: blur(6px); border-bottom: 1px solid var(--green-line);
   }
   .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .logo { font-size: 22px; font-weight: 800; color: var(--green-deep); text-decoration: none; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo img { display: block; }
   .logo span { font-size: 11px; font-weight: 600; color: var(--text-sub); display: block; line-height: 1.2; }
   nav.gnav a {
-    text-decoration: none; color: var(--text-main); font-size: 14px; font-weight: 600; margin-left: 22px;
+    text-decoration: none; color: var(--text-main); font-size: 14px; font-weight: 600; margin-left: 18px;
   }
-  nav.gnav .btn { padding: 10px 22px; font-size: 14px; margin-left: 22px; }
-  @media (max-width: 860px) { nav.gnav a:not(.btn) { display: none; } }
+  nav.gnav a.btn-cta { color: #fff; }
+  nav.gnav .btn { padding: 10px 22px; font-size: 14px; margin-left: 18px; }
+  @media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
 
-  /* ---------- S1 ファーストビュー ---------- */
-  .hero { background: linear-gradient(160deg, var(--green-pale) 0%, #fff 65%); padding: 64px 0 72px; }
-  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
-  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
-  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  /* ---------- S1 ファーストビュー（背景動画のみ・中央寄せ） ---------- */
+  .hero { position: relative; overflow: hidden; padding: 120px 0 128px; background: #0F3C2A; }
+  .hero-bg-video {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85;
+  }
+  .hero-bg-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,46,32,.55) 0%, rgba(13,46,32,.32) 45%, rgba(13,46,32,.62) 100%);
+  }
+  .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
+  @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-grid .badges { animation: heroFadeUp .7s ease-out both .1s; }
+  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .2s; }
+  .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .32s; }
+  .hero-grid .hero-price { animation: heroFadeUp .7s ease-out both .42s; }
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .52s; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
   .badge {
-    background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 700;
+    background: var(--green-accent); color: #0F3C2A; font-size: 13px; font-weight: 700;
     padding: 4px 14px; border-radius: 999px;
   }
-  .badge.alt { background: var(--green-accent); }
-  h1 { font-size: clamp(28px, 4.6vw, 42px); line-height: 1.4; margin-bottom: 18px; }
-  h1 .em { color: var(--green-deep); }
-  .hero-sub { font-size: 16px; color: var(--text-sub); margin-bottom: 10px; }
-  .hero-price { font-size: 15px; font-weight: 700; margin-bottom: 28px; }
-  .hero-price strong { font-size: 30px; color: var(--green-deep); }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-  .hero-visual .ph { aspect-ratio: 4/3; }
+  .badge.alt { background: rgba(255,255,255,.16); color: #fff; }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.35; margin-bottom: 16px; color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,.35);
+  }
+  h1 .em { color: var(--green-accent); }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,.9); margin-bottom: 14px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+  .hero-price { font-size: 13px; color: rgba(255,255,255,.75); font-weight: 600; margin-bottom: 24px; }
+  .hero-price strong { font-size: 18px; color: var(--green-accent); }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
 
-  /* プレースホルダー画像 */
+  /* プレースホルダー画像（一部未確定要素のみ使用） */
   .ph {
     background: repeating-linear-gradient(45deg, #DCEFE6, #DCEFE6 12px, #E9F5EF 12px, #E9F5EF 24px);
     border: 2px dashed var(--green-accent); border-radius: var(--radius);
@@ -106,6 +248,15 @@
 
   /* ---------- S2 問題提起 ---------- */
   .sec-problem { background: var(--white); }
+  .problem-hook-label {
+    background: var(--red-accent); color: #fff; border-color: var(--red-accent);
+    font-size: 13px; font-weight: 800;
+  }
+  h2.problem-heading { font-size: clamp(28px, 5vw, 40px); }
+  .problem-heading .underline {
+    color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 4px;
+    text-underline-offset: 6px; text-decoration-color: #FBD3D3;
+  }
   .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
   .problem-card {
     background: #FAFBFC; border: 1px solid #E4E7EB; border-radius: var(--radius); padding: 24px;
@@ -118,25 +269,39 @@
   }
   .problem-close .em { color: var(--green-deep); }
 
-  /* ---------- S3 オンライン ---------- */
-  .sec-online { background: var(--green-pale); }
+  /* ---------- S3 担当者・理念 ---------- */
+  .sec-about { background: var(--green-pale); }
+  .staff-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+  @media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
+  .staff-grid img.portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); }
+  .staff-msg h3 { font-size: 22px; margin-bottom: 12px; line-height: 1.5; }
+  .staff-msg p { font-size: 14px; color: var(--text-sub); margin-bottom: 10px; }
+  .staff-name { font-weight: 700; color: var(--text-main); }
+  .about-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+  @media (max-width: 780px) { .about-copy-grid { grid-template-columns: 1fr; } }
+  .about-copy-card { background: var(--white); border-radius: var(--radius); padding: 24px 26px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+  .about-copy-card h3 { font-size: 16px; color: var(--green-deep); margin-bottom: 10px; }
+  .about-copy-card p { font-size: 14px; color: var(--text-sub); }
+  .about-video-small {
+    width: 100%; max-width: 260px; border-radius: 10px; margin-top: 14px; display: block;
+    box-shadow: 0 6px 16px rgba(31,122,85,.15); background: #000;
+  }
+
+  /* ---------- S4 資料ダウンロード ---------- */
+  .sec-online { background: var(--white); }
   .online-list { display: grid; gap: 28px; }
   .online-item {
-    display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: center;
-    background: var(--white); border-radius: var(--radius); padding: 32px;
-    box-shadow: 0 2px 12px rgba(31, 122, 85, .08);
+    display: grid; grid-template-columns: 1fr 380px; gap: 32px; align-items: center;
+    background: var(--green-pale); border-radius: var(--radius); padding: 32px;
+    box-shadow: 0 2px 12px rgba(31, 122, 85, .08); position: relative;
   }
-  .online-item:nth-child(even) { grid-template-columns: 320px 1fr; }
-  .online-item:nth-child(even) .online-text { order: 2; }
-  @media (max-width: 860px) {
-    .online-item, .online-item:nth-child(even) { grid-template-columns: 1fr; }
-    .online-item:nth-child(even) .online-text { order: 0; }
-  }
-  .online-item h3 { font-size: 20px; color: var(--green-deep); margin-bottom: 10px; }
+  @media (max-width: 860px) { .online-item { grid-template-columns: 1fr; } }
+  .online-item h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 10px; white-space: nowrap; }
+  @media (max-width: 480px) { .online-item h3 { font-size: 16px; white-space: normal; } }
   .online-item p { font-size: 15px; }
-  .online-item .ph { aspect-ratio: 16/10; }
+  .online-item .guide-img { width: 100%; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(31,122,85,.18); }
 
-  /* ---------- S4 3本柱 ---------- */
+  /* ---------- S5 4本柱 ---------- */
   .pillar { display: grid; gap: 22px; }
   .pillar-card {
     background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
@@ -155,20 +320,21 @@
     font-size: 14px; color: var(--text-main);
   }
 
-  /* ---------- S5 ビフォーアフター ---------- */
+  /* ---------- S6 実績・声 ---------- */
   .sec-sample { background: var(--green-pale); }
-  .ba-grid { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 16px; align-items: center; margin-bottom: 48px; }
-  @media (max-width: 640px) { .ba-grid { grid-template-columns: 1fr; } .ba-arrow { transform: rotate(90deg); } }
-  .ba-grid .ph { aspect-ratio: 3/4; }
-  .ba-arrow { text-align: center; font-size: 32px; color: var(--green-deep); font-weight: 800; }
-  .ba-caption { text-align: center; font-size: 14px; font-weight: 700; margin-top: 10px; }
   .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .voice-card { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
-  .voice-card .ph { aspect-ratio: 16/9; margin-bottom: 16px; }
+  .voice-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+  .voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
+  .voice-card .voice-body { padding: 24px 28px 28px; }
+  .voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; }
   .voice-card h3 { font-size: 16px; margin-bottom: 8px; }
   .voice-card p { font-size: 14px; color: var(--text-sub); }
+  .voice-card .voice-source { font-size: 13px; margin-top: 10px; }
+  .mini-voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
+  .mini-voice-card { background: var(--white); border-radius: 10px; padding: 18px 20px; font-size: 13px; box-shadow: 0 2px 8px rgba(31,122,85,.06); }
+  .mini-voice-card .area { color: var(--green-deep); font-weight: 700; margin-top: 8px; display: block; }
 
-  /* ---------- S6 料金 ---------- */
+  /* ---------- S7 料金 ---------- */
   .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 28px; }
   .price-card {
     border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
@@ -177,10 +343,11 @@
   .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
   .price-card.sub .price-head { background: var(--green-accent); }
   .price-body { padding: 28px; }
-  .price-fig { text-align: center; margin-bottom: 20px; }
-  .price-fig .init { font-size: 15px; }
-  .price-fig .init strong { font-size: 34px; color: var(--green-deep); }
-  .price-fig .monthly { font-size: 14px; color: var(--text-sub); }
+  .price-fig { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center; }
+  .price-fig .cell { background: var(--green-pale); border-radius: 10px; padding: 14px 10px; }
+  .price-fig .cell .label { font-size: 13px; color: var(--text-sub); font-weight: 700; margin-bottom: 4px; }
+  .price-fig .cell .num { font-size: 26px; font-weight: 800; color: var(--green-deep); }
+  .price-fig .cell .num .unit { font-size: 14px; font-weight: 700; margin-left: 2px; }
   .price-body ul { list-style: none; }
   .price-body li { font-size: 14px; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--green-line); position: relative; }
   .price-body li::before { content: "✓"; position: absolute; left: 4px; color: var(--green-accent); font-weight: 800; }
@@ -190,7 +357,7 @@
   }
   .price-fine { font-size: 13px; color: var(--text-sub); }
 
-  /* ---------- S7 比較表 ---------- */
+  /* ---------- S8 比較表 ---------- */
   .compare-wrap { overflow-x: auto; }
   table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px; }
   table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
@@ -198,8 +365,9 @@
   table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 16px; }
   table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
   table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: #FAFBFC; }
+  .compare-note { font-size: 12px; color: var(--text-sub); margin-top: 12px; }
 
-  /* ---------- S8 導入の流れ ---------- */
+  /* ---------- S9 導入の流れ ---------- */
   .sec-flow { background: var(--green-pale); }
   .flow-list { list-style: none; counter-reset: flow; display: grid; gap: 14px; }
   .flow-list li {
@@ -212,21 +380,12 @@
   }
   .flow-list h3 { font-size: 16px; }
   .flow-list p { font-size: 14px; color: var(--text-sub); }
-  .flow-note { text-align: center; margin-top: 24px; font-weight: 700; }
-
-  /* ---------- S9 担当者 ---------- */
-  .staff-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: center; }
-  @media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
-  .staff-grid .ph { aspect-ratio: 1/1; border-radius: 50%; }
-  .staff-msg h3 { font-size: 22px; margin-bottom: 14px; line-height: 1.5; }
-  .staff-msg p { font-size: 15px; color: var(--text-sub); margin-bottom: 12px; }
-  .staff-name { font-weight: 700; color: var(--text-main); }
 
   /* ---------- S10 FAQ ---------- */
-  .sec-faq { background: var(--green-pale); }
+  .sec-faq { background: var(--white); }
   .faq-list { display: grid; gap: 12px; }
   details {
-    background: var(--white); border-radius: var(--radius); padding: 0; overflow: hidden;
+    background: var(--green-pale); border-radius: var(--radius); padding: 0; overflow: hidden;
     box-shadow: 0 2px 10px rgba(31,122,85,.07);
   }
   summary {
@@ -248,10 +407,6 @@
   .contact-alt h3 { font-size: 17px; margin-bottom: 14px; }
   .contact-alt .tel { font-size: 30px; font-weight: 800; letter-spacing: .04em; }
   .contact-alt .tel small { display: block; font-size: 13px; font-weight: 500; opacity: .85; }
-  .contact-alt .line-btn {
-    display: block; background: #06C755; color: #fff; text-decoration: none; text-align: center;
-    font-weight: 800; border-radius: 10px; padding: 14px; margin-top: 18px;
-  }
   form { background: var(--white); border-radius: var(--radius); padding: 32px; color: var(--text-main); }
   .form-row { margin-bottom: 18px; }
   .form-row label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
@@ -281,7 +436,7 @@
   }
   .fixed-cta a { text-decoration: none; text-align: center; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 13px 6px; }
   .fixed-cta .f-consult { background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark)); color: #fff; }
-  .fixed-cta .f-line { background: #06C755; color: #fff; }
+  .fixed-cta .f-tel { background: var(--green-deep); color: #fff; }
   @media (max-width: 860px) { .fixed-cta { display: grid; } }
   @media (min-width: 861px) { body { padding-bottom: 0; } }
 
@@ -294,13 +449,13 @@
 <!-- ヘッダー -->
 <header>
   <div class="inner header-inner">
-    <a class="logo" href="#">安診Web<span>整骨院・接骨院専門 ホームページ制作</span></a>
+    <a class="logo" href="#"><img src="assets/img/logo.svg" alt="安診Web" height="30"><span>整骨院・接骨院専門 ホームページ制作</span></a>
     <nav class="gnav">
-      <a href="#online">オンライン対応</a>
+      <a href="#about">私たちについて</a>
       <a href="#service">サービス内容</a>
       <a href="#price">料金</a>
-      <a href="#flow">導入の流れ</a>
       <a href="#faq">よくある質問</a>
+      <a href="#check" class="btn btn-sub">資料ダウンロード</a>
       <a href="#contact" class="btn btn-cta">無料相談する</a>
     </nav>
   </div>
@@ -308,23 +463,23 @@
 
 <!-- S1 ファーストビュー -->
 <div class="hero">
+  <video class="hero-bg-video" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" autoplay muted loop playsinline disablePictureInPicture></video>
+  <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <div>
-      <div class="badges">
-        <span class="badge">整骨院・接骨院専門</span>
-        <span class="badge alt">全国対応</span>
-        <span class="badge alt">打ち合わせはオンライン</span>
-      </div>
-      <h1>整骨院専門のホームページ制作、<br><span class="em">オンラインで丸ごとおまかせ。</span></h1>
-      <p class="hero-sub">制作も、毎月の更新も、Googleマップ対策も。<br>打ち合わせはZoomで30分から。全国どこの院でも同じ品質・同じ料金です。</p>
-      <p class="hero-price">初期費用 <strong>99,000</strong>円（税込）／ 月額 9,000円（税込）</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-cta">無料相談する<small>Zoom・電話・LINEが選べます</small></a>
-        <a href="#contact" class="btn btn-sub">サービス資料をもらう</a>
-      </div>
+    <div class="badges">
+      <span class="badge">整骨院・接骨院専門</span>
+      <span class="badge alt">東京・埼玉・神奈川・千葉対応（訪問可）<em style="font-style:normal;">[仮：要確定]</em></span>
+      <span class="badge alt">月1回の訪問サポート</span>
     </div>
-    <div class="hero-visual">
-      <div class="ph">画像：院長がPC/タブレット越しに<br>担当者と話す様子＋完成HPのスマホモック</div>
+    <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
+    <p class="hero-sub">東京・埼玉・神奈川・千葉の整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月お伺いして丸ごとおまかせできます。</p>
+    <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 9,000円（税込）</p>
+    <div class="hero-cta">
+      <div class="cta-with-badge">
+        <span class="cta-badge">1分で簡単入力</span>
+        <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
+      </div>
+      <a href="#check" class="btn btn-sub">無料の資料をダウンロードする</a>
     </div>
   </div>
 </div>
@@ -332,8 +487,8 @@
 <!-- S2 問題提起 -->
 <section class="sec-problem" id="problem">
   <div class="inner">
-    <span class="sec-label">PROBLEM</span>
-    <h2>あなたのホームページは、<span class="em">大丈夫ですか？</span></h2>
+    <span class="sec-label problem-hook-label">要チェック</span>
+    <h2 class="problem-heading">そのホームページ、<br><span class="underline">新しい患者さんに届いていますか？</span></h2>
     <p class="lead">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
     <div class="problem-grid">
       <div class="problem-card">
@@ -358,112 +513,165 @@
       </div>
       <div class="problem-card">
         <span class="no">✕ 問題 5</span>
-        <h3>誰が見に来ているのか分からない</h3>
-        <p>何人が見て、何を見て、なぜ予約に至らないのか。分からなければ、直しようもありません。</p>
+        <h3>Googleマップは登録しただけ</h3>
+        <p>指名検索（院名で調べた人）にしか出ておらず、新しい患者さんには届いていません。</p>
+      </div>
+      <div class="problem-card">
+        <span class="no">✕ 問題 6</span>
+        <h3>以前業者に頼んだが、効果が出なかった</h3>
+        <p>高い費用を払い続けたのに新規は増えず、そのまま「もう業者は信用できない」と感じている。</p>
       </div>
     </div>
     <p class="problem-close">直したい気持ちはあるのに、日々の施術で手が回らない。<br>——それが<span class="em">一番もったいない状態</span>です。</p>
   </div>
 </section>
 
-<!-- S3 オンラインでここまでできます -->
-<section class="sec-online" id="online">
+<!-- S3 担当者・理念 -->
+<section class="sec-about" id="about">
   <div class="inner">
-    <span class="sec-label">ONLINE</span>
-    <h2>オンラインで、<span class="em">ここまでできます。</span></h2>
-    <p class="lead">「パソコンは苦手で……」という先生こそ、ご安心ください。先生にお願いする作業は、驚くほど少ないです。</p>
-    <div class="online-list">
-      <div class="online-item">
-        <div class="online-text">
-          <h3>打ち合わせは、届いたURLをタップするだけ。</h3>
-          <p>アプリの準備も設定も不要です。初回はお電話で接続までご案内しますので、Zoomを使ったことがなくても大丈夫。1回30分、診療前・昼休み・診療後の空き時間から選べます。</p>
-        </div>
-        <div class="ph">画像：Zoom打ち合わせの実際の画面<br>（スマホでURLをタップする手元）</div>
+    <span class="sec-label">MESSAGE</span>
+    <div class="staff-grid">
+      <img class="portrait" src="assets/img/staff-portrait-ushitani-azusa.jpg" alt="安診Web担当 牛谷梓">
+      <div class="staff-msg">
+        <h3>先生の「一番近い相談相手」で<br>あり続けたい。</h3>
+        <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
+        <p class="staff-name">安診Web 担当　牛谷 梓（HumAIn Co.,Ltd.）</p>
       </div>
-      <div class="online-item">
-        <div class="online-text">
-          <h3>写真は、先生のスマホで十分きれいに撮れます。</h3>
-          <p>プロ監修の<strong>「写真撮影ガイドブック」</strong>をお渡しします。構図・明るさ・撮る場所のチェックリスト付きで、迷わず撮れます。撮った写真はLINEで送るだけ。明るさなどの補正はこちらで行います。</p>
-        </div>
-        <div class="ph">画像：写真撮影ガイドブックの<br>表紙＋中面サンプル</div>
+    </div>
+    <div class="about-copy-grid">
+      <div class="about-copy-card">
+        <h3>安診Web発足の背景</h3>
+        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。実際、上京後に足を痛めて整骨院を探した際、料金や診療時間、先生の情報が分からず不安で、結局は情報が整っている大手に予約しました。本当は近くの院に行きたかったのに、「分からない」という理由だけで選べなかったのです。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
       </div>
-      <div class="online-item">
-        <div class="online-text">
-          <h3>契約から公開まで、ご来社・ご訪問は一度も不要です。</h3>
-          <p>電子契約・オンライン入稿で完結します。全国どこの院でも同じ品質・同じ料金。遠方だからといって交通費などの追加費用は一切かかりません。</p>
-        </div>
-        <div class="ph">画像：日本地図＋「全国対応」<br>のイメージ図</div>
+      <div class="about-copy-card">
+        <h3>私たちが対面・訪問にこだわる理由</h3>
+        <p>院の強みは、実際に足を運んでこそ見えてきます。導線や雰囲気、先生の人柄は現地でしか分かりませんし、本当の強みは往々にして、雑談の中からこぼれ落ちてくるものです。また、Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、先生と目線を合わせて、長く・深く伴走したいのです。</p>
+        <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.png" controls playsinline preload="none"></video>
       </div>
     </div>
   </div>
 </section>
 
-<!-- S4 ソリューション3本柱 -->
+<!-- S4 資料ダウンロード -->
+<section class="sec-online" id="check">
+  <div class="inner">
+    <span class="sec-label">DOWNLOAD</span>
+    <h2>まずは、無料の<span class="em">「Googleマップ活用チェックガイド」</span>を。</h2>
+    <p class="lead">「相談するほどではないけど、今の状態は知りたい」という先生向けの資料です。院名・お名前・メールアドレスだけで、資料のリンクをメールでお送りします。</p>
+    <div class="online-list">
+      <div class="online-item">
+        <div class="online-text">
+          <h3>Googleマップ活用チェックガイド</h3>
+          <p>「あなたの院は大丈夫？」チェックリストで今の状態を確認しながら、Googleマップで見つかりやすくなる基本の考え方をまとめました。安診Webに頼まなくても実践できる内容も含めています。まずは知ることから始めてください。</p>
+          <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST" style="display:grid; gap:10px; margin-top:16px; max-width:420px;">
+            <input type="hidden" name="_subject" value="【資料DL】Googleマップ活用チェックガイド">
+            <input type="hidden" name="_next" value="thanks-download.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="この度は「Googleマップ活用チェックガイド」にお申し込みいただき、誠にありがとうございます。安診Webでございます。ご案内の資料はこちらからご覧いただけます。&#10;&#10;https://anshin-web.example.jp/docs/materials/google-map-guide.html&#10;&#10;※上記URLは仮のものです（本番ドメイン確定後に差し替え）&#10;&#10;ご不明点がございましたら、お気軽にご返信ください。担当者よりご連絡させていただく場合がございます。&#10;&#10;安診Web（運営：HumAIn Co.,Ltd.）">
+            <input type="text" name="院名" placeholder="院名" required>
+            <input type="text" name="お名前" placeholder="お名前" required>
+            <input type="email" name="email" placeholder="メールアドレス" required>
+            <input type="tel" name="電話番号" placeholder="電話番号（任意）">
+            <button type="submit" class="btn btn-cta" style="font-size:15px;">無料で資料をダウンロードする</button>
+          </form>
+        </div>
+        <img class="guide-img" src="assets/img/meo-report-sample-dummy-data.jpg" alt="Googleマップ活用チェックガイドの資料イメージ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 サービス4本柱 -->
 <section id="service">
   <div class="inner">
     <span class="sec-label">SERVICE</span>
-    <h2>「とりこぼす」リスクを、<span class="em">安診Webが解決します。</span></h2>
+    <h2>「丸投げ」できる安心感と、<span class="em">誠実さ。</span></h2>
     <div class="pillar">
       <div class="pillar-card">
         <div class="pillar-num">01</div>
         <div>
-          <h3>患者さんに見つけてもらえるホームページ</h3>
-          <p>Googleなどの検索エンジンが正しく認識できる設計で、「地域名＋整骨院」で検索した患者さんの画面に届きます。特別な広告費をかけずに、患者さんとの接点を増やします。もちろんスマホ対応・予約フォーム・休診日のお知らせ欄も標準装備です。</p>
+          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行します</h3>
+          <p>面倒な写真撮影、週1回の新着投稿、キーワードを含めた口コミ返信文の作成まで、実務はすべてこちらで代行します。先生にお願いするのは、月1回の訪問時に少しお話しいただくことだけ。施術に集中してください。</p>
+          <p class="pillar-note">投稿文・口コミ返信は、厚労省のあはき柔整広告ガイドラインに沿った表現で作成します。「効果を保証するような書き方」はいたしませんのでご安心ください。</p>
         </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-num">02</div>
         <div>
-          <h3>Googleマップで選ばれる、評判づくり</h3>
-          <p>先生も、初めての場所を探すときはGoogleマップを使いませんか？ 患者さんも同じです。マップ上の情報整備とクチコミづくりで、「見つかるだけでなく、選ばれる」院を目指します。</p>
-          <p class="pillar-note">クチコミをお願いするためのカード・卓上POPは、こちらでデザインしてお届けします。院内に置くだけでOKです。</p>
+          <h3>大量集客ではなく、悩んでいる患者さんに届ける</h3>
+          <p>「とにかく新規を増やす」広告や、AIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けるための情報発信です。既存の患者さんが来づらくなるような煽り文句も使いません。</p>
         </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-num">03</div>
         <div>
-          <h3>作りっぱなしにしない、毎月の作戦会議</h3>
-          <p>「何人が見てくれたのか」「来院された方は、何をきっかけに選んでくれたのか」。結果を分かりやすいレポートにまとめ、専門用語を使わずにご報告。月1回のオンライン作戦会議<em>[仮]</em>で、次の一手を先生と一緒に考えます。</p>
-          <p class="pillar-note">画像：実際の運用レポートのサンプル（数字はダミー）をここに掲載</p>
+          <h3>Googleマップで選ばれる、評判づくり</h3>
+          <p>先生も、初めての場所を探すときはGoogleマップを使いませんか？ 患者さんも同じです。マップ上の情報整備とクチコミづくりで、「見つかるだけでなく、選ばれる」院を目指します。</p>
+          <p class="pillar-note">クチコミをお願いするためのカード・卓上POPは、月1回の訪問時にお届けします。診察券と一緒にお渡しいただくだけでOKです。<br>
+            <img src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル" style="width:100%; max-width:420px; border-radius:8px; margin-top:10px;">
+          </p>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <div>
+          <h3>作りっぱなしにしない、毎月の訪問と作戦会議</h3>
+          <p>「何人が見てくれたのか」「来院された方は、何をきっかけに選んでくれたのか」。結果を分かりやすいレポートにまとめ、専門用語を使わずにご報告。月1回の訪問時に、次の一手を先生と一緒に考えます。</p>
+          <p class="pillar-note">
+            <img src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）" style="width:100%; max-width:520px; border-radius:8px;"><br>
+            ※上記は説明用のサンプルレポートです（数値はダミー）。
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- S5 制作見本・声 -->
+<!-- S6 実績・お客様の声 -->
 <section class="sec-sample" id="sample">
   <div class="inner">
     <span class="sec-label">SAMPLE</span>
-    <h2>ホームページは、<span class="em">ここまで変わります。</span></h2>
-    <div class="ba-grid">
-      <div>
-        <div class="ph">画像：Before<br>10年前の古いHP（架空院モック）<br>字が小さい・情報が古い</div>
-        <p class="ba-caption">Before：10年前のホームページ</p>
-      </div>
-      <div class="ba-arrow">→</div>
-      <div>
-        <div class="ph">画像：After<br>安診Webのデザイン（架空院モック）<br>スマホ対応・予約フォーム・お知らせ欄</div>
-        <p class="ba-caption">After：安診Webのホームページ</p>
-      </div>
-    </div>
-    <h2 style="font-size:24px;">ご利用中の先生の声</h2>
+    <h2>院の皆様から<span class="em">寄せられた声</span></h2>
     <div class="voice-grid">
       <div class="voice-card">
-        <div class="ph">画像：和漢整骨院サイトの<br>スクリーンショット</div>
-        <h3>「HPだけでなく、LINEやSNSでの発信方法まで提案してくれる」</h3>
-        <p>ホームページ制作にとどまらず、院の発信全体を一緒に考えてくれる。いつでも相談できる専任の担当がいる安心感が決め手でした。（和漢整骨院・高橋様）</p>
+        <img class="site-shot" src="assets/img/seikotsuin-fv-wakan-sekkotsuin.jpg" alt="和漢整体院 サイトトップページ">
+        <div class="voice-body">
+          <img class="client-logo" src="assets/img/client-logo-wakan-sekkotsuin.png" alt="和漢整体院">
+          <h3>「決め手は担当者の親身な対応！」</h3>
+          <p>ホームページ制作にとどまらず、LINEやSNSでの院の発信方法など提案してくれました。いつでも電話や対面で相談できる専任パートナーの存在が大きな安心感に繋がっています。Webが苦手な方や、信頼関係を重視する先生に最適です。</p>
+          <p class="voice-source">和漢整骨院　運営責任者　高橋様　<a href="https://wakan-sekkotsu.com/" target="_blank" rel="noopener">wakan-sekkotsu.com</a></p>
+        </div>
       </div>
       <div class="voice-card">
-        <div class="ph">画像：ホーセイ堂接骨院サイトの<br>スクリーンショット</div>
-        <h3>「一人院長にとって、何でも話せる相談相手ができた」</h3>
-        <p>ホームページに直接関係のない取り組みについても一緒に考え、思いを丁寧に汲み取ってくれる。その誠実さを信頼しています。（ホーセイ堂接骨院・市川先生）</p>
+        <img class="site-shot" src="assets/img/seikotsuin-fv-kotsuban-housei.jpg" alt="ホーセイ堂接骨院 サイトトップページ">
+        <div class="voice-body">
+          <img class="client-logo" src="assets/img/client-logo-kotsuban-housei.svg" alt="ホーセイ堂接骨院">
+          <h3>「担当者はなんでも話せる相談相手！」</h3>
+          <p>導入の決め手は、担当者の誠実さと「安診Webなら信頼できる」という確信です。個人で取り組んでいる動画制作など、ホームページに直接関係無いことについても一緒に考え、思いを丁寧に吸い上げてくれる心強い存在です。</p>
+          <p class="voice-source">ホーセイ堂接骨院　市川先生　<a href="https://www.kotsuban-housei.com/" target="_blank" rel="noopener">kotsuban-housei.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-size:20px; margin-top:48px;">他にもこのようなご意見をいただいています！</h2>
+    <div class="mini-voice-grid">
+      <div class="mini-voice-card">
+        <p>手が回らないWeb周りを丸ごと見てもらえるのは、本当にありがたいことだと感じています。</p>
+        <span class="area">板橋区　院長先生</span>
+      </div>
+      <div class="mini-voice-card">
+        <p>自分が今まで触れていなかった運用の部分を切り出せるだけでなく、思っていることや相談したいことを、何でも共有して一緒に伴走してくれる相手ができました。</p>
+        <span class="area">大田区　院長先生</span>
+      </div>
+      <div class="mini-voice-card">
+        <p>手が回らない運用面を任せられるだけでなく、何でも相談できる相手ができたことが心強いです。</p>
+        <span class="area">中央区　受付ご担当者様</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- S6 料金 -->
+<!-- S7 料金 -->
 <section id="price">
   <div class="inner">
     <span class="sec-label">PRICE</span>
@@ -474,16 +682,15 @@
         <div class="price-head">HPリニューアルプラン</div>
         <div class="price-body">
           <div class="price-fig">
-            <p class="init">初期費用 <strong>99,000</strong>円（税込）</p>
-            <p class="monthly">月額 9,000円（税込）</p>
+            <div class="cell"><div class="label">初期費用</div><div class="num">99,000<span class="unit">円</span></div></div>
+            <div class="cell"><div class="label">月額</div><div class="num">9,000<span class="unit">円</span></div></div>
           </div>
           <ul>
-            <li>オンラインインタビュー</li>
-            <li>写真撮影ガイドブックのご提供</li>
+            <li>ご訪問インタビュー・写真撮影</li>
             <li>ホームページ制作（ドメイン・サーバー取得込み）</li>
             <li>公式LINEの設定</li>
             <li>公開後の運用・保守</li>
-            <li>コンテンツ更新（月1回）</li>
+            <li>コンテンツ更新（月1回訪問）</li>
           </ul>
         </div>
       </div>
@@ -491,11 +698,11 @@
         <div class="price-head">Googleマップ対策プラン</div>
         <div class="price-body">
           <div class="price-fig">
-            <p class="init">初期費用 <strong>33,000</strong>円（税込）</p>
-            <p class="monthly">月額 11,000円（税込）</p>
+            <div class="cell"><div class="label">初期費用</div><div class="num">33,000<span class="unit">円</span></div></div>
+            <div class="cell"><div class="label">月額</div><div class="num">11,000<span class="unit">円</span></div></div>
           </div>
           <ul>
-            <li>オンラインインタビュー</li>
+            <li>ご訪問インタビュー</li>
             <li>Googleクチコミ訴求アイテムの作成・お届け</li>
             <li>Googleマップ（ビジネスプロフィール）初期設定</li>
             <li>ビジネスプロフィールの更新</li>
@@ -512,63 +719,46 @@
   </div>
 </section>
 
-<!-- S7 比較表 -->
+<!-- S8 比較表 -->
 <section class="sec-compare" style="padding-top:0;">
   <div class="inner">
     <span class="sec-label">COMPARE</span>
-    <h2>他のサービスとの<span class="em">違い</span></h2>
+    <h2>安診Webの<span class="em">特徴</span></h2>
+    <p class="lead">価格や規模ではなく、「同じ担当者と、どれだけ近い距離で継続的に伴走できるか」を大切にしています。</p>
     <div class="compare-wrap">
       <table class="compare">
         <thead>
           <tr>
             <th></th>
             <th class="us">安診Web</th>
-            <th>格安HP制作</th>
-            <th>一般的な制作会社</th>
+            <th>価格重視型のサービス</th>
+            <th>全国展開型のサービス</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>対応業界</td><td class="us">整骨院・接骨院専門</td><td>幅広い</td><td>幅広い</td></tr>
-          <tr><td>初期費用</td><td class="us">99,000円（税込）</td><td>数万円〜</td><td>30万〜100万円</td></tr>
-          <tr><td>公開後の更新</td><td class="us">毎月こちらで対応</td><td>先生が管理画面で操作</td><td>先生が管理画面で操作</td></tr>
-          <tr><td>Googleマップ対策</td><td class="us">専用プランあり</td><td>なし</td><td>別料金</td></tr>
-          <tr><td>相談のしやすさ</td><td class="us">毎月のオンライン作戦会議</td><td>メールのみ</td><td>都度お見積もり</td></tr>
+          <tr><td>対応業界</td><td class="us">整骨院・接骨院専門</td><td>整骨院・接骨院専門の場合が多い</td><td>治療院全般を含む場合が多い</td></tr>
+          <tr><td>初期費用の傾向</td><td class="us">99,000円（税込）</td><td>比較的抑えめな傾向</td><td>個別見積もりが多い傾向</td></tr>
+          <tr><td>接点</td><td class="us">月1回訪問・同じ担当者が継続対応</td><td>オンライン中心の場合が多い</td><td>体制が大きく分業対応の場合がある</td></tr>
+          <tr><td>実務代行</td><td class="us">撮影・投稿・口コミ返信まで丸ごと</td><td>更新のみのプランが多い</td><td>制作・取材込みのプランが多い</td></tr>
         </tbody>
       </table>
     </div>
+    <p class="compare-note">※他社の情報は一般的な傾向をもとにした参考情報であり、特定の企業を指すものではありません。プラン内容は各社異なりますので、詳しくは各社に直接ご確認ください。</p>
   </div>
 </section>
 
-<!-- S8 導入の流れ -->
+<!-- S9 導入の流れ -->
 <section class="sec-flow" id="flow">
   <div class="inner">
     <span class="sec-label">FLOW</span>
     <h2>公開までの<span class="em">流れ</span></h2>
     <ol class="flow-list">
-      <li><h3>無料相談</h3><p>Zoom・電話・LINEからお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
-      <li><h3>お申し込み</h3><p>電子契約で完結。書類の郵送やご来社は不要です。初期費用をお振込みください。</p></li>
-      <li><h3>オンラインインタビュー</h3><p>院のこだわり・強み・患者さんへの想いをじっくり伺います。写真撮影ガイドブックはこの時にお渡しします。</p></li>
-      <li><h3>写真撮影（先生のスマホでOK）</h3><p>ガイドブックを見ながら撮影して、LINEで送るだけ。撮り直しのご相談もお気軽に。</p></li>
-      <li><h3>制作・ご確認</h3><p>デザインを画面共有で一緒に確認しながら仕上げます。修正のご要望もその場で。</p></li>
-      <li><h3>公開＆運用スタート</h3><p>毎月のレポートと作戦会議で、公開後も伴走します。更新のご依頼はLINEで送るだけ。</p></li>
+      <li><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
+      <li><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
+      <li><h3>初回訪問：ヒアリング＋写真撮影</h3><p>院のこだわり・強み・患者さんへの想いをじっくり伺いながら、その場で写真撮影も行います。</p></li>
+      <li><h3>制作・ご確認</h3><p>デザインを一緒に確認しながら仕上げます。修正のご要望もその場で。</p></li>
+      <li><h3>公開＆運用スタート</h3><p>月1回の訪問とレポートで、公開後も伴走します。日々の更新のご依頼はお電話・メールで送るだけ。</p></li>
     </ol>
-    <p class="flow-note">お申し込みから公開まで、最短◯週間<em>[仮：要確定]</em>。</p>
-  </div>
-</section>
-
-<!-- S9 担当者・理念 -->
-<section id="about">
-  <div class="inner">
-    <span class="sec-label">MESSAGE</span>
-    <div class="staff-grid">
-      <div class="ph">画像：担当者の顔写真<br>[仮：顔出し可否 要確認]</div>
-      <div class="staff-msg">
-        <h3>先生の「一番近い相談相手」で<br>あり続けたい。</h3>
-        <p>整骨院業界には、確かな技術と地域の支持があるのに、Web上での発信が追いつかず、「分からない」という理由だけで患者さんの選択から外れてしまう院がたくさんあります。私たちは、それを本当にもったいないことだと思っています。</p>
-        <p>ホームページは、作って終わりではありません。毎月の作戦会議で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。</p>
-        <p class="staff-name">安診Web 担当◯◯（HumAIn Co.,Ltd.）</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -579,16 +769,16 @@
     <h2>よくある<span class="em">質問</span></h2>
     <div class="faq-list">
       <details>
-        <summary>Zoomを使ったことがありません。大丈夫でしょうか？</summary>
-        <p class="faq-a">大丈夫です。こちらからお送りするURLをタップするだけでつながります。アプリの設定などが不安な場合は、初回はお電話で接続までご案内します。</p>
+        <summary>訪問エリア外ですが、相談できますか？</summary>
+        <p class="faq-a">現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています<em>[仮：要確定]</em>。エリア外の場合もまずはご相談ください。</p>
       </details>
       <details>
-        <summary>写真をうまく撮れる自信がありません。</summary>
-        <p class="faq-a">プロ監修の「写真撮影ガイドブック」をお渡しします。構図やチェックリストに沿って撮るだけで、ホームページに使える写真が撮れます。撮影後はこちらで確認し、明るさなどの補正も行いますのでご安心ください。</p>
+        <summary>今、他社のHP/MEO運用サービスと契約中ですが相談できますか？</summary>
+        <p class="faq-a">まずはお話だけでも可能です。現在のご契約状況を伺った上で、無理のないご提案をいたします。</p>
       </details>
       <details>
-        <summary>遠方ですが、品質や料金は変わりませんか？</summary>
-        <p class="faq-a">全国どこでも同じ品質・同じ料金です。オンラインで完結するため、交通費などの追加費用も一切かかりません。</p>
+        <summary>Googleマップの口コミ返信や投稿は、広告のルールに違反しませんか？</summary>
+        <p class="faq-a">厚労省のあはき柔整広告ガイドラインに沿った表現でのみ作成しますので安心です。「〇〇が治りました」のような効果を断定する表現は使用しません。</p>
       </details>
       <details>
         <summary>今のホームページのURL（ドメイン）はどうなりますか？</summary>
@@ -596,7 +786,7 @@
       </details>
       <details>
         <summary>パソコンが苦手でも運用できますか？</summary>
-        <p class="faq-a">公開後の更新はすべてこちらで対応します。先生にお願いするのは、変更したい内容をLINEで送っていただくことだけです。</p>
+        <p class="faq-a">公開後の更新はすべてこちらで対応します。先生にお願いするのは、変更したい内容をご連絡いただくことだけです。</p>
       </details>
       <details>
         <summary>契約期間の縛りはありますか？</summary>
@@ -617,55 +807,63 @@
     <h2>まずは、無料相談から。</h2>
     <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。しつこい営業は一切いたしません。</p>
     <div class="contact-grid">
-      <form action="#" method="post" onsubmit="return false;">
+      <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="【無料相談】お問い合わせがありました">
+        <input type="hidden" name="_next" value="thanks-contact.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="この度はお問い合わせいただき、誠にありがとうございます。安診Webでございます。&#10;&#10;内容を確認のうえ、担当者より改めてご連絡させていただきます。今しばらくお待ちくださいませ。&#10;&#10;安診Web（運営：HumAIn Co.,Ltd.）">
         <div class="form-row">
           <label>院名<span class="req">必須</span></label>
-          <input type="text" placeholder="例：ふじわら整骨院">
+          <input type="text" name="院名" placeholder="例：ふじわら整骨院" required>
         </div>
         <div class="form-row">
           <label>お名前<span class="req">必須</span></label>
-          <input type="text" placeholder="例：藤原 智仁">
+          <input type="text" name="お名前" placeholder="例：藤原 智仁" required>
         </div>
         <div class="form-row">
           <label>電話番号<span class="req">必須</span></label>
-          <input type="tel" placeholder="例：090-1234-5678">
+          <input type="tel" name="電話番号" placeholder="例：090-1234-5678" required>
         </div>
         <div class="form-row">
           <label>メールアドレス<span class="req">必須</span></label>
-          <input type="email" placeholder="例：info@example.com">
+          <input type="email" name="email" placeholder="例：info@example.com" required>
         </div>
         <div class="form-row">
           <label>ご希望の相談方法<span class="req">必須</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="method" checked> Zoom</label>
-            <label><input type="radio" name="method"> 電話</label>
-            <label><input type="radio" name="method"> LINE</label>
+            <label><input type="radio" name="ご希望の相談方法" value="対面" checked> 対面</label>
+            <label><input type="radio" name="ご希望の相談方法" value="電話"> 電話</label>
           </div>
         </div>
         <div class="form-row">
           <label>ご希望の時間帯<span class="req">必須</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="time" checked> 診療開始前</label>
-            <label><input type="radio" name="time"> 昼休み</label>
-            <label><input type="radio" name="time"> 診療終了後</label>
+            <label><input type="radio" name="ご希望の時間帯" value="診療開始前" checked> 診療開始前</label>
+            <label><input type="radio" name="ご希望の時間帯" value="昼休み"> 昼休み</label>
+            <label><input type="radio" name="ご希望の時間帯" value="診療終了後"> 診療終了後</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>現在、他社のHP/MEO/SNS運用サービスと契約中ですか<span class="req">必須</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="他社契約状況" value="いいえ" checked> いいえ</label>
+            <label><input type="radio" name="他社契約状況" value="はい"> はい</label>
           </div>
         </div>
         <div class="form-row">
           <label>ご相談内容<span class="opt">任意</span></label>
-          <textarea rows="3" placeholder="例：10年前に作ったHPをリニューアルしたい"></textarea>
+          <textarea name="ご相談内容" rows="3" placeholder="例：開業10年で自費メニューへの移行を検討中／院内リニューアルのタイミングでHPも見直したい"></textarea>
         </div>
-        <button type="submit" class="btn btn-cta">無料相談を申し込む<small>1分で入力完了・しつこい営業なし</small></button>
+        <div class="cta-with-badge" style="width:100%;">
+          <span class="cta-badge">1分で簡単入力</span>
+          <button type="submit" class="btn btn-cta" style="width:100%;">無料相談を申し込む<small>しつこい営業なし</small></button>
+        </div>
         <p class="form-fine">送信いただいた個人情報は「個人情報の取扱いについて」に基づき管理します。</p>
       </form>
       <div>
         <div class="contact-alt">
           <h3>お電話でのご相談</h3>
           <p class="tel">03-4361-2643<small>平日 10:00〜19:00（診療の合間でもお気軽に）</small></p>
-        </div>
-        <div class="contact-alt" style="margin-top:20px;">
-          <h3>LINEでのご相談</h3>
-          <p style="font-size:14px;">「まずは文字で聞きたい」という先生はこちら。友だち追加して、そのままメッセージをお送りください。</p>
-          <a class="line-btn" href="#">LINEで友だち追加して相談する</a>
         </div>
       </div>
     </div>
@@ -675,8 +873,9 @@
 <!-- フッター -->
 <footer>
   <div class="inner">
-    <div>
-      <strong style="color:#fff;">安診Web</strong>（運営：HumAIn Co.,Ltd.）
+    <div style="display:flex; align-items:center; gap:10px;">
+      <img src="assets/img/logo.svg" alt="安診Web" height="24" style="filter:brightness(0) invert(1);">
+      <span>（運営：HumAIn Co.,Ltd.）</span>
     </div>
     <div>
       <a href="#">会社概要</a>
@@ -689,7 +888,7 @@
 <!-- スマホ固定CTAバー -->
 <div class="fixed-cta">
   <a href="#contact" class="f-consult">無料相談する</a>
-  <a href="#" class="f-line">LINEで相談</a>
+  <a href="tel:0343612643" class="f-tel">電話で相談</a>
 </div>
 
 </body>
