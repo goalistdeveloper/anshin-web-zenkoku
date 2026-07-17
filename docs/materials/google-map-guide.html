@@ -28,11 +28,40 @@
   }
   .serif { font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif; }
   .page { max-width: 760px; margin: 0 auto; background: var(--paper); padding: 64px 64px 72px; }
+  /* ==========================================================
+     印刷（PDF書き出し）用：16:9スライド形式
+     1280px×720px（96dpiで13.333in×7.5in＝標準的な16:9スライドサイズ）
+     セクション単位で1枚のスライドに強制改ページする
+  ========================================================== */
   @media print {
-    body { background: #fff; }
-    .page { max-width: none; padding: 14mm 16mm; }
+    @page { size: 1280px 720px; margin: 0; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: #fff; font-size: 16px; }
+    .page { max-width: none; padding: 0; }
     .no-print { display: none; }
-    section { break-inside: avoid-page; }
+
+    .cover, section.doc-sec {
+      width: 1280px; padding: 68px 96px; box-sizing: border-box;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      page-break-after: always; break-after: page;
+    }
+    .cover { border-bottom: none; padding-bottom: 68px; margin-bottom: 0; justify-content: center; }
+    section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
+    footer.doc-foot { width: 1280px; box-sizing: border-box; padding: 0 96px 48px; margin-top: 24px; }
+
+    .cover h1 { font-size: 38px; }
+    .cover .lede { font-size: 16px; max-width: 32em; }
+    .sec-head { margin-bottom: 32px; }
+    .sec-head .num { font-size: 40px; }
+    .sec-head h2 { font-size: 24px; }
+    .check-list li { font-size: 15px; padding: 9px 0; }
+    .template-card, .reply-card { font-size: 14.5px; padding-top: 10px; padding-bottom: 10px; }
+    table.doc-table { font-size: 14px; }
+    .point { margin: 12px 0; }
+    .point p, .body-text, .lead-note { font-size: 14.5px; }
+    .photo-grid .tag-item { font-size: 14px; }
+    .score-note, .foot-note, .caption { font-size: 13px; }
+    .sample-img { max-width: 340px; margin: 10px auto 4px; }
   }
   @media (max-width: 640px) { .page { padding: 40px 22px 56px; } }
 
