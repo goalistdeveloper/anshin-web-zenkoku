@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>整骨院オーナーのための、Googleマップ活用チェックガイド｜TOTONOE</title>
+<title>整骨院オーナーのための、Googleマップ活用チェックガイド｜安診Web</title>
 <!-- ============================================================
      ダウンロード資料（docs/lp-plan.md S4「資料ダウンロード」準拠）
      このHTMLはPDF生成用の版下。実際の配布物は同ディレクトリの
@@ -12,12 +12,12 @@
      内容の情報源は巻末の参考文献を参照。
 ============================================================ -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+JP:wght@500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&display=swap');
   :root {
     --ink: #1A2420;
     --ink-sub: #5B6560;
-    --gold: #8E6F41;
-    --line: #DAD3C2;
+    --green-deep: #1F5B41;
+    --green-line: #D8E4DD;
     --paper: #FBFAF6;
     --rule: #C9CFC9;
   }
@@ -28,46 +28,17 @@
   }
   .serif { font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif; }
   .page { max-width: 760px; margin: 0 auto; background: var(--paper); padding: 64px 64px 72px; }
-  /* ==========================================================
-     印刷（PDF書き出し）用：16:9スライド形式
-     1280px×720px（96dpiで13.333in×7.5in＝標準的な16:9スライドサイズ）
-     セクション単位で1枚のスライドに強制改ページする
-  ========================================================== */
   @media print {
-    @page { size: 1280px 720px; margin: 0; }
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { background: #fff; font-size: 16px; }
-    .page { max-width: none; padding: 0; }
+    body { background: #fff; }
+    .page { max-width: none; padding: 14mm 16mm; }
     .no-print { display: none; }
-
-    .cover, section.doc-sec {
-      width: 1280px; padding: 68px 96px; box-sizing: border-box;
-      display: flex; flex-direction: column; justify-content: flex-start;
-      page-break-after: always; break-after: page;
-    }
-    .cover { border-bottom: none; padding-bottom: 68px; margin-bottom: 0; justify-content: center; }
-    section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
-    footer.doc-foot { width: 1280px; box-sizing: border-box; padding: 0 96px 48px; margin-top: 24px; }
-
-    .cover h1 { font-size: 38px; }
-    .cover .lede { font-size: 16px; max-width: 32em; }
-    .sec-head { margin-bottom: 32px; }
-    .sec-head .num { font-size: 40px; }
-    .sec-head h2 { font-size: 24px; }
-    .check-list li { font-size: 15px; padding: 9px 0; }
-    .template-card, .reply-card { font-size: 14.5px; padding-top: 10px; padding-bottom: 10px; }
-    table.doc-table { font-size: 14px; }
-    .point { margin: 12px 0; }
-    .point p, .body-text, .lead-note { font-size: 14.5px; }
-    .photo-grid .tag-item { font-size: 14px; }
-    .score-note, .foot-note, .caption { font-size: 13px; }
-    .sample-img { max-width: 340px; margin: 10px auto 4px; }
+    section { break-inside: avoid-page; }
   }
   @media (max-width: 640px) { .page { padding: 40px 22px 56px; } }
 
   /* ---- 表紙エリア ---- */
   .cover { padding-bottom: 34px; margin-bottom: 40px; border-bottom: 1px solid var(--ink); }
-  .cover .kicker { font-size: 11px; letter-spacing: .22em; color: var(--gold); font-weight: 700; margin-bottom: 18px; }
+  .cover .kicker { font-size: 11px; letter-spacing: .22em; color: var(--green-deep); font-weight: 700; margin-bottom: 18px; }
   .cover h1 { font-size: 30px; line-height: 1.6; font-weight: 700; margin-bottom: 14px; }
   .cover .lede { font-size: 14px; color: var(--ink-sub); max-width: 46em; }
   .cover .meta { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 28px; font-size: 11px; color: var(--ink-sub); }
@@ -78,15 +49,15 @@
   .toc-title { font-size: 11px; letter-spacing: .2em; color: var(--ink-sub); margin-bottom: 14px; }
   .toc ol { list-style: none; display: grid; gap: 9px; }
   .toc li { display: flex; align-items: baseline; font-size: 13.5px; }
-  .toc li .num { width: 26px; color: var(--gold); font-weight: 700; }
+  .toc li .num { width: 26px; color: var(--green-deep); font-weight: 700; }
   .toc li .fill { flex: 1; border-bottom: 1px dotted var(--rule); margin: 0 8px; transform: translateY(-4px); }
 
   /* ---- セクション見出し ---- */
   section.doc-sec { margin-top: 52px; }
   .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; }
-  .sec-head .num { font-size: 30px; font-weight: 700; color: var(--line); line-height: 1; font-family: "Noto Serif JP", serif; }
+  .sec-head .num { font-size: 30px; font-weight: 700; color: var(--green-line); line-height: 1; font-family: "Noto Serif JP", serif; }
   .sec-head h2 { font-size: 19px; font-weight: 700; }
-  h3.doc-h3 { font-size: 14.5px; font-weight: 700; margin: 22px 0 8px; color: var(--gold); }
+  h3.doc-h3 { font-size: 14.5px; font-weight: 700; margin: 22px 0 8px; color: var(--green-deep); }
   p.lead-note { font-size: 13.5px; color: var(--ink-sub); margin-bottom: 16px; }
   p.body-text { font-size: 13.5px; margin-bottom: 12px; }
   .foot-note { font-size: 11.5px; color: var(--ink-sub); margin-top: 4px; }
@@ -95,14 +66,14 @@
   .check-list { list-style: none; }
   .check-list li {
     display: flex; align-items: flex-start; gap: 12px; font-size: 14px;
-    padding: 11px 0; border-bottom: 1px solid var(--line);
+    padding: 11px 0; border-bottom: 1px solid var(--green-line);
   }
-  .check-list li:first-child { border-top: 1px solid var(--line); }
+  .check-list li:first-child { border-top: 1px solid var(--green-line); }
   .check-list li .box { width: 13px; height: 13px; border: 1.5px solid var(--ink-sub); margin-top: 4px; flex: none; }
   .score-note { font-size: 12.5px; color: var(--ink-sub); margin-top: 12px; font-style: italic; }
 
   /* ---- 引用・ポイント（塗りボックスではなく左罫線） ---- */
-  .point { border-left: 2px solid var(--gold); padding-left: 18px; margin: 18px 0; }
+  .point { border-left: 2px solid var(--green-deep); padding-left: 18px; margin: 18px 0; }
   .point h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
   .point p { font-size: 13.5px; color: var(--ink-sub); }
 
@@ -113,26 +84,26 @@
   @media (max-width: 560px) { .compare-mini .col + .col { border-left: none; border-top: 1px solid var(--rule); } }
   .compare-mini h4 { font-size: 12.5px; font-weight: 700; margin-bottom: 6px; letter-spacing: .04em; }
   .compare-mini .no h4 { color: #99332A; }
-  .compare-mini .ok h4 { color: var(--gold); }
+  .compare-mini .ok h4 { color: var(--green-deep); }
 
   .photo-grid { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 14px 0 18px; }
-  .photo-grid .tag-item { font-size: 12.5px; color: var(--gold); border: 1px solid var(--line); padding: 5px 12px; }
+  .photo-grid .tag-item { font-size: 12.5px; color: var(--green-deep); border: 1px solid var(--green-line); padding: 5px 12px; }
 
   table.doc-table { width: 100%; border-collapse: collapse; font-size: 12.8px; margin: 14px 0 18px; }
   table.doc-table th, table.doc-table td { border-bottom: 1px solid var(--rule); padding: 9px 10px; text-align: left; vertical-align: top; }
-  table.doc-table th { font-weight: 700; color: var(--gold); border-bottom: 1.5px solid var(--ink); font-size: 12px; }
+  table.doc-table th { font-weight: 700; color: var(--green-deep); border-bottom: 1.5px solid var(--ink); font-size: 12px; }
 
   .template-card { padding: 14px 0 14px 18px; border-left: 2px solid var(--rule); margin-bottom: 4px; font-size: 13.5px; }
-  .template-card .label { font-size: 11.5px; font-weight: 700; color: var(--gold); margin-bottom: 6px; display: block; letter-spacing: .03em; }
+  .template-card .label { font-size: 11.5px; font-weight: 700; color: var(--green-deep); margin-bottom: 6px; display: block; letter-spacing: .03em; }
   .template-card .txt { white-space: pre-line; color: var(--ink); }
 
   .reply-card { padding: 14px 0 14px 18px; border-left: 2px solid var(--rule); margin-bottom: 4px; font-size: 13.5px; }
   .reply-card .label { font-size: 11.5px; font-weight: 700; margin-bottom: 6px; display: block; letter-spacing: .03em; }
-  .reply-card.good .label { color: var(--gold); }
+  .reply-card.good .label { color: var(--green-deep); }
   .reply-card.bad .label { color: #99332A; }
   .tag-ng, .tag-ok { font-size: 10.5px; font-weight: 700; padding: 1px 7px; border: 1px solid currentColor; margin-right: 6px; }
   .tag-ng { color: #99332A; }
-  .tag-ok { color: var(--gold); }
+  .tag-ok { color: var(--green-deep); }
 
   .sample-img { width: 100%; max-width: 460px; border: 1px solid var(--rule); display: block; margin: 14px auto 6px; }
   .caption { text-align: center; font-size: 11.5px; color: var(--ink-sub); }
@@ -141,12 +112,12 @@
   .cta-box h3 { font-size: 15.5px; margin-bottom: 8px; }
   .cta-box p { font-size: 13px; color: var(--ink-sub); margin-bottom: 16px; max-width: 40em; }
   .cta-box a {
-    display: inline-block; background: var(--gold); color: #fff;
+    display: inline-block; background: var(--green-deep); color: #fff;
     text-decoration: none; font-weight: 700; padding: 12px 30px; font-size: 13.5px;
   }
 
   .ref-list { font-size: 12px; color: var(--ink-sub); display: grid; gap: 7px; margin-top: 6px; }
-  .ref-list a { color: var(--gold); }
+  .ref-list a { color: var(--green-deep); }
 
   footer.doc-foot {
     margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
@@ -154,7 +125,7 @@
   }
 
   .print-btn {
-    position: fixed; top: 16px; right: 16px; background: var(--gold); color: #fff; border: none;
+    position: fixed; top: 16px; right: 16px; background: var(--green-deep); color: #fff; border: none;
     padding: 10px 18px; border-radius: 999px; font-weight: 700; cursor: pointer; font-size: 13px;
   }
 </style>
@@ -166,12 +137,12 @@
 <div class="page">
 
   <div class="cover">
-    <p class="kicker">TOTONOE　実践ガイド</p>
+    <p class="kicker">安診Web　実践ガイド</p>
     <h1 class="serif">整骨院オーナーのための、<br>Googleマップ活用チェックガイド</h1>
-    <p class="lede">TOTONOEに依頼するかどうかに関わらず、まず現状を知っていただくための資料です。専門用語はできるだけ使わず、今日から実践できることを中心にまとめました。</p>
+    <p class="lede">安診Webに依頼するかどうかに関わらず、まず現状を知っていただくための資料です。専門用語はできるだけ使わず、今日から実践できることを中心にまとめました。</p>
     <div class="meta">
       <span>整骨院・接骨院専門　ホームページ制作</span>
-      <img src="../../assets/img/logo-totonoe.png" alt="TOTONOE" style="height:20px;">
+      <img src="../../assets/img/logo.svg" alt="安診Web">
     </div>
   </div>
 
@@ -333,7 +304,7 @@
 
   <div class="cta-box no-print">
     <h3>「分かったけれど、続ける時間がない」という方へ</h3>
-    <p>写真撮影・投稿・クチコミ返信まで、TOTONOEが月1回の訪問でまるごと代行します。まずは無料相談でお話しください。</p>
+    <p>写真撮影・投稿・クチコミ返信まで、安診Webが月1回の訪問でまるごと代行します。まずは無料相談でお話しください。</p>
     <a href="../../index.html#contact">無料相談する</a>
   </div>
 
@@ -350,7 +321,7 @@
   </section>
 
   <footer class="doc-foot">
-    <span>TOTONOE（運営：HumAIn Co.,Ltd.）</span>
+    <span>安診Web（運営：HumAIn Co.,Ltd.）</span>
     <span>整骨院・接骨院専門　ホームページ制作</span>
   </footer>
 </div>
