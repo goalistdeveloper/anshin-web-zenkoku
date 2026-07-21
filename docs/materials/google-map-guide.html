@@ -34,20 +34,35 @@
   /* ---- 印刷＝スライド形式（1セクション=1ページ、16:9） ---- */
   @media print {
     @page { size: 1280px 720px; margin: 0; }
-    html, body { background: #fff; font-size: 20px; }
-    .page { max-width: none; padding: 66px 88px; }
+    html, body { background: #fff; font-size: 26px; line-height: 1.7; }
+    .page { max-width: none; padding: 60px 84px; }
     .no-print { display: none; }
     .cover, section.doc-sec { page-break-after: always; break-after: page; }
     section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
     section.doc-sec { margin-top: 0; }
-    .cover h1 { font-size: 40px; }
-    .cover .lede { font-size: 17px; }
-    .sec-head .num { font-size: 40px; }
-    .sec-head h2 { font-size: 26px; }
-    h3.doc-h3 { font-size: 19px; }
-    p.lead-note, p.body-text, .point p, .template-card, .reply-card, table.doc-table,
-    .check-list li, .compare-mini .col, .ref-list, .compare-mini p { font-size: 16px; }
-    .foot-note, .caption, .score-note { font-size: 14px; }
+    .cover .kicker { font-size: 16px; }
+    .cover h1 { font-size: 56px; line-height: 1.5; }
+    .cover .lede { font-size: 24px; line-height: 1.8; }
+    .cover .meta { font-size: 15px; }
+    .sec-head { margin-bottom: 30px; }
+    .sec-head .num { font-size: 52px; }
+    .sec-head h2 { font-size: 38px; }
+    h3.doc-h3 { font-size: 26px; margin: 26px 0 10px; }
+    p.lead-note, p.body-text, .point p, .template-card, .reply-card,
+    .check-list li, .compare-mini .col, .compare-mini p { font-size: 22px; }
+    table.doc-table { font-size: 21px; }
+    table.doc-table th, table.doc-table td { padding: 13px 14px; }
+    .check-list li .box { width: 18px; height: 18px; }
+    .point { padding-left: 22px; margin: 22px 0; }
+    .point h3 { font-size: 23px; }
+    .caution { padding: 20px 24px; margin: 22px 0; }
+    .photo-grid .tag-item { font-size: 20px; padding: 7px 16px; }
+    .compare-mini h4 { font-size: 20px; }
+    .template-card .label, .reply-card .label { font-size: 17px; }
+    .tag-ng, .tag-ok { font-size: 15px; padding: 2px 9px; }
+    .ref-list { font-size: 19px; gap: 10px; }
+    footer.doc-foot { font-size: 16px; }
+    .foot-note, .caption, .score-note { font-size: 18px; }
   }
 
   /* ---- 表紙エリア ---- */
@@ -95,7 +110,7 @@
   .caution { border: 1px solid #B5825A; background: #FBF3EA; padding: 16px 18px; margin: 18px 0; }
   .caution h3 { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: #8A5A2E; }
   .caution p { font-size: 13px; color: var(--ink); }
-  @media print { .caution h3 { font-size: 18px; } .caution p { font-size: 16px; } }
+  @media print { .caution h3 { font-size: 24px; } .caution p { font-size: 22px; } }
 
   .compare-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 20px 0; border: 1px solid var(--rule); }
   @media (max-width: 560px) { .compare-mini { grid-template-columns: 1fr; } }
