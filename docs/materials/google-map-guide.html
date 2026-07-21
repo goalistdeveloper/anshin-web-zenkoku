@@ -132,12 +132,12 @@
        スタイルシートの最後に置くこと（先に書くと後続の無条件ルールに上書きされる）。 */
   @media print {
     @page { size: 1280px 720px; margin: 0; }
-    html, body { background: #fff; font-size: 18px; line-height: 1.65; }
+    html, body { background: var(--paper); font-size: 18px; line-height: 1.65; }
     .page { max-width: none; padding: 48px 72px; }
     .no-print { display: none; }
     .cover, section.doc-sec { page-break-after: always; break-after: page; }
     section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
-    section.doc-sec { margin-top: 0; }
+    section.doc-sec { margin-top: 0; padding-top: 24px; }
     .point, .caution, .compare-mini, table.doc-table,
     .template-card, .reply-card, .sample-img { break-inside: avoid; page-break-inside: avoid; }
     .cover .kicker { font-size: 15px; margin-bottom: 20px; }
@@ -169,7 +169,7 @@
     .template-card .label, .reply-card .label { font-size: 13px; margin-bottom: 6px; }
     .tag-ng, .tag-ok { font-size: 12px; padding: 2px 8px; }
     .ref-list { font-size: 14px; gap: 9px; margin-top: 8px; }
-    footer.doc-foot { font-size: 13px; margin-top: 30px; padding-top: 14px; }
+    footer.doc-foot { font-size: 13px; margin-top: 14px; padding-top: 10px; }
     .foot-note { font-size: 14px; margin-top: 8px; }
     .caption, .score-note { font-size: 14px; }
     .score-note { margin-top: 10px; }
@@ -407,12 +407,11 @@
       <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/" target="_blank" rel="noopener">消費者庁「景品表示法（優良誤認表示・有利誤認表示）」関連ページ</a>
       <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/" target="_blank" rel="noopener">消費者庁「ステルスマーケティングに関する検討会」報告書・運用基準（2023年10月1日施行）</a>
     </div>
+    <footer class="doc-foot">
+      <span>安診Web（運営：HumAIn Co.,Ltd.）</span>
+      <span>整骨院・接骨院専門　ホームページ制作</span>
+    </footer>
   </section>
-
-  <footer class="doc-foot">
-    <span>安診Web（運営：HumAIn Co.,Ltd.）</span>
-    <span>整骨院・接骨院専門　ホームページ制作</span>
-  </footer>
 </div>
 
 </body>
