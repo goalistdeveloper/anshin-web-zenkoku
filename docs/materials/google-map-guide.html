@@ -50,11 +50,6 @@
   .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .sec-head .num { font-size: 30px; font-weight: 800; color: var(--green-line); line-height: 1; }
   .sec-head h2 { font-size: 19px; font-weight: 700; }
-  .sec-icon {
-    width: 30px; height: 30px; border-radius: 50%; background: var(--green-line);
-    display: flex; align-items: center; justify-content: center; flex: none;
-  }
-  .sec-icon svg { width: 16px; height: 16px; stroke: var(--green-deep); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
   /* ---- 表紙：資料の流れ図 ---- */
   .cover-flow { display: flex; align-items: flex-start; gap: 8px; margin-top: 30px; flex-wrap: wrap; }
@@ -155,9 +150,9 @@
        この@media printブロックは、同じ詳細度のルールとのカスケードで確実に勝つよう
        スタイルシートの最後に置くこと（先に書くと後続の無条件ルールに上書きされる）。 */
   @media print {
-    @page { size: 1280px 720px; margin: 40px 72px 32px; }
+    @page { size: 1280px 720px; margin: 0; }
     html, body { background: var(--paper); font-size: 18px; line-height: 1.65; }
-    .page { max-width: none; padding: 0; }
+    .page { max-width: none; padding: 48px 72px; }
     .no-print { display: none; }
     .cover, section.doc-sec { page-break-after: always; break-after: page; }
     section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
@@ -197,8 +192,6 @@
     .foot-note { font-size: 14px; margin-top: 8px; }
     .caption, .score-note { font-size: 14px; }
     .score-note { margin-top: 10px; }
-    .sec-icon { width: 42px; height: 42px; }
-    .sec-icon svg { width: 22px; height: 22px; }
     .cover-flow { margin-top: 34px; gap: 10px; }
     .flow-step { font-size: 13px; width: 108px; gap: 8px; }
     .flow-icon { width: 44px; height: 44px; }
@@ -272,7 +265,7 @@
   </div>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">01</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 13l2 2 4-4"/></svg></span><h2>あなたの院は大丈夫？ セルフチェック</h2></div>
+    <div class="sec-head"><span class="num">01</span><h2>あなたの院は大丈夫？ セルフチェック</h2></div>
     <p class="lead-note">当てはまらない項目が多いほど、新しい患者さんに見つけてもらいにくい状態です。</p>
     <ul class="check-list">
       <li><span class="box"></span>直近1ヶ月以内に、Googleマップへ写真や近況を投稿した</li>
@@ -288,7 +281,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">02</span><span class="sec-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><h2>なぜ「登録しただけ」では見つからないのか</h2></div>
+    <div class="sec-head"><span class="num">02</span><h2>なぜ「登録しただけ」では見つからないのか</h2></div>
     <div class="point">
       <h3>指名検索と、一般検索の違い</h3>
       <p>院名で検索されて表示される「指名検索」と、「地域名＋整骨院」のような一般検索で表示されることは別物です。登録して放置している状態だと、すでに院名を知っている人にしか表示されず、新しい患者さんの検索には出てきません。</p>
@@ -314,7 +307,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">03</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.5 3H4a1 1 0 0 0-1 1v5.5a2 2 0 0 0 .59 1.41l9.59 9.59a2 2 0 0 0 2.82 0l4.59-4.59a2 2 0 0 0 0-2.82Z"/><circle cx="7.2" cy="7.2" r="1.1"/></svg></span><h2>カテゴリ設定の考え方</h2></div>
+    <div class="sec-head"><span class="num">03</span><h2>カテゴリ設定の考え方</h2></div>
     <p class="body-text">Googleビジネスプロフィールには「メインカテゴリ」を1つと、「サブカテゴリ」を最大9つまで追加できます。カテゴリはマップでの表示・検索結果に大きく影響する設定のひとつです。実態と異なる広すぎるカテゴリより、実際の施術内容に合った具体的なカテゴリを選ぶことが基本です。</p>
     <table class="doc-table">
       <tr><th>設定例</th><th>備考</th></tr>
@@ -329,7 +322,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">04</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="14" r="3.3"/></svg></span><h2>写真・動画を充実させる</h2></div>
+    <div class="sec-head"><span class="num">04</span><h2>写真・動画を充実させる</h2></div>
     <p class="body-text">写真を数多く登録しているプロフィールは、数枚しか登録していないプロフィールに比べてプロフィール閲覧数・経路検索数が伸びやすい傾向があります。枚数を一度に揃える必要はありませんが、少しずつ充実させていく価値はあります。以下のような写真を意識的に集めてみてください。</p>
     <div class="photo-grid">
       <span class="tag-item">外観・入口</span>
@@ -347,7 +340,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">05</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M13.5 6.5l3 3"/></svg></span><h2>投稿の実例テンプレート</h2></div>
+    <div class="sec-head"><span class="num">05</span><h2>投稿の実例テンプレート</h2></div>
     <p class="lead-note">投稿は「頻度」より「継続」が大切です。いきなり毎日投稿する必要はありません。週1回でも継続していることが評価されます。以下はそのまま使える文例です。</p>
     <div class="template-card">
       <span class="label">営業日・休診日のお知らせ</span>
@@ -373,7 +366,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">06</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></span><h2>クチコミの増やし方・返信のコツ</h2></div>
+    <div class="sec-head"><span class="num">06</span><h2>クチコミの増やし方・返信のコツ</h2></div>
     <div class="point">
       <h3>お願いの仕方</h3>
       <p>会計時に「良ければ、Googleに一言だけでも感想をいただけると嬉しいです」と直接お願いするのが最も効果的とされています。QRコード付きのカードを受付や施術ベッド脇に置いておくと、お願いしやすくなります。</p>
@@ -395,7 +388,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">07</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M9 5 7 3 3 7c1 5 5 9 10 10l4-4-2-2c-1 1-2 1-3 0l-3-3c-1-1-1-2 0-3Z"/></svg></span><h2>予約・連絡導線を分かりやすくする</h2></div>
+    <div class="sec-head"><span class="num">07</span><h2>予約・連絡導線を分かりやすくする</h2></div>
     <div class="point">
       <h3>リンク設定は「ホームページ」を基本に</h3>
       <p>プロフィールのボタンを「電話」だけにしてしまうと、診療中で電話に出られない時間帯の機会を逃してしまいます。ホームページやWeb予約ページへのリンクを設定し、電話に出られない時間でも情報を確認・予約できる状態にしておくと取りこぼしが減ります。</p>
@@ -403,7 +396,7 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">08</span><span class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h2>忙しくても続けられる、月間運用カレンダー</h2></div>
+    <div class="sec-head"><span class="num">08</span><h2>忙しくても続けられる、月間運用カレンダー</h2></div>
     <div class="cal-grid">
       <div class="cal-card"><span class="cal-freq">週1回</span><p>近況・お知らせの投稿を1つ（写真だけでも可）</p></div>
       <div class="cal-card"><span class="cal-freq">週1回</span><p>新着クチコミがあれば返信</p></div>
@@ -414,14 +407,14 @@
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">09</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h2>継続すると、こう変わっていきます</h2></div>
+    <div class="sec-head"><span class="num">09</span><h2>継続すると、こう変わっていきます</h2></div>
     <p class="lead-note">下記は説明用のサンプルレポートです（数値はダミー）。運用を継続すると、表示回数やアクション数はこのように推移していく傾向があります。</p>
     <img class="sample-img" src="../../assets/img/meo-report-sample-dummy-data.jpg" alt="Googleビジネスプロフィール運用成果サマリーレポートのサンプル">
     <p class="caption">※実際の成果は院やエリアによって異なります。上記はイメージ共有のためのサンプルです。</p>
   </section>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">10</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M12 4v16M8 6h8"/><path d="M5 6l3 6a3 3 0 0 0 6 0L5 6ZM13 6l3 6a3 3 0 0 0 6 0l-9-6Z"/></svg></span><h2>広告・表示のルールを知っておく</h2></div>
+    <div class="sec-head"><span class="num">10</span><h2>広告・表示のルールを知っておく</h2></div>
     <p class="body-text">Googleマップ・ホームページ・SNSでの発信は、すべて「広告」として法令の対象になり得ます。知らずに違反すると、行政指導や措置命令の対象になるだけでなく、患者さんからの信頼も損ないます。院を守るためにも、最低限のルールを押さえておきましょう。</p>
 
     <h3 class="doc-h3">あはき柔整広告ガイドライン（2025年2月18日改訂）</h3>
@@ -456,7 +449,7 @@
   </div>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">11</span><span class="sec-icon"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2Z"/><path d="M20 5a2 2 0 0 0-2-2h-5v18h5a2 2 0 0 0 2-2Z"/></svg></span><h2>参考文献</h2></div>
+    <div class="sec-head"><span class="num">11</span><h2>参考文献</h2></div>
     <p class="body-text" style="font-size:12.5px;">本資料の作成にあたり、以下を参考にしています。</p>
     <div class="ref-list">
       <a href="https://www.zenjukyo.gr.jp/business/" target="_blank" rel="noopener">全国柔整鍼灸協同組合「ネットでの検索率アップ！Googleビジネスプロフィールを設定しよう！」</a>
