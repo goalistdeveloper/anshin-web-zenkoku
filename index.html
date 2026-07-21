@@ -197,22 +197,24 @@
     backdrop-filter: blur(6px); border-bottom: 1px solid var(--green-line);
   }
   .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
   .logo img { display: block; }
-  .logo span { font-size: 11px; font-weight: 600; color: var(--text-sub); display: block; line-height: 1.2; }
+  .logo span { font-size: 11px; font-weight: 600; color: var(--text-sub); display: block; line-height: 1.2; white-space: nowrap; }
   nav.gnav a {
     text-decoration: none; color: var(--text-main); font-size: 15px; font-weight: 600; margin-left: 18px;
+    white-space: nowrap;
   }
   nav.gnav a.btn-cta { color: #fff; }
+  nav.gnav { display: flex; align-items: center; flex-wrap: nowrap; }
   .header-tel {
-    display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;
+    display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.2;
     color: var(--green-deep) !important; font-weight: 800 !important; font-size: 17px !important;
-    border-left: 1px solid var(--green-line); padding-left: 16px;
+    border-left: 1px solid var(--green-line); padding-left: 16px; margin-left: 18px; white-space: nowrap;
   }
   .header-tel .tel-icon { display: none; }
   .header-tel small { font-size: 11px; font-weight: 600; color: var(--text-sub); }
-  @media (max-width: 960px) { .header-tel { display: none; } }
-  nav.gnav .btn { padding: 10px 22px; font-size: 15px; margin-left: 18px; }
+  @media (max-width: 1320px) { .header-tel { display: none; } }
+  nav.gnav .btn { padding: 10px 22px; font-size: 15px; margin-left: 18px; white-space: nowrap; }
   @media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
 
   /* ---------- S1 ファーストビュー（背景動画のみ・中央寄せ） ---------- */
@@ -486,7 +488,7 @@
   <div class="inner hero-grid">
     <div class="badges">
       <span class="badge">整骨院・接骨院専門</span>
-      <span class="badge alt">東京・埼玉・神奈川・千葉対応（訪問可）<em style="font-style:normal;">[仮：要確定]</em></span>
+      <span class="badge alt">東京・埼玉・神奈川・千葉訪問！</span>
       <span class="badge alt">月1回の訪問サポート</span>
     </div>
     <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
@@ -856,14 +858,7 @@
           <div class="radio-group">
             <label><input type="radio" name="ご希望の相談方法" value="対面" checked> 対面</label>
             <label><input type="radio" name="ご希望の相談方法" value="電話"> 電話</label>
-          </div>
-        </div>
-        <div class="form-row">
-          <label>ご希望の時間帯<span class="req">必須</span></label>
-          <div class="radio-group">
-            <label><input type="radio" name="ご希望の時間帯" value="診療開始前" checked> 診療開始前</label>
-            <label><input type="radio" name="ご希望の時間帯" value="昼休み"> 昼休み</label>
-            <label><input type="radio" name="ご希望の時間帯" value="診療終了後"> 診療終了後</label>
+            <label><input type="radio" name="ご希望の相談方法" value="ビデオ通話"> ビデオ通話</label>
           </div>
         </div>
         <div class="form-row">
