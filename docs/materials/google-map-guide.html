@@ -7,7 +7,8 @@
 <!-- ============================================================
      ダウンロード資料（docs/lp-plan.md S4「資料ダウンロード」準拠）
      このHTMLはPDF生成用の版下。実際の配布物は同ディレクトリの
-     google-map-guide.pdf（Chrome headlessでこのHTMLから書き出し）。
+     google-map-guide.pdf（Chrome headlessでこのHTMLから書き出し、
+     1セクション=1ページの16:9スライド構成）。
      ロゴ／サンプル画像は現行 anshin-hp.com のアセットを流用。
      内容の情報源は巻末の参考文献を参照。
 ============================================================ -->
@@ -28,13 +29,26 @@
   }
   .serif { font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif; }
   .page { max-width: 760px; margin: 0 auto; background: var(--paper); padding: 64px 64px 72px; }
-  @media print {
-    body { background: #fff; }
-    .page { max-width: none; padding: 14mm 16mm; }
-    .no-print { display: none; }
-    section { break-inside: avoid-page; }
-  }
   @media (max-width: 640px) { .page { padding: 40px 22px 56px; } }
+
+  /* ---- 印刷＝スライド形式（1セクション=1ページ、16:9） ---- */
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { background: #fff; font-size: 20px; }
+    .page { max-width: none; padding: 66px 88px; }
+    .no-print { display: none; }
+    .cover, section.doc-sec { page-break-after: always; break-after: page; }
+    section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
+    section.doc-sec { margin-top: 0; }
+    .cover h1 { font-size: 40px; }
+    .cover .lede { font-size: 17px; }
+    .sec-head .num { font-size: 40px; }
+    .sec-head h2 { font-size: 26px; }
+    h3.doc-h3 { font-size: 19px; }
+    p.lead-note, p.body-text, .point p, .template-card, .reply-card, table.doc-table,
+    .check-list li, .compare-mini .col, .ref-list, .compare-mini p { font-size: 16px; }
+    .foot-note, .caption, .score-note { font-size: 14px; }
+  }
 
   /* ---- 表紙エリア ---- */
   .cover { padding-bottom: 34px; margin-bottom: 40px; border-bottom: 1px solid var(--ink); }
@@ -76,6 +90,12 @@
   .point { border-left: 2px solid var(--green-deep); padding-left: 18px; margin: 18px 0; }
   .point h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
   .point p { font-size: 13.5px; color: var(--ink-sub); }
+
+  /* ---- 注意喚起（法令・表示規制まわり） ---- */
+  .caution { border: 1px solid #B5825A; background: #FBF3EA; padding: 16px 18px; margin: 18px 0; }
+  .caution h3 { font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: #8A5A2E; }
+  .caution p { font-size: 13px; color: var(--ink); }
+  @media print { .caution h3 { font-size: 18px; } .caution p { font-size: 16px; } }
 
   .compare-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 20px 0; border: 1px solid var(--rule); }
   @media (max-width: 560px) { .compare-mini { grid-template-columns: 1fr; } }
@@ -139,7 +159,7 @@
   <div class="cover">
     <p class="kicker">安診Web　実践ガイド</p>
     <h1 class="serif">整骨院オーナーのための、<br>Googleマップ活用チェックガイド</h1>
-    <p class="lede">安診Webに依頼するかどうかに関わらず、まず現状を知っていただくための資料です。専門用語はできるだけ使わず、今日から実践できることを中心にまとめました。</p>
+    <p class="lede">安診Webに依頼するかどうかに関わらず、まず現状を知っていただくための資料です。専門用語はできるだけ使わず、今日から実践できることと、広告・表示に関して知っておくべきルールをまとめました。</p>
     <div class="meta">
       <span>整骨院・接骨院専門　ホームページ制作</span>
       <img src="../../assets/img/logo.svg" alt="安診Web">
@@ -158,7 +178,8 @@
       <li><span class="num">07</span>予約・連絡導線を分かりやすくする<span class="fill"></span></li>
       <li><span class="num">08</span>忙しくても続けられる、月間運用カレンダー<span class="fill"></span></li>
       <li><span class="num">09</span>継続すると、こう変わっていきます<span class="fill"></span></li>
-      <li><span class="num">10</span>参考文献<span class="fill"></span></li>
+      <li><span class="num">10</span>広告・表示のルールを知っておく<span class="fill"></span></li>
+      <li><span class="num">11</span>参考文献<span class="fill"></span></li>
     </ol>
   </div>
 
@@ -188,6 +209,10 @@
       <h3>「放置」はGoogle側にも伝わる</h3>
       <p>Googleビジネスプロフィールの運用ガイドでは、長期間投稿や写真の更新がないプロフィールは表示回数が落ち込みやすく、週1〜2回程度の更新を継続しているプロフィールの方が表示機会を維持しやすいとされています。「毎日頑張って更新する」よりも「止めない」ことの方が重要です。</p>
     </div>
+    <div class="point">
+      <h3>競合との比較で選ばれるための土台</h3>
+      <p>地域名＋業種の検索では、多くの場合ユーザーは複数の院のプロフィールを見比べます。情報量・写真・クチコミ件数のいずれかが競合より明らかに見劣りすると、電話や来院の前段階で候補から外れてしまいます。「まず土俵に乗る」ための最低限の情報整備と考えてください。</p>
+    </div>
     <div class="compare-mini">
       <div class="col no">
         <h4>見つかりにくい状態</h4>
@@ -212,7 +237,7 @@
       <h3>「商品」「サービス」欄も活用する</h3>
       <p>カテゴリに加えて、プロフィール内の「商品」「サービス」欄に対応メニュー（交通事故施術、腰痛・肩こりの施術など）を登録すると、検索での見つかりやすさに繋がります。各メニューには個別の写真を添えるとより分かりやすくなります。</p>
     </div>
-    <p class="foot-note">※症状名・効果を強調する表現（「腰痛が治る」等）は避け、「〇〇の施術に対応」という書き方にとどめてください。</p>
+    <p class="foot-note">※症状名・効果を強調する表現（「腰痛が治る」等）は避け、「〇〇の施術に対応」という書き方にとどめてください。詳しい理由は10章で解説します。</p>
   </section>
 
   <section class="doc-sec">
@@ -230,6 +255,7 @@
       <h3>動画も効果的</h3>
       <p>「院内紹介」「院長からのごあいさつ」といった短い動画も、来院前の患者さんの不安を減らすのに役立つとされています。スマホで撮影した数十秒の映像でも十分です。</p>
     </div>
+    <p class="foot-note">※ビフォーアフター写真を掲載する場合は、加工や誇張のない実際の状態を使うこと。誤解を招く加工は10章の「優良誤認表示」に抵触するおそれがあります。</p>
   </section>
 
   <section class="doc-sec">
@@ -255,6 +281,7 @@
       <span class="label">写真だけの近況投稿</span>
       <span class="txt">（院内の様子や季節の飾り付けなど、一言コメントを添えて写真を投稿するだけでもOKです）</span>
     </div>
+    <p class="foot-note">※「〇〇が必ず改善します」など効果を保証する言い回しは投稿文でも避けてください。</p>
   </section>
 
   <section class="doc-sec">
@@ -273,6 +300,10 @@
       貴重なご意見をいただき、ありがとうございます。ご不便をおかけしましたこと、お詫び申し上げます。いただいたご意見は院内で共有し、改善に努めてまいります。
     </div>
     <p class="foot-note"><span class="tag-ng">NG</span>「〇〇が治りましたね」等、効果を断定・保証する返信　　<span class="tag-ok">OK</span>感謝と今後の対応を伝える返信</p>
+    <div class="caution">
+      <h3>注意：クチコミ依頼と「ステルスマーケティング規制」</h3>
+      <p>2023年10月1日から、事業者が第三者に依頼して投稿させた口コミを、依頼の事実（対価の提供や条件など）を伏せたまま一般の感想であるかのように見せることは、景品表示法上の「ステルスマーケティング」として規制の対象になっています。上記の「良ければ一言お願いします」という声かけ自体は問題ありませんが、割引や謝礼と引き換えに投稿を求めたり、投稿内容（星の数・文言）を指定したりすることは避けてください。</p>
+    </div>
   </section>
 
   <section class="doc-sec">
@@ -302,14 +333,43 @@
     <p class="caption">※実際の成果は院やエリアによって異なります。上記はイメージ共有のためのサンプルです。</p>
   </section>
 
+  <section class="doc-sec">
+    <div class="sec-head"><span class="num">10</span><h2>広告・表示のルールを知っておく</h2></div>
+    <p class="body-text">Googleマップ・ホームページ・SNSでの発信は、すべて「広告」として法令の対象になり得ます。知らずに違反すると、行政指導や措置命令の対象になるだけでなく、患者さんからの信頼も損ないます。院を守るためにも、最低限のルールを押さえておきましょう。</p>
+
+    <h3 class="doc-h3">あはき柔整広告ガイドライン（2025年2月18日改訂）</h3>
+    <p class="body-text">柔道整復師等の広告について、厚生労働省が定める運用ガイドラインです。2025年の改訂では、ホームページ本体だけでなく、リスティング広告・バナー広告、SNSの公式アカウントでの投稿、口コミサイト上での施術所紹介なども「広告」として規制対象に含まれることが明確化されています。マップ投稿やSNS発信も対象になり得ると考えて運用してください。</p>
+    <table class="doc-table">
+      <tr><th>NG表現の例</th><th>理由</th></tr>
+      <tr><td>「必ず治ります」「絶対に痛みがなくなる」</td><td>効果を保証する断定表現は禁止</td></tr>
+      <tr><td>「日本一」「地域No.1」（客観的根拠のない優良比較）</td><td>他院との比較を煽る表現は禁止</td></tr>
+      <tr><td>治療の内容や範囲を、実態を超えて広く見せる表現</td><td>誇大広告に該当するおそれ</td></tr>
+    </table>
+
+    <h3 class="doc-h3">景品表示法（優良誤認表示・有利誤認表示）</h3>
+    <p class="body-text">景品表示法は、実際の内容や取引条件よりも著しく優れている・お得であると誤認させる表示を禁止しています。整骨院の情報発信で特に関係するのは次の2点です。</p>
+    <div class="point">
+      <h3>優良誤認表示</h3>
+      <p>効果・実績を実際より著しく優れているように見せる表示。ビフォーアフター写真の加工、体験談・クチコミの捏造や誇張なども含まれます。</p>
+    </div>
+    <div class="point">
+      <h3>有利誤認表示</h3>
+      <p>価格や割引について、実際より著しく有利であるかのように誤認させる表示（初回無料と謳いながら実際は条件付きの場合など）。</p>
+    </div>
+    <p class="foot-note">※表示の根拠を消費者庁から求められた場合、期限内に合理的根拠を提出できないと「不当表示」とみなされ、措置命令・課徴金納付命令の対象になることがあります。</p>
+
+    <h3 class="doc-h3">薬機法との関係</h3>
+    <p class="body-text">薬機法は主に医薬品・医療機器としての効能効果を標榜する表現に適用される法律で、健康食品やサプリメント的な訴求で問題になるケースが多い法令です。整骨院の一般的なGoogleマップ・ホームページ運用では直接該当する場面は多くありませんが、「治療」「完治」など医療的な効果を保証するような表現は、上記のあはき柔整広告ガイドラインでも同様に避けるべきとされています。判断に迷う表現は、掲載前に一度立ち止まって確認する習慣をつけてください。</p>
+  </section>
+
   <div class="cta-box no-print">
     <h3>「分かったけれど、続ける時間がない」という方へ</h3>
-    <p>写真撮影・投稿・クチコミ返信まで、安診Webが月1回の訪問でまるごと代行します。まずは無料相談でお話しください。</p>
+    <p>写真撮影・投稿・クチコミ返信まで、安診Webが月1回の訪問でまるごと代行します。表示ルールを踏まえた運用まで含めてお任せいただけます。まずは無料相談でお話しください。</p>
     <a href="../../index.html#contact">無料相談する</a>
   </div>
 
   <section class="doc-sec">
-    <div class="sec-head"><span class="num">10</span><h2>参考文献</h2></div>
+    <div class="sec-head"><span class="num">11</span><h2>参考文献</h2></div>
     <p class="body-text" style="font-size:12.5px;">本資料の作成にあたり、以下を参考にしています。</p>
     <div class="ref-list">
       <a href="https://www.zenjukyo.gr.jp/business/" target="_blank" rel="noopener">全国柔整鍼灸協同組合「ネットでの検索率アップ！Googleビジネスプロフィールを設定しよう！」</a>
@@ -317,6 +377,9 @@
       <a href="https://www.mm-laboratory.com/blog/c386" target="_blank" rel="noopener">mm-laboratory「1人整骨院のGoogleビジネスプロフィール｜効果を最大限に上げるには？」</a>
       <a href="https://www.mm-laboratory.com/blog/c417" target="_blank" rel="noopener">mm-laboratory「整骨院のMEO対策｜Googleビジネスプロフィールを使った集客法！」</a>
       <a href="https://www.gyro-n.com/seo/hack/massage_meo/" target="_blank" rel="noopener">Gyro-n SEO「整体・整骨院・マッサージ業界のMEO対策と、Google対策、口コミの増やし方を解説」</a>
+      <a href="https://www.mhlw.go.jp/" target="_blank" rel="noopener">厚生労働省「あはき柔整広告ガイドライン」（2025年2月18日改訂版）</a>
+      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/" target="_blank" rel="noopener">消費者庁「景品表示法（優良誤認表示・有利誤認表示）」関連ページ</a>
+      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/" target="_blank" rel="noopener">消費者庁「ステルスマーケティングに関する検討会」報告書・運用基準（2023年10月1日施行）</a>
     </div>
   </section>
 
