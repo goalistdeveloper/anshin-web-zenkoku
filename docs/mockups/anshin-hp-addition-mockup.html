@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>安診Web 追加提案モックアップ（実績／導入事例拡張／LINE動線）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic Medium", YuGothic, sans-serif;
+    color: #1F1F1F; background: #EDEDED; line-height: 1.8;
+  }
+  .label-bar {
+    background: #1F1F1F; color: #fff; padding: 14px 24px; font-size: 14px; font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .label-bar span { color: #FFD400; margin-right: 8px; }
+  .frame { max-width: 1080px; margin: 0 auto 60px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+  .note {
+    max-width: 1080px; margin: 0 auto 4px; background: #FFF9E6; border: 1px solid #F0D060;
+    padding: 14px 24px; font-size: 13px; color: #6B5600;
+  }
+  .inner { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- 共通：赤・青CTA ---- */
+  .btn-blue {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff;
+    font-weight: 800; font-size: 16px; padding: 14px 30px; border-radius: 999px;
+    background: linear-gradient(100deg, #022D8A 0%, #0088DA 55%, #00C8FF 100%);
+    box-shadow: 0 6px 16px rgba(2,45,138,.28);
+  }
+  .btn-blue .tag {
+    background: #fff; color: #022D8A; font-size: 11px; font-weight: 800; border-radius: 999px;
+    padding: 6px 8px; line-height: 1.2; text-align: center;
+  }
+  .badge-red {
+    display: inline-flex; align-items: center; justify-content: center; text-align: center;
+    background: #FF0000; color: #fff; font-weight: 800; font-size: 12px; border-radius: 50%;
+    width: 56px; height: 56px; flex: none; line-height: 1.3;
+  }
+
+  /* ==================================================================
+     ① 実績セクション（KPI）
+  ================================================================== */
+  .kpi-section { padding: 56px 0 64px; text-align: center; }
+  .kpi-section h2 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
+  .kpi-section .sub { color: #555; font-size: 14px; margin-bottom: 40px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .kpi-card {
+    border: 2px solid #FFECEC; border-radius: 14px; padding: 28px 12px; background: #fff;
+  }
+  .kpi-card .num { font-size: 34px; font-weight: 900; color: #FF0000; line-height: 1.1; }
+  .kpi-card .num small { font-size: 16px; font-weight: 700; margin-left: 2px; }
+  .kpi-card .lbl { font-size: 13px; color: #333; margin-top: 8px; font-weight: 700; }
+  .kpi-foot { font-size: 12px; color: #888; margin-top: 28px; }
+
+  /* ==================================================================
+     ② 導入事例カード（顔写真＋実際のHP画像）
+  ================================================================== */
+  .case-section { padding: 56px 0 64px; background: #FAFAFA; }
+  .case-section h2 { text-align: center; font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  .case-section .sub { text-align: center; color: #555; font-size: 14px; margin-bottom: 44px; }
+  .case-card {
+    display: grid; grid-template-columns: 180px 1fr 260px; gap: 26px; align-items: center;
+    background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    padding: 26px; margin-bottom: 26px;
+  }
+  .case-card .face { width: 180px; height: 202px; object-fit: cover; border-radius: 12px; }
+  .case-card .body h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
+  .case-card .body p { font-size: 14px; color: #333; margin-bottom: 12px; }
+  .case-card .body .who { font-size: 13px; color: #555; }
+  .case-card .body .who a { color: #0066CC; }
+  .case-card .site-shot { width: 100%; border-radius: 10px; border: 1px solid #E5E5E5; display: block; }
+  .case-card .site-shot-wrap { text-align: center; }
+  .case-card .site-shot-cap { font-size: 11px; color: #888; margin-top: 6px; }
+  @media (max-width: 760px) {
+    .case-card { grid-template-columns: 1fr; }
+    .case-card .face { width: 120px; height: 135px; }
+  }
+
+  /* ==================================================================
+     ③ LINE動線
+  ================================================================== */
+  .header-mock {
+    display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;
+    border-bottom: 1px solid #eee;
+  }
+  .header-mock .logo { font-weight: 900; font-size: 20px; color: #1F1F1F; }
+  .header-mock .right { display: flex; align-items: center; gap: 14px; }
+  .btn-line {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    background: #06C755; color: #fff; font-weight: 800; font-size: 14px;
+    padding: 10px 18px; border-radius: 999px;
+  }
+  .btn-line svg { width: 18px; height: 18px; fill: #fff; }
+  .btn-tel-mock { font-size: 13px; color: #333; text-align: right; }
+  .btn-tel-mock strong { display: block; font-size: 16px; color: #1F1F1F; }
+
+  .line-section { padding: 56px 0 64px; text-align: center; }
+  .line-section .icon-circle {
+    width: 64px; height: 64px; border-radius: 50%; background: #06C755; display: flex;
+    align-items: center; justify-content: center; margin: 0 auto 18px;
+  }
+  .line-section .icon-circle svg { width: 32px; height: 32px; fill: #fff; }
+  .line-section h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+  .line-section p { color: #555; font-size: 14px; margin-bottom: 26px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  h1.page-title { text-align: center; padding: 30px 20px 6px; font-size: 20px; color: #1F1F1F; }
+  p.page-lead { text-align: center; padding: 0 20px 30px; color: #666; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">安診Web LP 追加提案モックアップ</h1>
+<p class="page-lead">実際のトンマナ（赤・青グラデーション・白カード・角丸ピルボタン）に合わせた3つの追加案です。STUDIO側での再現用イメージとしてご確認ください。</p>
+
+<!-- ============ ① 実績セクション ============ -->
+<div class="label-bar"><span>追加①</span>実績セクション（数字で見る、安診Webの実績）</div>
+<div class="frame">
+  <section class="kpi-section">
+    <div class="inner">
+      <h2>数字で見る、安診Webの実績</h2>
+      <p class="sub">2026年◯月時点、安診Webをご利用中の全17院の実績です（院名は伏せています）</p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="num">17<small>院</small></div>
+          <div class="lbl">導入院数</div>
+        </div>
+        <div class="kpi-card">
+          <div class="num">153<small>件</small></div>
+          <div class="lbl">Googleマップ経由<br>累計予約数</div>
+        </div>
+        <div class="kpi-card">
+          <div class="num">4.7<small>★</small></div>
+          <div class="lbl">クチコミ平均評価</div>
+        </div>
+        <div class="kpi-card">
+          <div class="num">16.5<small>件</small></div>
+          <div class="lbl">クチコミ平均件数<br>／院</div>
+        </div>
+      </div>
+      <p class="kpi-foot">※運用期間（1〜8ヶ月）・院の規模により結果は異なります。特定の院を選んで掲載したものではなく、導入中の全17院を対象に集計しています。</p>
+    </div>
+  </section>
+</div>
+<div class="note">
+  ※ 数値は全て匿名集計データ（ご提供いただいたスプレッドシートの17院分）を基に計算した実数です。個別の院名・数値の捏造はしていません。
+</div>
+
+<!-- ============ ② 導入事例カード（顔写真＋HP画像） ============ -->
+<div class="label-bar" style="margin-top:60px;"><span>追加②</span>導入事例カードに実際のHP画像を追加</div>
+<div class="frame">
+  <section class="case-section">
+    <div class="inner">
+      <h2>導入事例</h2>
+      <p class="sub">院の皆様から寄せられた声</p>
+
+      <div class="case-card">
+        <img class="face" src="anshin-hp-additions-assets/takahashi.jpg" alt="和漢整骨院 運営責任者 高橋様">
+        <div class="body">
+          <h3>決め手は担当者の親身な対応！</h3>
+          <p>ホームページ制作だけでなく、LINEやSNSでの院の発信方法など提案してくれました。いつでも電話や対面で相談できる専任パートナーの存在が大きな安心感に繋がっています。Webが苦手な方や、信頼関係を重視する先生に最適です。</p>
+          <p class="who">和漢整骨院　運営責任者　高橋様<br><a href="https://wakan-sekkotsu.com/" target="_blank">https://wakan-sekkotsu.com/</a></p>
+        </div>
+        <div class="site-shot-wrap">
+          <img class="site-shot" src="anshin-hp-additions-assets/seikotsuin-fv-wakan-sekkotsuin.jpg" alt="和漢整骨院 ホームページ">
+          <p class="site-shot-cap">実際に制作したホームページ</p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img class="face" src="anshin-hp-additions-assets/ichikawa.jpg" alt="ホーセイ堂接骨院 市川先生">
+        <div class="body">
+          <h3>一人院長は孤独…担当者はなんでも話せる相談相手！</h3>
+          <p>導入の決め手は、担当者の誠実さと「安診Webなら信頼できる」という確信です。個人で取り組んでいる動画制作など、ホームページに直接関係無いことについても一緒に考え、思いを丁寧に吸い上げてくれる心強い存在です。</p>
+          <p class="who">ホーセイ堂接骨院　市川先生<br><a href="https://www.kotsuban-housei.com/" target="_blank">https://www.kotsuban-housei.com/</a></p>
+        </div>
+        <div class="site-shot-wrap">
+          <img class="site-shot" src="anshin-hp-additions-assets/seikotsuin-fv-kotsuban-housei.jpg" alt="ホーセイ堂接骨院 ホームページ">
+          <p class="site-shot-cap">実際に制作したホームページ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="note">
+  ※ 顔写真は本番anshin-hp.com掲載の実写真（高橋様・市川先生）、HP画像はこのプロジェクトのassets/imgにある実際のスクリーンショットをそのまま使用しています。新規の捏造画像は使っていません。
+</div>
+
+<!-- ============ ③ LINE動線 ============ -->
+<div class="label-bar" style="margin-top:60px;"><span>追加③</span>PC版ヘッダー＋インラインのLINE動線</div>
+<div class="frame">
+  <div class="header-mock">
+    <div class="logo">安診<span style="color:#FF0000">❤</span>web</div>
+    <div class="right">
+      <div class="btn-tel-mock">平日10:00〜19:00<strong>03-4361-2643</strong></div>
+      <a class="btn-line" href="#">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.6 2 10c0 2.9 2 5.5 5 7-.2.9-.8 2.8-.9 3.3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.7-2.5.6.1 1.2.1 1.8.1 5.5 0 10-3.6 10-8S17.5 2 12 2Z"/></svg>
+        LINEで相談
+      </a>
+      <a class="btn-blue" href="#"><span class="tag">1分で<br>簡単入力</span>無料で相談する</a>
+    </div>
+  </div>
+
+  <section class="line-section">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.6 2 10c0 2.9 2 5.5 5 7-.2.9-.8 2.8-.9 3.3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.7-2.5.6.1 1.2.1 1.8.1 5.5 0 10-3.6 10-8S17.5 2 12 2Z"/></svg>
+    </div>
+    <h2>まずはLINEで、気軽にご相談ください</h2>
+    <p>お電話やフォームの前に、「こんなことも聞いていいのかな」をLINEで気軽に聞いてみませんか。担当者が直接お答えします。</p>
+    <a class="btn-line" href="#" style="font-size:16px; padding:14px 28px;">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.6 2 10c0 2.9 2 5.5 5 7-.2.9-.8 2.8-.9 3.3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.7-2.5.6.1 1.2.1 1.8.1 5.5 0 10-3.6 10-8S17.5 2 12 2Z"/></svg>
+      LINE公式アカウントを友だち追加
+    </a>
+  </section>
+</div>
+<div class="note" style="margin-bottom:60px;">
+  ※ LINEアイコン・グリーン(#06C755)はLINE公式のブランドカラーに準拠。配置はヘッダー右側（電話番号の右）と、お問い合わせ直前の独立セクションの2箇所を想定しています。
+</div>
+
+</body>
+</html>
