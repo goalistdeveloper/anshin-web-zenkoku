@@ -46,7 +46,7 @@
   .toc li .fill { flex: 1; border-bottom: 1px dotted var(--rule); margin: 0 8px; transform: translateY(-4px); }
 
   /* ---- セクション見出し ---- */
-  section.doc-sec { margin-top: 52px; }
+  section.doc-sec { margin-top: 32px; }
   .sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .sec-head .num { font-size: 30px; font-weight: 800; color: var(--green-line); line-height: 1; }
   .sec-head h2 { font-size: 19px; font-weight: 700; }
@@ -133,8 +133,9 @@
     text-decoration: none; font-weight: 700; padding: 12px 30px; font-size: 13.5px;
   }
 
-  .ref-list { font-size: 12px; color: var(--ink-sub); display: grid; gap: 7px; margin-top: 6px; }
+  .ref-list { font-size: 12px; color: var(--ink-sub); display: grid; gap: 7px; margin-top: 6px; margin-bottom: 14px; }
   .ref-list a { color: var(--green-deep); }
+  .ref-group-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-top: 14px; }
 
   footer.doc-foot {
     margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule);
@@ -152,7 +153,7 @@
   @media print {
     @page { size: 1280px 720px; margin: 0; }
     html, body { background: var(--paper); font-size: 18px; line-height: 1.65; }
-    .page { max-width: none; padding: 48px 72px; }
+    .page { max-width: none; padding: 32px 72px; }
     .no-print { display: none; }
     .cover, section.doc-sec { page-break-after: always; break-after: page; }
     section.doc-sec:last-of-type { page-break-after: auto; break-after: auto; }
@@ -188,7 +189,8 @@
     .template-card, .reply-card { padding: 12px 0 12px 16px; margin-bottom: 6px; }
     .template-card .label, .reply-card .label { font-size: 13px; margin-bottom: 6px; }
     .tag-ng, .tag-ok { font-size: 12px; padding: 2px 8px; }
-    .ref-list { font-size: 14px; gap: 9px; margin-top: 8px; }
+    .ref-list { font-size: 14px; gap: 9px; margin-top: 8px; margin-bottom: 18px; }
+    .ref-group-title { font-size: 15px; margin-top: 16px; }
     footer.doc-foot { font-size: 13px; margin-top: 14px; padding-top: 10px; }
     .foot-note { font-size: 14px; margin-top: 8px; }
     .caption, .score-note { font-size: 14px; }
@@ -453,18 +455,22 @@
 
   <section class="doc-sec">
     <div class="sec-head"><span class="num">11</span><h2>参考文献</h2></div>
-    <p class="body-text" style="font-size:12.5px;">本資料の作成にあたり、以下を参考にしています。</p>
+    <p class="body-text" style="font-size:12.5px;">本資料の作成にあたり、以下を参考にしています。法令・運用ルールに関する記述は公式情報を根拠とし、実務上のノウハウ・文例部分は業界の参考記事も交えて構成しています。</p>
+    <p class="ref-group-title">法令・公式情報</p>
+    <div class="ref-list">
+      <a href="https://www.mhlw.go.jp/content/10800000/001412682.pdf" target="_blank" rel="noopener">厚生労働省「あはき・柔整広告ガイドラインの概要」（令和7年2月18日改訂版）</a>
+      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/" target="_blank" rel="noopener">消費者庁「景品表示法（優良誤認表示・有利誤認表示）」関連ページ</a>
+      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/" target="_blank" rel="noopener">消費者庁「ステルスマーケティングに関する検討会」報告書・運用基準（2023年10月1日施行）</a>
+      <a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener">Google ビジネス プロフィール ヘルプ「ローカル検索結果のランキングについて」</a>
+      <a href="https://support.google.com/business/answer/9976909" target="_blank" rel="noopener">Google ビジネス プロフィール ヘルプ「コンテンツ ポリシー」</a>
+    </div>
+    <p class="ref-group-title">業界情報・参考記事（補足）</p>
     <div class="ref-list">
       <a href="https://www.zenjukyo.gr.jp/business/" target="_blank" rel="noopener">全国柔整鍼灸協同組合「ネットでの検索率アップ！Googleビジネスプロフィールを設定しよう！」</a>
       <a href="https://rehasaku.net/media/attractingcustomers/2527/" target="_blank" rel="noopener">リハサク「整骨院・接骨院・治療院に求められる6つのMEO対策をポイント解説」</a>
       <a href="https://www.mm-laboratory.com/blog/c386" target="_blank" rel="noopener">mm-laboratory「1人整骨院のGoogleビジネスプロフィール｜効果を最大限に上げるには？」</a>
       <a href="https://www.mm-laboratory.com/blog/c417" target="_blank" rel="noopener">mm-laboratory「整骨院のMEO対策｜Googleビジネスプロフィールを使った集客法！」</a>
       <a href="https://www.gyro-n.com/seo/hack/massage_meo/" target="_blank" rel="noopener">Gyro-n SEO「整体・整骨院・マッサージ業界のMEO対策と、Google対策、口コミの増やし方を解説」</a>
-      <a href="https://www.mhlw.go.jp/content/10800000/001412682.pdf" target="_blank" rel="noopener">厚生労働省「あはき・柔整広告ガイドラインの概要」（令和7年2月18日改訂版）</a>
-      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/" target="_blank" rel="noopener">消費者庁「景品表示法（優良誤認表示・有利誤認表示）」関連ページ</a>
-      <a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/" target="_blank" rel="noopener">消費者庁「ステルスマーケティングに関する検討会」報告書・運用基準（2023年10月1日施行）</a>
-      <a href="https://support.google.com/business/answer/7091" target="_blank" rel="noopener">Google ビジネス プロフィール ヘルプ「ローカル検索結果のランキングについて」</a>
-      <a href="https://support.google.com/business/answer/9976909" target="_blank" rel="noopener">Google ビジネス プロフィール ヘルプ「コンテンツ ポリシー」</a>
     </div>
     <footer class="doc-foot">
       <span>安診Web（運営：HumAIn Co.,Ltd.）</span>
