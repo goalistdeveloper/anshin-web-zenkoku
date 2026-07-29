@@ -1,0 +1,57 @@
+/* ============================================================
+   layout.css — 全体レイアウト
+   コンテナ／ヘッダー／フッター／スマホ固定CTAバー
+============================================================ */
+
+/* ---------- コンテナ ---------- */
+.inner { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+section { padding: 72px 0; }
+
+/* ---------- ヘッダー ---------- */
+header {
+  position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.95);
+  backdrop-filter: blur(6px); border-bottom: 1px solid var(--green-line);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logo img { display: block; }
+.logo span { font-size: 11px; font-weight: 600; color: var(--text-sub); display: block; line-height: 1.2; white-space: nowrap; }
+nav.gnav { display: flex; align-items: center; flex-wrap: nowrap; }
+nav.gnav a {
+  text-decoration: none; color: var(--text-main); font-size: 15px; font-weight: 600; margin-left: 18px;
+  white-space: nowrap;
+}
+nav.gnav a.btn-cta { color: #fff; }
+nav.gnav .btn { padding: 10px 22px; font-size: 15px; margin-left: 18px; white-space: nowrap; }
+
+/* ヘッダー内の電話番号 */
+.header-tel {
+  display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.2;
+  color: var(--green-deep) !important; font-weight: 800 !important; font-size: 17px !important;
+  border-left: 1px solid var(--green-line); padding-left: 16px; margin-left: 18px; white-space: nowrap;
+}
+.header-tel .tel-icon { display: none; }
+.header-tel small { font-size: 11px; font-weight: 600; color: var(--text-sub); }
+
+@media (max-width: 1320px) { .header-tel { display: none; } }
+@media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
+
+/* ---------- フッター ---------- */
+footer { background: var(--green-darkest); color: var(--text-on-dark); padding: 40px 0 100px; font-size: 14px; }
+footer .inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+footer a { color: var(--text-on-dark); margin-right: 18px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; }
+.footer-logo { filter: brightness(0) invert(1); } /* 緑のロゴを白抜きにする */
+
+/* ---------- スマホ固定CTAバー ---------- */
+.fixed-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; display: none;
+  grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px;
+  background: rgba(255,255,255,.96); border-top: 1px solid var(--green-line);
+}
+.fixed-cta a { text-decoration: none; text-align: center; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 13px 6px; }
+.fixed-cta .f-consult { background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark)); color: #fff; }
+.fixed-cta .f-tel { background: var(--green-deep); color: #fff; }
+
+@media (max-width: 860px) { .fixed-cta { display: grid; } }
+@media (min-width: 861px) { body { padding-bottom: 0; } }

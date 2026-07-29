@@ -1,0 +1,37 @@
+/* ============================================================
+   variables.css — デザイントークン
+   配色・角丸などの共通値。色を変えたいときはこのファイルだけ触る。
+============================================================ */
+:root {
+  /* ブランドカラー（緑系） */
+  --green-deep: #1F7A55;
+  --green-accent: #3DBB7E;
+  --green-pale: #EDF7F2;
+  --green-line: #CDE8DB;
+  --green-contact-end: #175E42;  /* S11 背景グラデーションの終点 */
+  --green-darkest: #12362A;      /* フッター背景 */
+  --hero-dark: #0F3C2A;          /* S1 ファーストビュー背景 */
+
+  /* CTAカラー（オレンジ系） */
+  --cta-orange: #F59E0B;
+  --cta-orange-dark: #D97706;
+
+  /* アクセント */
+  --red-accent: #C81E1E;
+  --red-underline: #FBD3D3;
+
+  /* テキスト */
+  --text-main: #1F2933;
+  --text-sub: #52606D;
+  --text-on-dark: #B9D6C8;       /* フッター文字 */
+  --text-lead-on-dark: #D7EEE2;  /* S11 リード文 */
+
+  /* グレー系（カード背景・フォーム罫線） */
+  --white: #FFFFFF;
+  --gray-bg: #FAFBFC;
+  --gray-border: #E4E7EB;
+  --gray-line: #CBD2D9;
+  --gray-line-strong: #9AA5B1;
+
+  --radius: 14px;
+}

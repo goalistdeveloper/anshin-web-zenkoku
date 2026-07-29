@@ -126,355 +126,12 @@
 }
 </script>
 
-<style>
-  :root {
-    --green-deep: #1F7A55;
-    --green-accent: #3DBB7E;
-    --green-pale: #EDF7F2;
-    --green-line: #CDE8DB;
-    --cta-orange: #F59E0B;
-    --cta-orange-dark: #D97706;
-    --red-accent: #C81E1E;
-    --text-main: #1F2933;
-    --text-sub: #52606D;
-    --white: #FFFFFF;
-    --radius: 14px;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-  body {
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic Medium", YuGothic, sans-serif;
-    color: var(--text-main);
-    line-height: 1.8;
-    background: var(--white);
-    padding-bottom: 64px; /* スマホ固定CTAバー分 */
-  }
-  img { max-width: 100%; }
-  a { color: var(--green-deep); }
-
-  .inner { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 72px 0; }
-  .sec-label {
-    display: inline-block; color: var(--green-deep); font-size: 13px; font-weight: 700;
-    letter-spacing: .12em; border: 1px solid var(--green-accent); border-radius: 999px;
-    padding: 2px 14px; margin-bottom: 14px; background: var(--white);
-  }
-  h2 { font-size: clamp(24px, 4vw, 34px); line-height: 1.45; margin-bottom: 36px; }
-  h2 .em { color: var(--green-deep); }
-  .em-red { color: var(--red-accent); }
-  .lead { color: var(--text-sub); margin: -20px 0 36px; }
-
-  /* ---------- ボタン ---------- */
-  .btn {
-    display: inline-block; text-decoration: none; font-weight: 700; text-align: center;
-    border-radius: 999px; transition: transform .15s, box-shadow .15s;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-cta {
-    background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark));
-    color: #fff; padding: 17px 40px; font-size: 17px; position: relative; z-index: 1;
-    box-shadow: 0 6px 18px rgba(217, 119, 6, .35);
-  }
-  .btn-cta small { display: block; font-size: 12px; font-weight: 500; opacity: .95; }
-  .btn-sub {
-    background: var(--white); color: var(--green-deep); border: 2px solid var(--green-deep);
-    padding: 16px 36px; font-size: 15px;
-  }
-  .cta-with-badge { position: relative; display: inline-block; padding-top: 22px; }
-  .cta-badge {
-    display: inline-block; background: var(--green-deep); color: #fff;
-    font-size: 12px; font-weight: 800; padding: 7px 18px; border-radius: 999px;
-    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; white-space: nowrap;
-  }
-  .cta-badge::after {
-    content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 0; height: 0;
-    border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid var(--green-deep);
-  }
-
-  /* ---------- ヘッダー ---------- */
-  header {
-    position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.95);
-    backdrop-filter: blur(6px); border-bottom: 1px solid var(--green-line);
-  }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
-  .logo img { display: block; }
-  .logo span { font-size: 11px; font-weight: 600; color: var(--text-sub); display: block; line-height: 1.2; white-space: nowrap; }
-  nav.gnav a {
-    text-decoration: none; color: var(--text-main); font-size: 15px; font-weight: 600; margin-left: 18px;
-    white-space: nowrap;
-  }
-  nav.gnav a.btn-cta { color: #fff; }
-  nav.gnav { display: flex; align-items: center; flex-wrap: nowrap; }
-  .header-tel {
-    display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.2;
-    color: var(--green-deep) !important; font-weight: 800 !important; font-size: 17px !important;
-    border-left: 1px solid var(--green-line); padding-left: 16px; margin-left: 18px; white-space: nowrap;
-  }
-  .header-tel .tel-icon { display: none; }
-  .header-tel small { font-size: 11px; font-weight: 600; color: var(--text-sub); }
-  @media (max-width: 1320px) { .header-tel { display: none; } }
-  nav.gnav .btn { padding: 10px 22px; font-size: 15px; margin-left: 18px; white-space: nowrap; }
-  @media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
-
-  /* ---------- S1 ファーストビュー（背景動画のみ・中央寄せ） ---------- */
-  .hero { position: relative; overflow: hidden; padding: 40px 0 32px; background: #0F3C2A; }
-  @media (max-width: 640px) {
-    .hero { padding: 28px 0 20px; }
-    .hero-sub { margin-bottom: 10px; }
-    .hero-price { margin-bottom: 16px; }
-    .hero-cta { gap: 12px; }
-  }
-  .hero-bg-video {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%;
-    opacity: 0; transform: scale(1.08);
-    animation: heroBgReveal 1.8s ease-out both .1s;
-  }
-  @keyframes heroBgReveal {
-    from { opacity: 0; transform: scale(1.08); }
-    to   { opacity: .8; transform: scale(1); }
-  }
-  @media (prefers-reduced-motion: reduce) { .hero-bg-video { animation: none; opacity: .8; transform: scale(1); } }
-  .hero-bg-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(13,46,32,.62) 0%, rgba(13,46,32,.42) 45%, rgba(13,46,32,.68) 100%);
-  }
-  .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
-  @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-grid .badges { animation: heroFadeUp .7s ease-out both .1s; }
-  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .2s; }
-  .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .32s; }
-  .hero-grid .hero-price { animation: heroFadeUp .7s ease-out both .42s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .52s; }
-  .hero-grid .hero-tel { animation: heroFadeUp .7s ease-out both .62s; }
-  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
-  .badge {
-    background: var(--green-accent); color: #0F3C2A; font-size: 13px; font-weight: 700;
-    padding: 4px 14px; border-radius: 999px;
-  }
-  .badge.alt { background: rgba(255,255,255,.16); color: #fff; }
-  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.35; margin-bottom: 16px; color: #fff;
-    text-shadow: 0 2px 16px rgba(0,0,0,.35);
-  }
-  h1 .em { color: var(--green-accent); }
-  .hero-sub { font-size: 16px; color: rgba(255,255,255,.9); margin-bottom: 14px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
-  .hero-price { font-size: 14px; color: rgba(255,255,255,.75); font-weight: 600; margin-bottom: 24px; }
-  .hero-price strong { font-size: 18px; color: var(--green-accent); }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
-  .hero-tel {
-    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 10px;
-    margin-top: 16px; text-decoration: none; color: #fff;
-  }
-  .hero-tel-icon { font-size: 20px; }
-  .hero-tel-num { font-size: 26px; font-weight: 800; letter-spacing: .02em; }
-  .hero-tel-note { font-size: 13px; color: rgba(255,255,255,.75); width: 100%; text-align: center; }
-  @media (min-width: 561px) { .hero-tel-note { width: auto; } }
-
-  /* プレースホルダー画像（一部未確定要素のみ使用） */
-  .ph {
-    background: repeating-linear-gradient(45deg, #DCEFE6, #DCEFE6 12px, #E9F5EF 12px, #E9F5EF 24px);
-    border: 2px dashed var(--green-accent); border-radius: var(--radius);
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    color: var(--green-deep); font-size: 13px; font-weight: 700; padding: 12px;
-  }
-
-  /* ---------- S2 問題提起 ---------- */
-  .sec-problem { background: var(--white); padding-top: 20px; }
-  .problem-hook-label {
-    background: var(--red-accent); color: #fff; border-color: var(--red-accent);
-    font-size: 13px; font-weight: 800;
-  }
-  h2.problem-heading { font-size: clamp(28px, 5vw, 40px); }
-  .problem-heading .underline {
-    color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 4px;
-    text-underline-offset: 6px; text-decoration-color: #FBD3D3;
-  }
-  .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-  .problem-card {
-    background: #FAFBFC; border: 1px solid #E4E7EB; border-radius: var(--radius); padding: 24px;
-  }
-  .problem-card .no { color: #C81E1E; font-weight: 800; font-size: 14px; }
-  .problem-card h3 { font-size: 18px; margin: 6px 0 8px; }
-  .problem-card p { font-size: 16px; color: var(--text-sub); }
-  .problem-close {
-    margin-top: 40px; text-align: center; font-size: clamp(16px, 2.6vw, 20px); font-weight: 700;
-  }
-  .problem-close .em { color: var(--green-deep); }
-
-  /* ---------- S3 担当者・理念 ---------- */
-  .sec-about { background: var(--green-pale); }
-  .staff-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
-  @media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
-  .staff-grid img.portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); }
-  .staff-msg h3 { font-size: 22px; margin-bottom: 12px; line-height: 1.5; }
-  .staff-msg p { font-size: 16px; color: var(--text-sub); margin-bottom: 10px; }
-  .staff-name { font-weight: 700; color: var(--text-main); }
-  .about-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
-  @media (max-width: 780px) { .about-copy-grid { grid-template-columns: 1fr; } }
-  .about-copy-card { background: var(--white); border-radius: var(--radius); padding: 24px 26px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
-  .about-copy-card h3 { font-size: 17px; color: var(--green-deep); margin-bottom: 10px; }
-  .about-copy-card p { font-size: 16px; color: var(--text-sub); }
-  .about-video-small {
-    width: 100%; max-width: 260px; border-radius: 10px; margin-top: 14px; display: block;
-    box-shadow: 0 6px 16px rgba(31,122,85,.15); background: #000;
-  }
-
-  /* ---------- S4 資料ダウンロード ---------- */
-  .sec-online { background: var(--white); }
-  .online-list { display: grid; gap: 28px; }
-  .online-item {
-    display: grid; grid-template-columns: 1fr 380px; gap: 32px; align-items: center;
-    background: var(--green-pale); border-radius: var(--radius); padding: 32px;
-    box-shadow: 0 2px 12px rgba(31, 122, 85, .08); position: relative;
-  }
-  @media (max-width: 860px) { .online-item { grid-template-columns: 1fr; } }
-  .online-item h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 10px; white-space: nowrap; }
-  @media (max-width: 480px) { .online-item h3 { font-size: 16px; white-space: normal; } }
-  .online-item p { font-size: 16px; }
-  .online-item .guide-img { width: 100%; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(31,122,85,.18); }
-
-  /* ---------- S5 4本柱 ---------- */
-  .pillar { display: grid; gap: 22px; }
-  .pillar-card {
-    background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
-    padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px;
-  }
-  @media (max-width: 640px) { .pillar-card { grid-template-columns: 1fr; } }
-  .pillar-num {
-    font-size: 30px; font-weight: 800; color: var(--green-accent); border-right: 2px solid var(--green-line);
-    padding-right: 20px;
-  }
-  @media (max-width: 640px) { .pillar-num { border-right: none; padding-right: 0; } }
-  .pillar-card h3 { font-size: 20px; margin-bottom: 8px; }
-  .pillar-card p { font-size: 16px; color: var(--text-sub); }
-  .pillar-note {
-    background: var(--green-pale); border-radius: 8px; padding: 10px 16px; margin-top: 12px;
-    font-size: 15px; color: var(--text-main);
-  }
-
-  /* ---------- S6 実績・声 ---------- */
-  .sec-sample { background: var(--green-pale); }
-  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .voice-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
-  .voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
-  .voice-card .voice-body { padding: 24px 28px 28px; }
-  .voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; }
-  .voice-card h3 { font-size: 17px; margin-bottom: 8px; }
-  .voice-card p { font-size: 16px; color: var(--text-sub); }
-  .voice-card .voice-source { font-size: 14px; margin-top: 10px; }
-  .mini-voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
-  .mini-voice-card { background: var(--white); border-radius: 10px; padding: 18px 20px; font-size: 15px; box-shadow: 0 2px 8px rgba(31,122,85,.06); }
-  .mini-voice-card .area { color: var(--green-deep); font-weight: 700; margin-top: 8px; display: block; }
-
-  /* ---------- S7 料金 ---------- */
-  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 28px; }
-  .price-card {
-    border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
-  }
-  .price-card.main { border-color: var(--green-deep); }
-  .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
-  .price-card.sub .price-head { background: var(--green-accent); }
-  .price-body { padding: 28px; }
-  .price-fig { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center; }
-  .price-fig .cell { background: var(--green-pale); border-radius: 10px; padding: 14px 10px; }
-  .price-fig .cell .label { font-size: 14px; color: var(--text-sub); font-weight: 700; margin-bottom: 4px; }
-  .price-fig .cell .num { font-size: 27px; font-weight: 800; color: var(--green-deep); }
-  .price-fig .cell .num .unit { font-size: 15px; font-weight: 700; margin-left: 2px; }
-  .price-body ul { list-style: none; }
-  .price-body li { font-size: 16px; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--green-line); position: relative; }
-  .price-body li::before { content: "✓"; position: absolute; left: 4px; color: var(--green-accent); font-weight: 800; }
-  .price-banner {
-    background: var(--green-pale); border: 2px solid var(--green-deep); border-radius: var(--radius);
-    text-align: center; padding: 20px; font-size: 18px; font-weight: 800; color: var(--green-deep); margin-bottom: 16px;
-  }
-  .price-fine { font-size: 14px; color: var(--text-sub); }
-
-  /* ---------- S8 比較表 ---------- */
-  .compare-wrap { overflow-x: auto; }
-  table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px; }
-  table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
-  table.compare thead th { background: var(--green-pale); }
-  table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; }
-  table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
-  table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: #FAFBFC; }
-  .compare-note { font-size: 13.5px; color: var(--text-sub); margin-top: 12px; }
-
-  /* ---------- S9 導入の流れ ---------- */
-  .sec-flow { background: var(--green-pale); }
-  .flow-list { list-style: none; counter-reset: flow; display: grid; gap: 14px; }
-  .flow-list li {
-    counter-increment: flow; background: var(--white); border-radius: var(--radius); padding: 22px 24px 22px 76px;
-    position: relative; box-shadow: 0 2px 10px rgba(31,122,85,.07);
-  }
-  .flow-list li::before {
-    content: counter(flow, decimal-leading-zero); position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
-    color: var(--green-accent); font-size: 24px; font-weight: 800;
-  }
-  .flow-list h3 { font-size: 17px; }
-  .flow-list p { font-size: 16px; color: var(--text-sub); }
-
-  /* ---------- S10 FAQ ---------- */
-  .sec-faq { background: var(--white); }
-  .faq-list { display: grid; gap: 12px; }
-  details {
-    background: var(--green-pale); border-radius: var(--radius); padding: 0; overflow: hidden;
-    box-shadow: 0 2px 10px rgba(31,122,85,.07);
-  }
-  summary {
-    cursor: pointer; list-style: none; padding: 20px 52px 20px 52px; font-weight: 700; font-size: 16px; position: relative;
-  }
-  summary::before { content: "Q"; position: absolute; left: 20px; color: var(--green-deep); font-weight: 800; }
-  summary::after { content: "＋"; position: absolute; right: 20px; color: var(--green-accent); font-weight: 800; }
-  details[open] summary::after { content: "−"; }
-  .faq-a { padding: 0 24px 20px 52px; font-size: 16px; color: var(--text-sub); position: relative; }
-  .faq-a::before { content: "A"; position: absolute; left: 20px; color: var(--cta-orange); font-weight: 800; }
-
-  /* ---------- S11 CTA・フォーム ---------- */
-  .sec-contact { background: linear-gradient(180deg, var(--green-deep), #175E42); color: #fff; }
-  .sec-contact h2 { color: #fff; text-align: center; }
-  .sec-contact .lead { color: #D7EEE2; text-align: center; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-alt { background: rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px; }
-  .contact-alt h3 { font-size: 17px; margin-bottom: 14px; }
-  .contact-alt .tel { font-size: 30px; font-weight: 800; letter-spacing: .04em; }
-  .contact-alt .tel small { display: block; font-size: 14px; font-weight: 500; opacity: .85; }
-  form { background: var(--white); border-radius: var(--radius); padding: 32px; color: var(--text-main); }
-  .form-row { margin-bottom: 18px; }
-  .form-row label { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-  .req { color: #C81E1E; font-size: 12px; border: 1px solid #C81E1E; border-radius: 4px; padding: 0 6px; margin-left: 8px; }
-  .opt { color: var(--text-sub); font-size: 12px; border: 1px solid #9AA5B1; border-radius: 4px; padding: 0 6px; margin-left: 8px; }
-  input[type=text], input[type=tel], input[type=email], select, textarea {
-    width: 100%; border: 1px solid #CBD2D9; border-radius: 8px; padding: 12px; font-size: 16px; font-family: inherit;
-  }
-  .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
-  .radio-group label {
-    font-weight: 500; font-size: 15px; border: 1px solid #CBD2D9; border-radius: 999px;
-    padding: 8px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin: 0;
-  }
-  form .btn-cta { width: 100%; border: none; cursor: pointer; font-family: inherit; }
-  .form-fine { font-size: 12px; color: var(--text-sub); margin-top: 12px; text-align: center; }
-
-  /* ---------- フッター ---------- */
-  footer { background: #12362A; color: #B9D6C8; padding: 40px 0 100px; font-size: 14px; }
-  footer .inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
-  footer a { color: #B9D6C8; margin-right: 18px; }
-
-  /* ---------- スマホ固定CTAバー ---------- */
-  .fixed-cta {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; display: none;
-    grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px;
-    background: rgba(255,255,255,.96); border-top: 1px solid var(--green-line);
-  }
-  .fixed-cta a { text-decoration: none; text-align: center; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 13px 6px; }
-  .fixed-cta .f-consult { background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark)); color: #fff; }
-  .fixed-cta .f-tel { background: var(--green-deep); color: #fff; }
-  @media (max-width: 860px) { .fixed-cta { display: grid; } }
-  @media (min-width: 861px) { body { padding-bottom: 0; } }
-
-  .center { text-align: center; }
-  .mt-40 { margin-top: 40px; }
-</style>
+<!-- スタイルシート（assets/css/ 配下。読み込み順に依存があるため入れ替え注意） -->
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
 </head>
 <body>
 
@@ -600,7 +257,7 @@
         <div class="online-text">
           <h3>Googleマップ活用チェックガイド</h3>
           <p>「あなたの院は大丈夫？」チェックリストで今の状態を確認しながら、Googleマップで見つかりやすくなる基本の考え方をまとめました。安診Webに頼まなくても実践できる内容も含めています。まずは知ることから始めてください。</p>
-          <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST" style="display:grid; gap:10px; margin-top:16px; max-width:420px;">
+          <form class="download-form" action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="【資料DL】Googleマップ活用チェックガイド">
             <input type="hidden" name="_next" value="thanks-download.html">
             <input type="hidden" name="_captcha" value="false">
@@ -609,7 +266,7 @@
             <input type="text" name="お名前" placeholder="お名前" required>
             <input type="email" name="email" placeholder="メールアドレス" required>
             <input type="tel" name="電話番号" placeholder="電話番号（任意）">
-            <button type="submit" class="btn btn-cta" style="font-size:15px;">無料で資料をダウンロードする</button>
+            <button type="submit" class="btn btn-cta">無料で資料をダウンロードする</button>
           </form>
         </div>
         <img loading="lazy" class="guide-img" src="assets/img/meo-report-sample-dummy-data.jpg" alt="Googleマップ活用チェックガイドの資料イメージ">
@@ -645,7 +302,7 @@
           <h3>Googleマップで選ばれる、評判づくり</h3>
           <p>先生も、初めての場所を探すときはGoogleマップを使いませんか？ 患者さんも同じです。マップ上の情報整備とクチコミづくりで、「見つかるだけでなく、選ばれる」院を目指します。</p>
           <p class="pillar-note">クチコミをお願いするためのカード・卓上POPは、月1回の訪問時にお届けします。診察券と一緒にお渡しいただくだけでOKです。<br>
-            <img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル" style="width:100%; max-width:420px; border-radius:8px; margin-top:10px;">
+            <img loading="lazy" class="pillar-img" src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル">
           </p>
         </div>
       </div>
@@ -655,7 +312,7 @@
           <h3>作りっぱなしにしない、毎月の訪問と作戦会議</h3>
           <p>「何人が見てくれたのか」「来院された方は、何をきっかけに選んでくれたのか」。結果を分かりやすいレポートにまとめ、専門用語を使わずにご報告。月1回の訪問時に、次の一手を先生と一緒に考えます。</p>
           <p class="pillar-note">
-            <img loading="lazy" src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）" style="width:100%; max-width:520px; border-radius:8px;"><br>
+            <img loading="lazy" class="pillar-img-report" src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）"><br>
             ※上記は説明用のサンプルレポートです（数値はダミー）。
           </p>
         </div>
@@ -690,7 +347,7 @@
       </div>
     </div>
 
-    <h2 style="font-size:20px; margin-top:48px;">他にもこのようなご意見をいただいています！</h2>
+    <h2 class="voice-sub-heading">他にもこのようなご意見をいただいています！</h2>
     <div class="mini-voice-grid">
       <div class="mini-voice-card">
         <p>手が回らないWeb周りを丸ごと見てもらえるのは、本当にありがたいことだと感じています。</p>
@@ -757,7 +414,7 @@
 </section>
 
 <!-- S8 比較表 -->
-<section class="sec-compare" style="padding-top:0;">
+<section class="sec-compare">
   <div class="inner">
     <span class="sec-label">COMPARE</span>
     <h2>安診Webの<span class="em">特徴</span></h2>
@@ -840,7 +497,7 @@
 <!-- S11 CTA・フォーム -->
 <section class="sec-contact" id="contact">
   <div class="inner">
-    <span class="sec-label" style="background:transparent;color:#fff;border-color:#fff;">CONTACT</span>
+    <span class="sec-label on-dark">CONTACT</span>
     <h2>まずは、無料相談から。</h2>
     <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。しつこい営業は一切いたしません。<br>担当者が直接訪問する形でお付き合いするため、同時にご案内できる院数には限りがございます。</p>
     <div class="contact-grid">
@@ -884,9 +541,9 @@
           <label>ご相談内容<span class="opt">任意</span></label>
           <textarea name="ご相談内容" rows="3" placeholder="例：開業10年で自費メニューへの移行を検討中／院内リニューアルのタイミングでHPも見直したい"></textarea>
         </div>
-        <div class="cta-with-badge" style="width:100%;">
+        <div class="cta-with-badge full">
           <span class="cta-badge">1分で簡単入力</span>
-          <button type="submit" class="btn btn-cta" style="width:100%;">無料相談を申し込む<small>しつこい営業なし</small></button>
+          <button type="submit" class="btn btn-cta">無料相談を申し込む<small>しつこい営業なし</small></button>
         </div>
         <p class="form-fine">送信いただいた個人情報は<a href="https://anshin-hp.com/privacy" target="_blank" rel="noopener">「個人情報のお取扱いに関する同意事項」</a>に基づき管理します。</p>
       </form>
@@ -903,8 +560,8 @@
 <!-- フッター -->
 <footer>
   <div class="inner">
-    <div style="display:flex; align-items:center; gap:10px;">
-      <img src="assets/img/logo.svg" alt="安診Web" height="24" style="filter:brightness(0) invert(1);">
+    <div class="footer-brand">
+      <img class="footer-logo" src="assets/img/logo.svg" alt="安診Web" height="24">
       <span>（運営：HumAIn Co.,Ltd.）</span>
     </div>
     <div>
