@@ -260,16 +260,10 @@
   }
   .hero-grid { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-grid .hero-eyebrow { animation: heroFadeUp .7s ease-out both .1s; }
-  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .2s; }
-  .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .32s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .44s; }
-  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .56s; }
-  .hero-eyebrow {
-    display: inline-block; color: #fff; font-size: 13.5px; font-weight: 800; letter-spacing: .08em;
-    margin-bottom: 24px; border: 1.5px solid rgba(255,255,255,.7); border-radius: 999px;
-    padding: 7px 20px; background: rgba(255,255,255,.1);
-  }
+  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .1s; }
+  .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .24s; }
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .38s; }
+  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .5s; }
   h1 { font-size: clamp(32px, 5.6vw, 50px); line-height: 1.4; margin-bottom: 20px; color: #fff;
     font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
   }
@@ -408,25 +402,6 @@
   .reason-area-banner span { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 4px; }
   .sec-reason { background: var(--green-pale); padding-top: 0; }
 
-  /* ---------- S3.5 マニフェスト ---------- */
-  .sec-manifesto {
-    background: linear-gradient(155deg, #0F3C2A, #1F7A55 120%);
-    padding: 100px 0;
-  }
-  .manifesto-inner { max-width: 720px; text-align: center; }
-  .manifesto-attr {
-    color: rgba(255,255,255,.7); font-size: 13.5px; font-weight: 700; letter-spacing: .04em;
-    margin-bottom: 24px;
-  }
-  .manifesto-quote {
-    color: #fff; font-size: clamp(24px, 4.2vw, 38px); line-height: 1.65; font-weight: 800; text-wrap: balance;
-  }
-  .manifesto-em {
-    background: linear-gradient(180deg, transparent 58%, rgba(61,187,126,.55) 58%);
-    padding: 0 4px;
-  }
-  .manifesto-sub { color: rgba(255,255,255,.82); font-size: 16px; margin-top: 28px; }
-
   /* ---------- S4 資料ダウンロード ---------- */
   .sec-online { background: var(--white); }
   .online-list { display: grid; gap: 28px; }
@@ -439,6 +414,17 @@
   .online-item h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 10px; white-space: nowrap; }
   @media (max-width: 480px) { .online-item h3 { font-size: 16px; white-space: normal; } }
   .online-item p { font-size: 16px; }
+  .guide-preview { list-style: none; margin: 18px 0; display: grid; gap: 8px; max-width: 460px; }
+  .guide-preview li {
+    font-size: 14.5px; color: var(--text-main); padding-left: 26px; position: relative;
+  }
+  .guide-preview li::before {
+    content: "☑"; position: absolute; left: 0; color: var(--green-deep); font-weight: 800;
+  }
+  .guide-preview li.more {
+    color: var(--text-sub); font-size: 13.5px; padding-left: 0; font-style: italic;
+  }
+  .guide-preview li.more::before { content: none; }
   .online-item .guide-img {
     width: 100%; border-radius: var(--radius); box-shadow: 0 14px 30px rgba(31,122,85,.28);
     border: 4px solid #fff;
@@ -508,7 +494,8 @@
   .price-card.main { border-color: var(--green-deep); box-shadow: 0 14px 32px rgba(31,122,85,.18); }
   .price-ribbon {
     position: absolute; top: 14px; right: -38px; transform: rotate(40deg); z-index: 3;
-    background: var(--green-accent); color: #0F3C2A; font-size: 12.5px; font-weight: 800;
+    background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark)); color: #fff;
+    font-size: 12.5px; font-weight: 800;
     padding: 5px 44px; box-shadow: 0 3px 8px rgba(0,0,0,.2); white-space: nowrap;
   }
   .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
@@ -534,7 +521,12 @@
   table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px; }
   table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
   table.compare thead th { background: var(--white); }
-  table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; }
+  table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; position: relative; }
+  table.compare thead th.us .us-pop {
+    display: inline-block; font-size: 1.55em; font-weight: 900; white-space: nowrap;
+    transform: scale(1.08) translateY(-10px); box-shadow: 0 8px 18px rgba(15,60,42,.35);
+    background: var(--green-deep); padding: 6px 18px; border-radius: 10px; position: relative; z-index: 2;
+  }
   table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
   table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: #FAFBFC; }
   .compare-note { font-size: 13.5px; color: var(--text-sub); margin-top: 12px; }
@@ -652,9 +644,8 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <p class="hero-eyebrow">整骨院・接骨院専門　東京都内 全域訪問</p>
-    <h1>毎月お伺いして、<span class="em">徹底的に伴走します。</span></h1>
-    <p class="hero-sub">ホームページも、Googleマップも、顔の見える担当者が丸ごとおまかせ。価格ではなく、伴走の安心感で選ばれています。</p>
+    <h1>毎月お伺いして、ホームページもGoogleマップも、<span class="em">丸ごと伴走します。</span></h1>
+    <p class="hero-sub">価格ではなく、顔の見える担当者との伴走の安心感で選ばれています。</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
@@ -723,13 +714,14 @@
       <div class="staff-msg">
         <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
         <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
+        <p>実は私自身、上京後に足を痛めて整骨院を探した際、<strong><u>「分からない」という理由だけで、本当は行きたかった近くの院を選べなかった</u></strong>経験があります。だからこそ、先生の隣で「会いに行く」ことにこだわっています。</p>
         <p class="staff-name">安診Web 担当　牛谷 梓（HumAIn Co.,Ltd.）</p>
       </div>
     </div>
     <div class="about-copy-grid">
       <div class="about-copy-card">
         <h3>安診Web発足の背景</h3>
-        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。実際、上京後に足を痛めて整骨院を探した際、料金や診療時間、先生の情報が分からず不安で、結局は情報が整っている大手に予約しました。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
+        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
       </div>
       <div class="about-copy-card">
         <h3>私たちが対面・訪問にこだわる理由</h3>
@@ -737,15 +729,6 @@
         <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- S3.5 マニフェスト -->
-<section class="sec-manifesto">
-  <div class="inner manifesto-inner">
-    <p class="manifesto-attr">安診Web担当 牛谷梓が、上京後に自分自身の通院先を探したときの実体験より</p>
-    <p class="manifesto-quote">「本当は、近くの院に行きたかった。」<br>それなのに、<span class="manifesto-em">「分からない」という理由だけ</span>で、選べなかった。</p>
-    <p class="manifesto-sub">安診Webが「会いに行く」ことにこだわるのは、この経験があるからです。</p>
   </div>
 </section>
 
@@ -805,6 +788,12 @@
         <div class="online-text">
           <h3>Googleマップ活用チェックガイド</h3>
           <p>「あなたの院は大丈夫？」チェックリストで今の状態を確認しながら、Googleマップで見つかりやすくなる基本の考え方をまとめました。安診Webに頼まなくても実践できる内容も含めています。まずは知ることから始めてください。</p>
+          <ul class="guide-preview">
+            <li>直近1ヶ月以内に、Googleマップへ写真や近況を投稿した</li>
+            <li>クチコミへの返信を1ヶ月以内に行っている</li>
+            <li>院内・外観・スタッフの写真が10枚以上登録されている</li>
+            <li class="more">…など全8項目のセルフチェック＋投稿・返信テンプレート、月間運用カレンダーまで収録</li>
+          </ul>
           <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST" style="display:grid; gap:10px; margin-top:16px; max-width:420px;">
             <input type="hidden" name="_subject" value="【資料DL】Googleマップ活用チェックガイド">
             <input type="hidden" name="_next" value="thanks-download.html">
@@ -976,7 +965,7 @@
         <thead>
           <tr>
             <th></th>
-            <th class="us">★ 安診Web</th>
+            <th class="us"><span class="us-pop">★ 安診Web</span></th>
             <th>価格重視型のサービス</th>
             <th>全国展開型のサービス</th>
           </tr>
@@ -999,7 +988,6 @@
   <div class="inner">
     <span class="sec-label">FLOW</span>
     <h2>公開までの<span class="em">流れ</span></h2>
-    <div class="ph" style="aspect-ratio:21/9; margin-bottom:36px;">ここに写真を入れる（例：初回訪問でヒアリングしている様子）</div>
     <ol class="timeline">
       <li><div class="tl-num">01</div><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
       <li><div class="tl-num">02</div><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
