@@ -168,7 +168,9 @@
   .em-red { color: var(--red-accent); }
   .brand-shout {
     display: inline-block; color: var(--green-deep); font-weight: 900;
-    font-size: 1.35em; letter-spacing: -.01em;
+    font-size: 1.55em; letter-spacing: -.01em;
+    background: linear-gradient(180deg, transparent 60%, rgba(61,187,126,.32) 60%);
+    padding: 0 4px;
   }
   .lead { color: var(--text-sub); margin: -20px 0 36px; }
 
@@ -264,8 +266,9 @@
   .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .44s; }
   .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .56s; }
   .hero-eyebrow {
-    color: #fff; font-size: 13.5px; font-weight: 700; letter-spacing: .1em; opacity: .9;
-    margin-bottom: 20px; text-shadow: 0 1px 6px rgba(0,0,0,.3);
+    display: inline-block; color: #fff; font-size: 13.5px; font-weight: 800; letter-spacing: .08em;
+    margin-bottom: 24px; border: 1.5px solid rgba(255,255,255,.7); border-radius: 999px;
+    padding: 7px 20px; background: rgba(255,255,255,.1);
   }
   h1 { font-size: clamp(32px, 5.6vw, 50px); line-height: 1.4; margin-bottom: 20px; color: #fff;
     font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
@@ -335,24 +338,29 @@
   .problem-card h3 { font-size: 18px; margin: 6px 0 8px; }
   .problem-card p { font-size: 16px; color: var(--text-sub); }
   .problem-close {
-    margin-top: 40px; text-align: center; font-size: clamp(16px, 2.6vw, 20px); font-weight: 700;
+    margin-top: 40px; text-align: center; font-size: clamp(20px, 3.4vw, 26px); font-weight: 800;
   }
   .problem-close .em {
     color: var(--green-deep);
     background: linear-gradient(180deg, transparent 60%, rgba(61,187,126,.32) 60%);
     padding: 0 2px;
   }
+  .problem-close .problem-em-red {
+    color: var(--red-accent); background: none;
+    text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 5px;
+    text-decoration-color: var(--red-accent);
+  }
 
   /* ---------- S3 担当者・理念 ---------- */
   .sec-about { background: var(--green-pale); }
-  .staff-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
-  @media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
+  .staff-grid { display: grid; grid-template-columns: 380px 1fr; gap: 44px; align-items: center; }
+  @media (max-width: 780px) { .staff-grid { grid-template-columns: 1fr; } }
   .staff-grid img.portrait {
     width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius);
-    border: 4px solid #fff; box-shadow: 0 10px 26px rgba(31,122,85,.22);
+    box-shadow: 0 16px 36px rgba(15,60,42,.22);
   }
   .staff-big-heading {
-    font-size: clamp(30px, 5.4vw, 48px); font-weight: 900; line-height: 1.42; margin-bottom: 28px;
+    font-size: clamp(26px, 3.6vw, 36px); font-weight: 900; line-height: 1.45; margin-bottom: 20px;
     text-wrap: balance;
   }
   .staff-big-heading .em {
@@ -406,6 +414,10 @@
     padding: 100px 0;
   }
   .manifesto-inner { max-width: 720px; text-align: center; }
+  .manifesto-attr {
+    color: rgba(255,255,255,.7); font-size: 13.5px; font-weight: 700; letter-spacing: .04em;
+    margin-bottom: 24px;
+  }
   .manifesto-quote {
     color: #fff; font-size: clamp(24px, 4.2vw, 38px); line-height: 1.65; font-weight: 800; text-wrap: balance;
   }
@@ -496,7 +508,7 @@
   .price-card.main { border-color: var(--green-deep); box-shadow: 0 14px 32px rgba(31,122,85,.18); }
   .price-ribbon {
     position: absolute; top: 14px; right: -38px; transform: rotate(40deg); z-index: 3;
-    background: var(--green-deep); color: #fff; font-size: 12.5px; font-weight: 800;
+    background: var(--green-accent); color: #0F3C2A; font-size: 12.5px; font-weight: 800;
     padding: 5px 44px; box-shadow: 0 3px 8px rgba(0,0,0,.2); white-space: nowrap;
   }
   .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
@@ -517,7 +529,7 @@
   .price-fine { font-size: 14px; color: var(--text-sub); }
 
   /* ---------- S8 比較表 ---------- */
-  .sec-compare { background: var(--green-pale); }
+  .sec-compare { background: var(--green-pale); padding-top: 80px; }
   .compare-wrap { overflow-x: auto; }
   table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px; }
   table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
@@ -641,7 +653,7 @@
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
     <p class="hero-eyebrow">整骨院・接骨院専門　東京都内 全域訪問</p>
-    <h1>毎月、<span class="em">"先生に会いに行く"</span>担当者がいます。</h1>
+    <h1>毎月お伺いして、<span class="em">徹底的に伴走します。</span></h1>
     <p class="hero-sub">ホームページも、Googleマップも、顔の見える担当者が丸ごとおまかせ。価格ではなく、伴走の安心感で選ばれています。</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
@@ -664,7 +676,8 @@
       <p class="alert-shout">ちょっと待って！！</p>
       <h2 class="problem-heading">そのホームページ、<span class="underline">新しい<span style="white-space:nowrap;">患者さん</span>に届いていますか？</span></h2>
     </div>
-    <p class="lead" style="margin-top:36px;">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
+    <p class="lead" style="margin-top:36px; text-align:center;">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
+    <div class="ph" style="aspect-ratio:21/9; margin-bottom:32px;">ここに写真を入れる（例：スマホで見づらい・古いホームページの実例）</div>
     <div class="problem-grid">
       <div class="problem-card">
         <span class="no">✕ 問題 1</span>
@@ -697,7 +710,7 @@
         <p>高い費用を払い続けたのに新規は増えず、そのまま「もう業者は信用できない」と感じている。</p>
       </div>
     </div>
-    <p class="problem-close">直したい気持ちはあるのに、日々の施術で手が回らない。<br>——それが<span class="em">一番もったいない状態</span>です。</p>
+    <p class="problem-close">直したい気持ちはあるのに、日々の施術で手が回らない。<br>——それが<span class="em problem-em-red">一番もったいない状態</span>です。</p>
   </div>
 </section>
 
@@ -705,10 +718,10 @@
 <section class="sec-about" id="about">
   <div class="inner">
     <span class="sec-label">MESSAGE</span>
-    <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
     <div class="staff-grid">
       <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa.jpg" alt="安診Web担当 牛谷梓">
       <div class="staff-msg">
+        <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
         <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
         <p class="staff-name">安診Web 担当　牛谷 梓（HumAIn Co.,Ltd.）</p>
       </div>
@@ -730,8 +743,9 @@
 <!-- S3.5 マニフェスト -->
 <section class="sec-manifesto">
   <div class="inner manifesto-inner">
-    <p class="manifesto-quote">「本当は、近くの院に行きたかった。」<br>それなのに、<span class="manifesto-em">「分からない」という理由だけ</span>で、選ばれなかった。</p>
-    <p class="manifesto-sub">──それが、安診Webが「会いに行く」ことにこだわる理由です。</p>
+    <p class="manifesto-attr">安診Web担当 牛谷梓が、上京後に自分自身の通院先を探したときの実体験より</p>
+    <p class="manifesto-quote">「本当は、近くの院に行きたかった。」<br>それなのに、<span class="manifesto-em">「分からない」という理由だけ</span>で、選べなかった。</p>
+    <p class="manifesto-sub">安診Webが「会いに行く」ことにこだわるのは、この経験があるからです。</p>
   </div>
 </section>
 
@@ -742,6 +756,7 @@
       <h3>なぜ、<span class="em" style="color:var(--green-deep);">「人」</span>にこだわるのか。</h3>
       <p>正直に言うと、価格の安さだけで比べれば、もっと安いサービスは他にもあります。それでも安診Webを選んでいただいているのは、担当者が直接お会いする「距離の近さ」があるからです。</p>
     </div>
+    <div class="ph" style="aspect-ratio:21/9; margin:32px 0;">ここに写真を入れる（例：担当者が院を訪問し、院長と話している様子）</div>
     <div class="reason-grid">
       <div class="reason-card">
         <div class="reason-num">01</div>
@@ -813,6 +828,7 @@
   <div class="inner">
     <span class="sec-label">SERVICE</span>
     <h2>「丸投げ」できる安心感と、<span class="em">誠実さ。</span></h2>
+    <div class="ph" style="aspect-ratio:21/9; margin-bottom:32px;">ここに写真を入れる（例：担当者が撮影・作業している様子）</div>
     <div class="pillar-intro-row">
       <div class="pillar-mini">
         <div class="pillar-mini-num">01</div>
@@ -904,7 +920,7 @@
 <section id="price">
   <div class="inner">
     <span class="sec-label">PRICE</span>
-    <h2>料金は、<span class="em">これだけ。</span></h2>
+    <h2><span class="em">追加費用なし</span>の、シンプル料金。</h2>
     <p class="lead">下記の金額にすべて含まれます。遠方の交通費や、更新のたびの追加料金は一切ありません。</p>
     <div class="price-grid">
       <div class="price-card main">
@@ -950,7 +966,7 @@
 </section>
 
 <!-- S8 比較表 -->
-<section class="sec-compare" style="padding-top:0;">
+<section class="sec-compare">
   <div class="inner">
     <span class="sec-label">COMPARE</span>
     <h2><span class="brand-shout">安診Web</span>の特徴</h2>
@@ -983,6 +999,7 @@
   <div class="inner">
     <span class="sec-label">FLOW</span>
     <h2>公開までの<span class="em">流れ</span></h2>
+    <div class="ph" style="aspect-ratio:21/9; margin-bottom:36px;">ここに写真を入れる（例：初回訪問でヒアリングしている様子）</div>
     <ol class="timeline">
       <li><div class="tl-num">01</div><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
       <li><div class="tl-num">02</div><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
@@ -1085,6 +1102,7 @@
         <p class="form-fine">送信いただいた個人情報は<a href="https://anshin-hp.com/privacy" target="_blank" rel="noopener">「個人情報のお取扱いに関する同意事項」</a>に基づき管理します。</p>
       </form>
       <div>
+        <div class="ph" style="aspect-ratio:4/3; margin-bottom:20px; border-color:rgba(255,255,255,.5); color:#fff; background:rgba(255,255,255,.08);">ここに写真を入れる（例：担当者の顔写真）</div>
         <div class="contact-alt">
           <h3>お電話でのご相談</h3>
           <p class="tel">03-4361-2643<small>平日 10:00〜19:00（診療の合間でもお気軽に）</small></p>
