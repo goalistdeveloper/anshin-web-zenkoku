@@ -252,46 +252,32 @@
     position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(13,46,32,.5) 0%, rgba(13,46,32,.3) 45%, rgba(13,46,32,.62) 100%);
   }
-  .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
+  .hero-grid { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-grid .badges { animation: heroFadeUp .7s ease-out both .1s; }
+  .hero-grid .hero-eyebrow { animation: heroFadeUp .7s ease-out both .1s; }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .2s; }
   .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .32s; }
-  .hero-grid .hero-price { animation: heroFadeUp .7s ease-out both .42s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .52s; }
-  .hero-grid .hero-tel { animation: heroFadeUp .7s ease-out both .62s; }
-  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
-  .badge {
-    background: var(--green-accent); color: #0F3C2A; font-size: 13.5px; font-weight: 800;
-    padding: 6px 16px; border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.18); white-space: nowrap;
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .44s; }
+  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .56s; }
+  .hero-eyebrow {
+    color: #fff; font-size: 13.5px; font-weight: 700; letter-spacing: .1em; opacity: .9;
+    margin-bottom: 20px; text-shadow: 0 1px 6px rgba(0,0,0,.3);
   }
-  .badge.alt {
-    background: #fff; color: var(--green-deep); font-weight: 800;
-    box-shadow: 0 3px 10px rgba(0,0,0,.18);
-  }
-  h1 { font-size: clamp(34px, 6.2vw, 56px); line-height: 1.32; margin-bottom: 18px; color: #fff;
+  h1 { font-size: clamp(32px, 5.6vw, 50px); line-height: 1.4; margin-bottom: 20px; color: #fff;
     font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
   }
   h1 .em {
     color: #fff; background: linear-gradient(180deg, transparent 58%, var(--green-accent) 58%);
     padding: 0 4px; box-decoration-break: clone; -webkit-box-decoration-break: clone;
   }
-  .hero-sub { font-size: 17px; color: rgba(255,255,255,.92); margin-bottom: 20px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
-  .hero-price {
-    display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap; justify-content: center;
-    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
-    padding: 10px 26px; margin-bottom: 28px; font-size: 15px; color: #fff; font-weight: 700;
-  }
-  .hero-price strong { font-size: 30px; color: var(--green-accent); font-weight: 800; }
+  .hero-sub { font-size: 17px; color: rgba(255,255,255,.92); margin-bottom: 32px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
-  .hero-tel {
-    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 10px;
-    margin-top: 16px; text-decoration: none; color: #fff;
+  .hero-micro {
+    margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,.72);
+    display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: center;
   }
-  .hero-tel-icon { font-size: 20px; }
-  .hero-tel-num { font-size: 26px; font-weight: 800; letter-spacing: .02em; }
-  .hero-tel-note { font-size: 13px; color: rgba(255,255,255,.75); width: 100%; text-align: center; }
-  @media (min-width: 561px) { .hero-tel-note { width: auto; } }
+  .hero-micro a { color: #fff; text-decoration: underline; font-weight: 700; }
+  .hero-micro .sep { opacity: .5; }
 
   /* プレースホルダー画像（一部未確定要素のみ使用） */
   .ph {
@@ -373,6 +359,22 @@
     padding: 18px 24px; text-align: center; font-size: 16px; font-weight: 700;
   }
   .reason-area-banner span { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 4px; }
+  .sec-reason { background: var(--green-pale); padding-top: 0; }
+
+  /* ---------- S3.5 マニフェスト ---------- */
+  .sec-manifesto {
+    background: linear-gradient(155deg, #0F3C2A, #1F7A55 120%);
+    padding: 100px 0;
+  }
+  .manifesto-inner { max-width: 720px; text-align: center; }
+  .manifesto-quote {
+    color: #fff; font-size: clamp(24px, 4.2vw, 38px); line-height: 1.65; font-weight: 800; text-wrap: balance;
+  }
+  .manifesto-em {
+    background: linear-gradient(180deg, transparent 58%, rgba(61,187,126,.55) 58%);
+    padding: 0 4px;
+  }
+  .manifesto-sub { color: rgba(255,255,255,.82); font-size: 16px; margin-top: 28px; }
 
   /* ---------- S4 資料ダウンロード ---------- */
   .sec-online { background: var(--white); }
@@ -391,27 +393,36 @@
     border: 4px solid #fff;
   }
 
-  /* ---------- S5 4本柱 ---------- */
-  .pillar { display: grid; gap: 22px; }
-  .pillar-card {
-    background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
-    padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px;
-    box-shadow: 0 6px 18px rgba(31,122,85,.07); transition: box-shadow .2s, transform .2s;
+  /* ---------- S5 サービス（イントロ2件＋ショーケース2件） ---------- */
+  .pillar-intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 56px; }
+  @media (max-width: 720px) { .pillar-intro-row { grid-template-columns: 1fr; gap: 24px; } }
+  .pillar-mini { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
+  .pillar-mini-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--green-pale); color: var(--green-deep);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px;
   }
-  .pillar-card:hover { box-shadow: 0 14px 30px rgba(31,122,85,.16); transform: translateY(-3px); }
-  @media (max-width: 640px) { .pillar-card { grid-template-columns: 1fr; } }
-  .pillar-num {
-    width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
-    font-size: 24px; font-weight: 800; color: #fff; border-radius: 50%;
-    background: linear-gradient(135deg, var(--green-accent), var(--green-deep));
-    box-shadow: 0 6px 14px rgba(31,122,85,.3);
+  .pillar-mini h3 { font-size: 18px; margin-bottom: 6px; }
+  .pillar-mini p { font-size: 15px; color: var(--text-sub); }
+
+  .showcase { display: grid; gap: 64px; }
+  .showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+  .showcase-row.reverse { direction: rtl; }
+  .showcase-row.reverse > * { direction: ltr; }
+  @media (max-width: 780px) {
+    .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; direction: ltr; }
   }
-  @media (max-width: 640px) { .pillar-num { margin-bottom: 4px; } }
-  .pillar-card h3 { font-size: 20px; margin-bottom: 8px; }
-  .pillar-card p { font-size: 16px; color: var(--text-sub); }
-  .pillar-note {
-    background: var(--green-pale); border-radius: 8px; padding: 10px 16px; margin-top: 12px;
-    font-size: 15px; color: var(--text-main);
+  .showcase-media img {
+    width: 100%; border-radius: var(--radius); box-shadow: 0 16px 32px rgba(31,122,85,.2); border: 4px solid #fff;
+  }
+  .showcase-num {
+    display: inline-block; font-size: 13.5px; font-weight: 800; color: var(--green-deep);
+    background: var(--green-pale); padding: 4px 14px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .showcase-text h3 { font-size: 23px; margin-bottom: 12px; }
+  .showcase-text p { font-size: 16px; color: var(--text-sub); }
+  .showcase-note {
+    background: var(--green-pale); border-radius: 8px; padding: 10px 16px; margin-top: 14px;
+    font-size: 14.5px; color: var(--text-main);
   }
 
   /* ---------- S6 実績・声 ---------- */
@@ -446,7 +457,7 @@
   .price-card.main { border-color: var(--green-deep); box-shadow: 0 14px 32px rgba(31,122,85,.18); }
   .price-ribbon {
     position: absolute; top: 14px; right: -38px; transform: rotate(40deg); z-index: 3;
-    background: var(--cta-orange); color: #fff; font-size: 12.5px; font-weight: 800;
+    background: var(--green-deep); color: #fff; font-size: 12.5px; font-weight: 800;
     padding: 5px 44px; box-shadow: 0 3px 8px rgba(0,0,0,.2); white-space: nowrap;
   }
   .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
@@ -467,34 +478,48 @@
   .price-fine { font-size: 14px; color: var(--text-sub); }
 
   /* ---------- S8 比較表 ---------- */
+  .sec-compare { background: var(--green-pale); }
   .compare-wrap { overflow-x: auto; }
   table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px; }
   table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
-  table.compare thead th { background: var(--green-pale); }
+  table.compare thead th { background: var(--white); }
   table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; }
   table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
   table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: #FAFBFC; }
   .compare-note { font-size: 13.5px; color: var(--text-sub); margin-top: 12px; }
 
-  /* ---------- S9 導入の流れ ---------- */
-  .sec-flow { background: var(--green-pale); }
-  .flow-list { list-style: none; counter-reset: flow; display: grid; gap: 14px; }
-  .flow-list li {
-    counter-increment: flow; background: var(--white); border-radius: var(--radius); padding: 22px 24px 22px 76px;
-    position: relative; box-shadow: 0 2px 10px rgba(31,122,85,.07);
+  /* ---------- S9 導入の流れ（横並びタイムライン） ---------- */
+  .sec-flow { background: var(--white); }
+  .timeline {
+    list-style: none; counter-reset: tl; display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 12px; position: relative;
   }
-  .flow-list li::before {
-    content: counter(flow, decimal-leading-zero); position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
-    color: var(--green-accent); font-size: 24px; font-weight: 800;
+  .timeline::before {
+    content: ""; position: absolute; top: 22px; left: 8%; right: 8%; height: 3px;
+    background: var(--green-line); z-index: 0;
   }
-  .flow-list h3 { font-size: 17px; }
-  .flow-list p { font-size: 16px; color: var(--text-sub); }
+  @media (max-width: 900px) {
+    .timeline { grid-template-columns: 1fr; gap: 20px; }
+    .timeline::before { display: none; }
+  }
+  .timeline li { position: relative; z-index: 1; text-align: center; padding: 0 6px; }
+  @media (max-width: 900px) {
+    .timeline li { text-align: left; display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; padding: 0; }
+  }
+  .tl-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--green-deep); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px;
+    margin: 0 auto 14px; box-shadow: 0 5px 12px rgba(31,122,85,.28); position: relative; z-index: 1;
+  }
+  @media (max-width: 900px) { .tl-num { margin: 0; } }
+  .timeline h3 { font-size: 15px; margin-bottom: 6px; }
+  .timeline p { font-size: 13.5px; color: var(--text-sub); line-height: 1.6; }
 
   /* ---------- S10 FAQ ---------- */
-  .sec-faq { background: var(--white); }
+  .sec-faq { background: var(--green-pale); }
   .faq-list { display: grid; gap: 12px; }
   details {
-    background: var(--green-pale); border-radius: var(--radius); padding: 0; overflow: hidden;
+    background: var(--white); border-radius: var(--radius); padding: 0; overflow: hidden;
     box-shadow: 0 2px 10px rgba(31,122,85,.07);
   }
   summary {
@@ -504,7 +529,7 @@
   summary::after { content: "＋"; position: absolute; right: 20px; color: var(--green-accent); font-weight: 800; }
   details[open] summary::after { content: "−"; }
   .faq-a { padding: 0 24px 20px 52px; font-size: 16px; color: var(--text-sub); position: relative; }
-  .faq-a::before { content: "A"; position: absolute; left: 20px; color: var(--cta-orange); font-weight: 800; }
+  .faq-a::before { content: "A"; position: absolute; left: 20px; color: var(--green-accent); font-weight: 800; }
 
   /* ---------- S11 CTA・フォーム ---------- */
   .sec-contact { background: linear-gradient(180deg, var(--green-deep), #175E42); color: #fff; }
@@ -576,26 +601,20 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <div class="badges">
-      <span class="badge">整骨院・接骨院専門</span>
-      <span class="badge alt">東京都内なら全域訪問！</span>
-      <span class="badge alt">月1回の訪問サポート</span>
-    </div>
-    <h1>先生の代わりに、<span style="white-space:nowrap;">Webから</span><span class="em">選ばれる理由をつくる。</span></h1>
-    <p class="hero-sub">整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月直接お伺いして丸ごとおまかせできます。東京都内ならどこへでも。埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</p>
-    <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 <strong>9,000円</strong>（税込）</p>
+    <p class="hero-eyebrow">整骨院・接骨院専門　東京都内 全域訪問</p>
+    <h1>毎月、<span class="em">"先生に会いに行く"</span>担当者がいます。</h1>
+    <p class="hero-sub">ホームページも、Googleマップも、顔の見える担当者が丸ごとおまかせ。価格ではなく、伴走の安心感で選ばれています。</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
         <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
       </div>
-      <a href="#check" class="btn btn-sub">無料の資料をダウンロードする</a>
     </div>
-    <a href="tel:0343612643" class="hero-tel">
-      <span class="hero-tel-icon">☎</span>
-      <span class="hero-tel-num">03-4361-2643</span>
-      <span class="hero-tel-note">お電話でのご相談も歓迎です（平日10:00〜19:00）</span>
-    </a>
+    <p class="hero-micro">
+      <a href="#check">まずは無料の資料だけ見てみる →</a>
+      <span class="sep">｜</span>初期費用99,000円・月額9,000円〜
+      <span class="sep">｜</span><a href="tel:0343612643">☎ 03-4361-2643</a>
+    </p>
   </div>
 </div>
 
@@ -655,7 +674,7 @@
     <div class="about-copy-grid">
       <div class="about-copy-card">
         <h3>安診Web発足の背景</h3>
-        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。実際、上京後に足を痛めて整骨院を探した際、料金や診療時間、先生の情報が分からず不安で、結局は情報が整っている大手に予約しました。本当は近くの院に行きたかったのに、「分からない」という理由だけで選べなかったのです。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
+        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。実際、上京後に足を痛めて整骨院を探した際、料金や診療時間、先生の情報が分からず不安で、結局は情報が整っている大手に予約しました。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
       </div>
       <div class="about-copy-card">
         <h3>私たちが対面・訪問にこだわる理由</h3>
@@ -663,7 +682,20 @@
         <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- S3.5 マニフェスト -->
+<section class="sec-manifesto">
+  <div class="inner manifesto-inner">
+    <p class="manifesto-quote">「本当は、近くの院に行きたかった。」<br>それなのに、<span class="manifesto-em">「分からない」という理由だけ</span>で、選ばれなかった。</p>
+    <p class="manifesto-sub">──それが、安診Webが「会いに行く」ことにこだわる理由です。</p>
+  </div>
+</section>
+
+<!-- S3.6 なぜ人にこだわるのか -->
+<section class="sec-reason">
+  <div class="inner">
     <div class="reason-intro">
       <h3>なぜ、<span class="em" style="color:var(--green-deep);">「人」</span>にこだわるのか。</h3>
       <p>正直に言うと、価格の安さだけで比べれば、もっと安いサービスは他にもあります。それでも安診Webを選んでいただいているのは、担当者が直接お会いする「距離の近さ」があるからです。</p>
@@ -734,46 +766,48 @@
   </div>
 </section>
 
-<!-- S5 サービス4本柱 -->
+<!-- S5 サービス -->
 <section id="service">
   <div class="inner">
     <span class="sec-label">SERVICE</span>
     <h2>「丸投げ」できる安心感と、<span class="em">誠実さ。</span></h2>
-    <div class="pillar">
-      <div class="pillar-card">
-        <div class="pillar-num">01</div>
+    <div class="pillar-intro-row">
+      <div class="pillar-mini">
+        <div class="pillar-mini-num">01</div>
         <div>
-          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行します</h3>
-          <p>面倒な写真撮影、週1回の新着投稿、キーワードを含めた口コミ返信文の作成まで、実務はすべてこちらで代行します。先生にお願いするのは、月1回の訪問時に少しお話しいただくことだけ。施術に集中してください。</p>
-          <p class="pillar-note">投稿文・口コミ返信は、厚労省のあはき柔整広告ガイドラインに沿った表現で作成します。「効果を保証するような書き方」はいたしませんのでご安心ください。</p>
+          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行</h3>
+          <p>面倒な写真撮影、週1回の新着投稿、口コミ返信文の作成まで実務は全て代行。先生にお願いするのは月1回の訪問時に少しお話しいただくことだけです。</p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">02</div>
+      <div class="pillar-mini">
+        <div class="pillar-mini-num">02</div>
         <div>
           <h3>大量集客ではなく、悩んでいる患者さんに届ける</h3>
-          <p>「とにかく新規を増やす」広告や、AIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けるための情報発信です。既存の患者さんが来づらくなるような煽り文句も使いません。</p>
+          <p>「とにかく新規を増やす」広告やAIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けます。</p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">03</div>
-        <div>
+    </div>
+    <div class="showcase">
+      <div class="showcase-row">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">03</span>
           <h3>Googleマップで選ばれる、評判づくり</h3>
           <p>先生も、初めての場所を探すときはGoogleマップを使いませんか？ 患者さんも同じです。マップ上の情報整備とクチコミづくりで、「見つかるだけでなく、選ばれる」院を目指します。</p>
-          <p class="pillar-note">クチコミをお願いするためのカード・卓上POPは、月1回の訪問時にお届けします。診察券と一緒にお渡しいただくだけでOKです。<br>
-            <img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル" style="width:100%; max-width:420px; border-radius:8px; margin-top:10px;">
-          </p>
+          <p class="showcase-note">クチコミをお願いするためのカード・卓上POPは、月1回の訪問時にお届け。診察券と一緒にお渡しいただくだけでOKです。</p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">04</div>
-        <div>
+      <div class="showcase-row reverse">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">04</span>
           <h3>作りっぱなしにしない、毎月の訪問と作戦会議</h3>
           <p>「何人が見てくれたのか」「来院された方は、何をきっかけに選んでくれたのか」。結果を分かりやすいレポートにまとめ、専門用語を使わずにご報告。月1回の訪問時に、次の一手を先生と一緒に考えます。</p>
-          <p class="pillar-note">
-            <img loading="lazy" src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）" style="width:100%; max-width:520px; border-radius:8px;"><br>
-            ※上記は説明用のサンプルレポートです（数値はダミー）。
-          </p>
+          <p class="showcase-note">※上記は説明用のサンプルレポートです（数値はダミー）。</p>
         </div>
       </div>
     </div>
@@ -907,12 +941,12 @@
   <div class="inner">
     <span class="sec-label">FLOW</span>
     <h2>公開までの<span class="em">流れ</span></h2>
-    <ol class="flow-list">
-      <li><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
-      <li><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
-      <li><h3>初回訪問：ヒアリング＋写真撮影</h3><p>院のこだわり・強み・患者さんへの想いをじっくり伺いながら、その場で写真撮影も行います。</p></li>
-      <li><h3>制作・ご確認</h3><p>デザインを一緒に確認しながら仕上げます。修正のご要望もその場で。</p></li>
-      <li><h3>公開＆運用スタート</h3><p>月1回の訪問とレポートで、公開後も伴走します。日々の更新のご依頼はお電話・メールで送るだけ。</p></li>
+    <ol class="timeline">
+      <li><div class="tl-num">01</div><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
+      <li><div class="tl-num">02</div><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
+      <li><div class="tl-num">03</div><h3>初回訪問</h3><p>院のこだわり・強み・患者さんへの想いを伺いながら、その場で写真撮影も行います。</p></li>
+      <li><div class="tl-num">04</div><h3>制作・ご確認</h3><p>デザインを一緒に確認しながら仕上げます。修正のご要望もその場で。</p></li>
+      <li><div class="tl-num">05</div><h3>公開＆運用スタート</h3><p>月1回の訪問とレポートで、公開後も伴走します。</p></li>
     </ol>
   </div>
 </section>
