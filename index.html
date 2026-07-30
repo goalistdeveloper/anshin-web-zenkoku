@@ -155,11 +155,11 @@
   section { padding: 72px 0; }
   .sec-label {
     display: inline-block; color: #fff; font-size: 13px; font-weight: 800;
-    letter-spacing: .12em; border-radius: 999px;
+    letter-spacing: .12em; border-radius: 999px; border: 2px solid transparent;
     padding: 5px 18px; margin-bottom: 14px; background: var(--green-deep);
     box-shadow: 0 4px 10px rgba(31,122,85,.28);
   }
-  h2 { font-size: clamp(26px, 4.6vw, 38px); line-height: 1.4; margin-bottom: 36px; font-weight: 800; }
+  h2 { font-size: clamp(26px, 4.6vw, 38px); line-height: 1.4; margin-bottom: 36px; font-weight: 800; text-wrap: balance; }
   h2 .em {
     color: var(--green-deep);
     background: linear-gradient(180deg, transparent 60%, rgba(61,187,126,.32) 60%);
@@ -228,9 +228,12 @@
   @media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
 
   /* ---------- S1 ファーストビュー（背景動画のみ・中央寄せ） ---------- */
-  .hero { position: relative; overflow: hidden; padding: 40px 0 32px; background: #0F3C2A; }
+  .hero {
+    position: relative; overflow: hidden; padding: 40px 0 56px; background: #0F3C2A;
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  }
   @media (max-width: 640px) {
-    .hero { padding: 28px 0 20px; }
+    .hero { padding: 28px 0 40px; }
     .hero-sub { margin-bottom: 10px; }
     .hero-price { margin-bottom: 16px; }
     .hero-cta { gap: 12px; }
@@ -260,14 +263,14 @@
   .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
   .badge {
     background: var(--green-accent); color: #0F3C2A; font-size: 13.5px; font-weight: 800;
-    padding: 6px 16px; border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.18);
+    padding: 6px 16px; border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.18); white-space: nowrap;
   }
   .badge.alt {
     background: #fff; color: var(--green-deep); font-weight: 800;
     box-shadow: 0 3px 10px rgba(0,0,0,.18);
   }
   h1 { font-size: clamp(34px, 6.2vw, 56px); line-height: 1.32; margin-bottom: 18px; color: #fff;
-    font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4);
+    font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
   }
   h1 .em {
     color: #fff; background: linear-gradient(180deg, transparent 58%, var(--green-accent) 58%);
@@ -299,12 +302,12 @@
   }
 
   /* ---------- S2 問題提起 ---------- */
-  .sec-problem { background: var(--white); padding-top: 20px; }
+  .sec-problem { background: var(--white); padding-top: 40px; }
   .problem-hook-label {
     background: var(--red-accent); color: #fff; border-color: var(--red-accent);
     font-size: 13px; font-weight: 800;
   }
-  h2.problem-heading { font-size: clamp(30px, 5.6vw, 44px); font-weight: 800; }
+  h2.problem-heading { font-size: clamp(30px, 5.6vw, 44px); font-weight: 800; text-wrap: balance; }
   .problem-heading .underline {
     color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 5px;
     text-underline-offset: 6px; text-decoration-color: #FBD3D3;
@@ -332,7 +335,10 @@
   .sec-about { background: var(--green-pale); }
   .staff-grid { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center; background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
   @media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
-  .staff-grid img.portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); }
+  .staff-grid img.portrait {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius);
+    border: 4px solid #fff; box-shadow: 0 10px 26px rgba(31,122,85,.22);
+  }
   .staff-msg h3 { font-size: 22px; margin-bottom: 12px; line-height: 1.5; }
   .staff-msg p { font-size: 16px; color: var(--text-sub); margin-bottom: 10px; }
   .staff-name { font-weight: 700; color: var(--text-main); }
@@ -352,11 +358,13 @@
   @media (max-width: 720px) { .reason-grid { grid-template-columns: 1fr; } }
   .reason-card {
     background: var(--white); border-radius: var(--radius); padding: 24px 26px;
-    box-shadow: 0 2px 12px rgba(31,122,85,.08); display: grid; grid-template-columns: 44px 1fr; gap: 16px;
+    box-shadow: 0 8px 20px rgba(31,122,85,.1); display: grid; grid-template-columns: 48px 1fr; gap: 16px;
   }
   .reason-card .reason-num {
-    width: 44px; height: 44px; border-radius: 50%; background: var(--green-pale); color: var(--green-deep);
-    display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800;
+    width: 48px; height: 48px; border-radius: 50%; color: #fff;
+    background: linear-gradient(135deg, var(--green-accent), var(--green-deep));
+    box-shadow: 0 6px 14px rgba(31,122,85,.3);
+    display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 800;
   }
   .reason-card h4 { font-size: 17px; margin-bottom: 6px; }
   .reason-card p { font-size: 15px; color: var(--text-sub); line-height: 1.7; }
@@ -378,20 +386,27 @@
   .online-item h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 10px; white-space: nowrap; }
   @media (max-width: 480px) { .online-item h3 { font-size: 16px; white-space: normal; } }
   .online-item p { font-size: 16px; }
-  .online-item .guide-img { width: 100%; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(31,122,85,.18); }
+  .online-item .guide-img {
+    width: 100%; border-radius: var(--radius); box-shadow: 0 14px 30px rgba(31,122,85,.28);
+    border: 4px solid #fff;
+  }
 
   /* ---------- S5 4本柱 ---------- */
   .pillar { display: grid; gap: 22px; }
   .pillar-card {
     background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
     padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px;
+    box-shadow: 0 6px 18px rgba(31,122,85,.07); transition: box-shadow .2s, transform .2s;
   }
+  .pillar-card:hover { box-shadow: 0 14px 30px rgba(31,122,85,.16); transform: translateY(-3px); }
   @media (max-width: 640px) { .pillar-card { grid-template-columns: 1fr; } }
   .pillar-num {
-    font-size: 30px; font-weight: 800; color: var(--green-accent); border-right: 2px solid var(--green-line);
-    padding-right: 20px;
+    width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 800; color: #fff; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-accent), var(--green-deep));
+    box-shadow: 0 6px 14px rgba(31,122,85,.3);
   }
-  @media (max-width: 640px) { .pillar-num { border-right: none; padding-right: 0; } }
+  @media (max-width: 640px) { .pillar-num { margin-bottom: 4px; } }
   .pillar-card h3 { font-size: 20px; margin-bottom: 8px; }
   .pillar-card p { font-size: 16px; color: var(--text-sub); }
   .pillar-note {
@@ -402,23 +417,38 @@
   /* ---------- S6 実績・声 ---------- */
   .sec-sample { background: var(--green-pale); }
   .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .voice-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+  .voice-card {
+    background: var(--white); border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 12px 28px rgba(31,122,85,.14); border-top: 4px solid var(--green-accent);
+  }
   .voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
-  .voice-card .voice-body { padding: 24px 28px 28px; }
-  .voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; }
-  .voice-card h3 { font-size: 17px; margin-bottom: 8px; }
-  .voice-card p { font-size: 16px; color: var(--text-sub); }
-  .voice-card .voice-source { font-size: 14px; margin-top: 10px; }
+  .voice-card .voice-body { padding: 24px 28px 28px; position: relative; }
+  .voice-card .voice-body::before {
+    content: "\201C"; position: absolute; top: -6px; right: 20px; font-size: 64px; font-weight: 800;
+    color: var(--green-pale); line-height: 1; z-index: 0; font-family: Georgia, serif;
+  }
+  .voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; position: relative; }
+  .voice-card h3 { font-size: 18px; margin-bottom: 8px; position: relative; }
+  .voice-card p { font-size: 16px; color: var(--text-sub); position: relative; }
+  .voice-card .voice-source { font-size: 14px; margin-top: 10px; position: relative; }
   .mini-voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
-  .mini-voice-card { background: var(--white); border-radius: 10px; padding: 18px 20px; font-size: 15px; box-shadow: 0 2px 8px rgba(31,122,85,.06); }
+  .mini-voice-card {
+    background: var(--white); border-radius: 10px; padding: 18px 20px; font-size: 15px;
+    box-shadow: 0 4px 14px rgba(31,122,85,.1); border-left: 4px solid var(--green-accent);
+  }
   .mini-voice-card .area { color: var(--green-deep); font-weight: 700; margin-top: 8px; display: block; }
 
   /* ---------- S7 料金 ---------- */
   .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 28px; }
   .price-card {
-    border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
+    position: relative; border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
   }
-  .price-card.main { border-color: var(--green-deep); }
+  .price-card.main { border-color: var(--green-deep); box-shadow: 0 14px 32px rgba(31,122,85,.18); }
+  .price-ribbon {
+    position: absolute; top: 14px; right: -38px; transform: rotate(40deg); z-index: 3;
+    background: var(--cta-orange); color: #fff; font-size: 12.5px; font-weight: 800;
+    padding: 5px 44px; box-shadow: 0 3px 8px rgba(0,0,0,.2); white-space: nowrap;
+  }
   .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
   .price-card.sub .price-head { background: var(--green-accent); }
   .price-body { padding: 28px; }
@@ -551,7 +581,7 @@
       <span class="badge alt">東京都内なら全域訪問！</span>
       <span class="badge alt">月1回の訪問サポート</span>
     </div>
-    <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
+    <h1>先生の代わりに、<span style="white-space:nowrap;">Webから</span><span class="em">選ばれる理由をつくる。</span></h1>
     <p class="hero-sub">整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月直接お伺いして丸ごとおまかせできます。東京都内ならどこへでも。埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</p>
     <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 <strong>9,000円</strong>（税込）</p>
     <div class="hero-cta">
@@ -572,7 +602,7 @@
 <!-- S2 問題提起 -->
 <section class="sec-problem" id="problem">
   <div class="inner">
-    <h2 class="problem-heading">そのホームページ、<span class="underline">新しい患者さんに届いていますか？</span></h2>
+    <h2 class="problem-heading">そのホームページ、<span class="underline">新しい<span style="white-space:nowrap;">患者さん</span>に届いていますか？</span></h2>
     <p class="lead">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
     <div class="problem-grid">
       <div class="problem-card">
@@ -679,7 +709,7 @@
 <section class="sec-online" id="check">
   <div class="inner">
     <span class="sec-label">DOWNLOAD</span>
-    <h2>まずは、無料の<span class="em">「Googleマップ活用チェックガイド」</span>を。</h2>
+    <h2>まずは、無料の<span class="em">「<span style="white-space:nowrap;">Googleマップ</span>活用チェックガイド」</span>を。</h2>
     <p class="lead">「相談するほどではないけど、今の状態は知りたい」という先生向けの資料です。院名・お名前・メールアドレスだけで、資料のリンクをメールでお送りします。</p>
     <div class="online-list">
       <div class="online-item">
@@ -802,6 +832,7 @@
     <p class="lead">下記の金額にすべて含まれます。遠方の交通費や、更新のたびの追加料金は一切ありません。</p>
     <div class="price-grid">
       <div class="price-card main">
+        <div class="price-ribbon">人気プラン</div>
         <div class="price-head">HPリニューアルプラン</div>
         <div class="price-body">
           <div class="price-fig">
@@ -853,7 +884,7 @@
         <thead>
           <tr>
             <th></th>
-            <th class="us">安診Web</th>
+            <th class="us">★ 安診Web</th>
             <th>価格重視型のサービス</th>
             <th>全国展開型のサービス</th>
           </tr>
