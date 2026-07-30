@@ -154,12 +154,17 @@
   .inner { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
   section { padding: 72px 0; }
   .sec-label {
-    display: inline-block; color: var(--green-deep); font-size: 13px; font-weight: 700;
-    letter-spacing: .12em; border: 1px solid var(--green-accent); border-radius: 999px;
-    padding: 2px 14px; margin-bottom: 14px; background: var(--white);
+    display: inline-block; color: #fff; font-size: 13px; font-weight: 800;
+    letter-spacing: .12em; border-radius: 999px;
+    padding: 5px 18px; margin-bottom: 14px; background: var(--green-deep);
+    box-shadow: 0 4px 10px rgba(31,122,85,.28);
   }
-  h2 { font-size: clamp(24px, 4vw, 34px); line-height: 1.45; margin-bottom: 36px; }
-  h2 .em { color: var(--green-deep); }
+  h2 { font-size: clamp(26px, 4.6vw, 38px); line-height: 1.4; margin-bottom: 36px; font-weight: 800; }
+  h2 .em {
+    color: var(--green-deep);
+    background: linear-gradient(180deg, transparent 60%, rgba(61,187,126,.32) 60%);
+    padding: 0 2px;
+  }
   .em-red { color: var(--red-accent); }
   .lead { color: var(--text-sub); margin: -20px 0 36px; }
 
@@ -171,10 +176,16 @@
   .btn:hover { transform: translateY(-2px); }
   .btn-cta {
     background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark));
-    color: #fff; padding: 17px 40px; font-size: 17px; position: relative; z-index: 1;
-    box-shadow: 0 6px 18px rgba(217, 119, 6, .35);
+    color: #fff; padding: 20px 46px; font-size: 19px; position: relative; z-index: 1;
+    box-shadow: 0 8px 22px rgba(217, 119, 6, .45);
+    animation: ctaPulse 2.2s ease-in-out infinite;
   }
-  .btn-cta small { display: block; font-size: 12px; font-weight: 500; opacity: .95; }
+  @keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 8px 22px rgba(217, 119, 6, .45); }
+    50% { box-shadow: 0 8px 30px rgba(217, 119, 6, .7), 0 0 0 8px rgba(245, 158, 11, .12); }
+  }
+  @media (prefers-reduced-motion: reduce) { .btn-cta { animation: none; } }
+  .btn-cta small { display: block; font-size: 12.5px; font-weight: 700; opacity: .95; }
   .btn-sub {
     background: var(--white); color: var(--green-deep); border: 2px solid var(--green-deep);
     padding: 16px 36px; font-size: 15px;
@@ -236,7 +247,7 @@
   @media (prefers-reduced-motion: reduce) { .hero-bg-video { animation: none; opacity: .8; transform: scale(1); } }
   .hero-bg-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(13,46,32,.62) 0%, rgba(13,46,32,.42) 45%, rgba(13,46,32,.68) 100%);
+    background: linear-gradient(180deg, rgba(13,46,32,.5) 0%, rgba(13,46,32,.3) 45%, rgba(13,46,32,.62) 100%);
   }
   .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
@@ -248,17 +259,27 @@
   .hero-grid .hero-tel { animation: heroFadeUp .7s ease-out both .62s; }
   .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
   .badge {
-    background: var(--green-accent); color: #0F3C2A; font-size: 13px; font-weight: 700;
-    padding: 4px 14px; border-radius: 999px;
+    background: var(--green-accent); color: #0F3C2A; font-size: 13.5px; font-weight: 800;
+    padding: 6px 16px; border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.18);
   }
-  .badge.alt { background: rgba(255,255,255,.16); color: #fff; }
-  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.35; margin-bottom: 16px; color: #fff;
-    text-shadow: 0 2px 16px rgba(0,0,0,.35);
+  .badge.alt {
+    background: #fff; color: var(--green-deep); font-weight: 800;
+    box-shadow: 0 3px 10px rgba(0,0,0,.18);
   }
-  h1 .em { color: var(--green-accent); }
-  .hero-sub { font-size: 16px; color: rgba(255,255,255,.9); margin-bottom: 14px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
-  .hero-price { font-size: 14px; color: rgba(255,255,255,.75); font-weight: 600; margin-bottom: 24px; }
-  .hero-price strong { font-size: 18px; color: var(--green-accent); }
+  h1 { font-size: clamp(34px, 6.2vw, 56px); line-height: 1.32; margin-bottom: 18px; color: #fff;
+    font-weight: 800; text-shadow: 0 2px 16px rgba(0,0,0,.4);
+  }
+  h1 .em {
+    color: #fff; background: linear-gradient(180deg, transparent 58%, var(--green-accent) 58%);
+    padding: 0 4px; box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  }
+  .hero-sub { font-size: 17px; color: rgba(255,255,255,.92); margin-bottom: 20px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+  .hero-price {
+    display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap; justify-content: center;
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
+    padding: 10px 26px; margin-bottom: 28px; font-size: 15px; color: #fff; font-weight: 700;
+  }
+  .hero-price strong { font-size: 30px; color: var(--green-accent); font-weight: 800; }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
   .hero-tel {
     display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 10px;
@@ -283,22 +304,29 @@
     background: var(--red-accent); color: #fff; border-color: var(--red-accent);
     font-size: 13px; font-weight: 800;
   }
-  h2.problem-heading { font-size: clamp(28px, 5vw, 40px); }
+  h2.problem-heading { font-size: clamp(30px, 5.6vw, 44px); font-weight: 800; }
   .problem-heading .underline {
-    color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 4px;
+    color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 5px;
     text-underline-offset: 6px; text-decoration-color: #FBD3D3;
   }
   .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
   .problem-card {
     background: #FAFBFC; border: 1px solid #E4E7EB; border-radius: var(--radius); padding: 24px;
   }
-  .problem-card .no { color: #C81E1E; font-weight: 800; font-size: 14px; }
+  .problem-card .no {
+    display: inline-block; color: #fff; background: var(--red-accent); font-weight: 800; font-size: 13px;
+    padding: 3px 12px; border-radius: 999px;
+  }
   .problem-card h3 { font-size: 18px; margin: 6px 0 8px; }
   .problem-card p { font-size: 16px; color: var(--text-sub); }
   .problem-close {
     margin-top: 40px; text-align: center; font-size: clamp(16px, 2.6vw, 20px); font-weight: 700;
   }
-  .problem-close .em { color: var(--green-deep); }
+  .problem-close .em {
+    color: var(--green-deep);
+    background: linear-gradient(180deg, transparent 60%, rgba(61,187,126,.32) 60%);
+    padding: 0 2px;
+  }
 
   /* ---------- S3 担当者・理念 ---------- */
   .sec-about { background: var(--green-pale); }
@@ -395,10 +423,10 @@
   .price-card.sub .price-head { background: var(--green-accent); }
   .price-body { padding: 28px; }
   .price-fig { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center; }
-  .price-fig .cell { background: var(--green-pale); border-radius: 10px; padding: 14px 10px; }
-  .price-fig .cell .label { font-size: 14px; color: var(--text-sub); font-weight: 700; margin-bottom: 4px; }
-  .price-fig .cell .num { font-size: 27px; font-weight: 800; color: var(--green-deep); }
-  .price-fig .cell .num .unit { font-size: 15px; font-weight: 700; margin-left: 2px; }
+  .price-fig .cell { background: var(--green-pale); border-radius: 10px; padding: 16px 10px; border: 2px solid var(--green-line); }
+  .price-fig .cell .label { font-size: 13.5px; color: var(--text-sub); font-weight: 700; margin-bottom: 6px; }
+  .price-fig .cell .num { font-size: 34px; font-weight: 800; color: var(--green-deep); }
+  .price-fig .cell .num .unit { font-size: 16px; font-weight: 700; margin-left: 2px; }
   .price-body ul { list-style: none; }
   .price-body li { font-size: 16px; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--green-line); position: relative; }
   .price-body li::before { content: "✓"; position: absolute; left: 4px; color: var(--green-accent); font-weight: 800; }
@@ -525,7 +553,7 @@
     </div>
     <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
     <p class="hero-sub">整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月直接お伺いして丸ごとおまかせできます。東京都内ならどこへでも。埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</p>
-    <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 9,000円（税込）</p>
+    <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 <strong>9,000円</strong>（税込）</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
