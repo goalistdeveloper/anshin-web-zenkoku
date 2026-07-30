@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】</title>
-<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で先生のそばで伴走します。">
+<title>安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】</title>
+<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京都内なら全域訪問、埼玉・神奈川・千葉など近郊エリアもまずはご相談ください。">
 <meta name="robots" content="index,follow">
 <!-- [仮] 本番ドメイン確定後に置き換え -->
 <link rel="canonical" href="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
 
 <!-- OGP（現行anshin-hp.comの構成に準拠。画像は現行サイトのOGP画像を流用） -->
 <meta property="og:site_name" content="安診Web｜整骨院・接骨院専門のホームページ制作">
-<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】">
-<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で伴走します。">
+<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】">
+<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京都内なら全域訪問、近郊エリアもご相談ください。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
 <meta property="og:image" content="assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png">
@@ -39,12 +39,11 @@
   "@type": "ProfessionalService",
   "name": "安診Web",
   "description": "整骨院・接骨院専門のホームページ制作。撮影・更新・Googleマップ対策まで、月1回の訪問で丸ごと代行します。",
-  "areaServed": [
-    { "@type": "State", "name": "東京都" },
-    { "@type": "State", "name": "埼玉県" },
-    { "@type": "State", "name": "神奈川県" },
-    { "@type": "State", "name": "千葉県" }
-  ],
+  "areaServed": {
+    "@type": "State",
+    "name": "東京都",
+    "description": "東京都内は全域訪問対応。埼玉県・神奈川県・千葉県など近郊エリアもご相談に応じて訪問可能です。"
+  },
   "priceRange": "¥33,000〜¥99,000",
   "telephone": "+81-3-4361-2643",
   "image": "assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png",
@@ -78,8 +77,8 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "訪問エリア外ですが、相談できますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています。エリア外の場合もまずはご相談ください。" }
+      "name": "対応エリアを教えてください",
+      "acceptedAnswer": { "@type": "Answer", "text": "東京都内なら、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。" }
     },
     {
       "@type": "Question",
@@ -318,6 +317,26 @@
     width: 100%; max-width: 260px; border-radius: 10px; margin-top: 14px; display: block;
     box-shadow: 0 6px 16px rgba(31,122,85,.15); background: #000;
   }
+  .reason-intro { margin-top: 48px; text-align: center; }
+  .reason-intro h3 { font-size: 22px; margin-bottom: 10px; }
+  .reason-intro p { font-size: 16px; color: var(--text-sub); max-width: 640px; margin: 0 auto; }
+  .reason-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; }
+  @media (max-width: 720px) { .reason-grid { grid-template-columns: 1fr; } }
+  .reason-card {
+    background: var(--white); border-radius: var(--radius); padding: 24px 26px;
+    box-shadow: 0 2px 12px rgba(31,122,85,.08); display: grid; grid-template-columns: 44px 1fr; gap: 16px;
+  }
+  .reason-card .reason-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--green-pale); color: var(--green-deep);
+    display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800;
+  }
+  .reason-card h4 { font-size: 17px; margin-bottom: 6px; }
+  .reason-card p { font-size: 15px; color: var(--text-sub); line-height: 1.7; }
+  .reason-area-banner {
+    margin-top: 24px; background: var(--green-deep); color: #fff; border-radius: var(--radius);
+    padding: 18px 24px; text-align: center; font-size: 16px; font-weight: 700;
+  }
+  .reason-area-banner span { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 4px; }
 
   /* ---------- S4 資料ダウンロード ---------- */
   .sec-online { background: var(--white); }
@@ -501,11 +520,11 @@
   <div class="inner hero-grid">
     <div class="badges">
       <span class="badge">整骨院・接骨院専門</span>
-      <span class="badge alt">東京・埼玉・神奈川・千葉訪問！</span>
+      <span class="badge alt">東京都内なら全域訪問！</span>
       <span class="badge alt">月1回の訪問サポート</span>
     </div>
     <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
-    <p class="hero-sub">東京・埼玉・神奈川・千葉の整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月お伺いして丸ごとおまかせできます。</p>
+    <p class="hero-sub">整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月直接お伺いして丸ごとおまかせできます。東京都内ならどこへでも。埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</p>
     <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 9,000円（税込）</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
@@ -582,9 +601,48 @@
       </div>
       <div class="about-copy-card">
         <h3>私たちが対面・訪問にこだわる理由</h3>
-        <p>院の強みは、実際に足を運んでこそ見えてきます。導線や雰囲気、先生の人柄は現地でしか分かりませんし、本当の強みは往々にして、雑談の中からこぼれ落ちてくるものです。また、Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、先生と目線を合わせて、長く・深く伴走したいのです。</p>
+        <p>Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、先生と目線を合わせて、長く・深く伴走したいのです。</p>
         <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
       </div>
+    </div>
+
+    <div class="reason-intro">
+      <h3>なぜ、<span class="em" style="color:var(--green-deep);">「人」</span>にこだわるのか。</h3>
+      <p>正直に言うと、価格の安さだけで比べれば、もっと安いサービスは他にもあります。それでも安診Webを選んでいただいているのは、担当者が直接お会いする「距離の近さ」があるからです。</p>
+    </div>
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-num">01</div>
+        <div>
+          <h4>価格では戦いません。だから、直接お会いします</h4>
+          <p>安さや規模で勝負すると、私たちは大手には敵いません。その分、担当者が毎月顔を合わせ、丁寧に伴走することに力を注いでいます。「値段」ではなく「安心感」で選んでいただきたいと思っています。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">02</div>
+        <div>
+          <h4>Zoomに不慣れでも、まったく問題ありません</h4>
+          <p>「オンライン商談の準備や操作が分からない」という先生も、対面ならその心配は不要です。いつも通り院にいながら、画面越しではなく、その場でゆっくりお話しいただけます。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">03</div>
+        <div>
+          <h4>現地に伺うから、本当の強みが見える</h4>
+          <p>院の強みは、実際に足を運んでこそ見えてきます。導線や雰囲気、先生の人柄は画面越しでは伝わりません。本当の魅力は、往々にして雑談の中からこぼれ落ちてくるものです。</p>
+        </div>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">04</div>
+        <div>
+          <h4>顔の見える関係だから、ずっと安心</h4>
+          <p>担当者の顔と名前が分かる関係は、何かあったときすぐ相談できる安心感につながります。以前業者との対応に困った経験がある先生ほど、「顔の見える相手」であることを大切にしてくださっています。</p>
+        </div>
+      </div>
+    </div>
+    <div class="reason-area-banner">
+      東京都内なら、どこへでも伺います。
+      <span>埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</span>
     </div>
   </div>
 </section>
@@ -774,6 +832,7 @@
         </thead>
         <tbody>
           <tr><td>対応業界</td><td class="us">整骨院・接骨院専門</td><td>整骨院・接骨院専門の場合が多い</td><td>治療院全般を含む場合が多い</td></tr>
+          <tr><td>訪問対応</td><td class="us">東京都内は全域、近郊エリアも相談可</td><td>非対面が中心の場合が多い</td><td>対応エリアが限定的な場合がある</td></tr>
           <tr><td>初期費用の傾向</td><td class="us">99,000円（税込）</td><td>比較的抑えめな傾向</td><td>個別見積もりが多い傾向</td></tr>
           <tr><td>接点</td><td class="us">月1回訪問・同じ担当者が継続対応</td><td>オンライン中心の場合が多い</td><td>体制が大きく分業対応の場合がある</td></tr>
           <tr><td>実務代行</td><td class="us">撮影・投稿・口コミ返信まで丸ごと</td><td>更新のみのプランが多い</td><td>制作・取材込みのプランが多い</td></tr>
@@ -806,8 +865,8 @@
     <h2>よくある<span class="em">質問</span></h2>
     <div class="faq-list">
       <details>
-        <summary>訪問エリア外ですが、相談できますか？</summary>
-        <p class="faq-a">現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています<em>[仮：要確定]</em>。エリア外の場合もまずはご相談ください。</p>
+        <summary>対応エリアを教えてください</summary>
+        <p class="faq-a">東京都内なら、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。</p>
       </details>
       <details>
         <summary>今、他社のHP/MEO運用サービスと契約中ですが相談できますか？</summary>
