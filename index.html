@@ -397,9 +397,9 @@
   .reason-card p { font-size: 15px; color: var(--text-sub); line-height: 1.7; }
   .reason-area-banner {
     margin-top: 24px; background: var(--green-deep); color: #fff; border-radius: var(--radius);
-    padding: 18px 24px; text-align: center; font-size: 16px; font-weight: 700;
+    padding: 26px 24px; text-align: center; font-size: clamp(22px, 3.6vw, 30px); font-weight: 900;
   }
-  .reason-area-banner span { display: block; font-size: 13px; font-weight: 500; opacity: .9; margin-top: 4px; }
+  .reason-area-banner span { display: block; font-size: 15px; font-weight: 600; opacity: .9; margin-top: 10px; }
   .sec-reason { background: var(--green-pale); padding-top: 0; }
 
   /* ---------- S4 資料ダウンロード ---------- */
@@ -433,10 +433,12 @@
   /* ---------- S5 サービス（イントロ2件＋ショーケース2件） ---------- */
   .pillar-intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 56px; }
   @media (max-width: 720px) { .pillar-intro-row { grid-template-columns: 1fr; gap: 24px; } }
-  .pillar-mini { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
+  .pillar-mini { display: grid; grid-template-columns: 88px 1fr; gap: 16px; align-items: start; }
+  .pillar-mini-ph { aspect-ratio: 1/1; border-radius: 10px; font-size: 12px; padding: 4px; }
+  .pillar-mini-body { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: start; }
   .pillar-mini-num {
-    width: 44px; height: 44px; border-radius: 50%; background: var(--green-pale); color: var(--green-deep);
-    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px;
+    width: 32px; height: 32px; border-radius: 50%; background: var(--green-pale); color: var(--green-deep);
+    display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px;
   }
   .pillar-mini h3 { font-size: 18px; margin-bottom: 6px; }
   .pillar-mini p { font-size: 15px; color: var(--text-sub); }
@@ -524,10 +526,10 @@
   table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; position: relative; }
   table.compare thead th.us .us-pop {
     display: inline-block; font-size: 1.55em; font-weight: 900; white-space: nowrap;
-    transform: scale(1.08) translateY(-10px); box-shadow: 0 8px 18px rgba(15,60,42,.35);
+    transform: scale(1.08) translateY(-10px);
     background: var(--green-deep); padding: 6px 18px; border-radius: 10px; position: relative; z-index: 2;
   }
-  table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
+  table.compare td.us { background: #F4FBF7; font-weight: 800; color: var(--green-deep); font-size: 1.2em; }
   table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: #FAFBFC; }
   .compare-note { font-size: 13.5px; color: var(--text-sub); margin-top: 12px; }
 
@@ -644,17 +646,16 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <h1>毎月お伺いして、ホームページもGoogleマップも、<span class="em">丸ごと伴走します。</span></h1>
-    <p class="hero-sub">価格ではなく、顔の見える担当者との伴走の安心感で選ばれています。</p>
+    <h1>東京都内なら、<span class="em">どこへでも会いに行きます。</span></h1>
     <div class="hero-cta">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
         <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
       </div>
+      <a href="#check" class="btn btn-sub">資料ダウンロード</a>
     </div>
     <p class="hero-micro">
-      <a href="#check">まずは無料の資料だけ見てみる →</a>
-      <span class="sep">｜</span>初期費用99,000円・月額9,000円〜
+      初期費用99,000円・月額9,000円〜
       <span class="sep">｜</span><a href="tel:0343612643">☎ 03-4361-2643</a>
     </p>
   </div>
@@ -710,7 +711,7 @@
   <div class="inner">
     <span class="sec-label">MESSAGE</span>
     <div class="staff-grid">
-      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa.jpg" alt="安診Web担当 牛谷梓">
+      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa-nobg.png" alt="安診Web担当 牛谷梓">
       <div class="staff-msg">
         <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
         <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
@@ -721,11 +722,11 @@
     <div class="about-copy-grid">
       <div class="about-copy-card">
         <h3>安診Web発足の背景</h3>
-        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
+        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。今は、検索した瞬間に判断される時代です。技術の差ではなく、<strong><u>Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。</u></strong>それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
       </div>
       <div class="about-copy-card">
         <h3>私たちが対面・訪問にこだわる理由</h3>
-        <p>Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、先生と目線を合わせて、長く・深く伴走したいのです。</p>
+        <p>Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、<strong><u>先生と目線を合わせて、長く・深く伴走したい</u></strong>のです。</p>
         <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
       </div>
     </div>
@@ -817,20 +818,25 @@
   <div class="inner">
     <span class="sec-label">SERVICE</span>
     <h2>「丸投げ」できる安心感と、<span class="em">誠実さ。</span></h2>
-    <div class="ph" style="aspect-ratio:21/9; margin-bottom:32px;">ここに写真を入れる（例：担当者が撮影・作業している様子）</div>
     <div class="pillar-intro-row">
       <div class="pillar-mini">
-        <div class="pillar-mini-num">01</div>
-        <div>
-          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行</h3>
-          <p>面倒な写真撮影、週1回の新着投稿、口コミ返信文の作成まで実務は全て代行。先生にお願いするのは月1回の訪問時に少しお話しいただくことだけです。</p>
+        <div class="ph pillar-mini-ph">写真</div>
+        <div class="pillar-mini-body">
+          <div class="pillar-mini-num">01</div>
+          <div>
+            <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行</h3>
+            <p>面倒な写真撮影、週1回の新着投稿、口コミ返信文の作成まで実務は全て代行。先生にお願いするのは月1回の訪問時に少しお話しいただくことだけです。</p>
+          </div>
         </div>
       </div>
       <div class="pillar-mini">
-        <div class="pillar-mini-num">02</div>
-        <div>
-          <h3>大量集客ではなく、悩んでいる患者さんに届ける</h3>
-          <p>「とにかく新規を増やす」広告やAIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けます。</p>
+        <div class="ph pillar-mini-ph">写真</div>
+        <div class="pillar-mini-body">
+          <div class="pillar-mini-num">02</div>
+          <div>
+            <h3>大量集客ではなく、悩んでいる患者さんに届ける</h3>
+            <p>「とにかく新規を増やす」広告やAIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けます。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -979,7 +985,7 @@
         </tbody>
       </table>
     </div>
-    <p class="compare-note">※他社の情報は一般的な傾向をもとにした参考情報であり、特定の企業を指すものではありません。プラン内容は各社異なりますので、詳しくは各社に直接ご確認ください。</p>
+    <p class="compare-note">※他社の情報は一般的な傾向をもとにした参考情報であり、特定の企業を指すものではありません。</p>
   </div>
 </section>
 
