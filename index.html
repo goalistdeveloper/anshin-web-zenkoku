@@ -351,7 +351,6 @@
   @media (max-width: 780px) { .staff-grid { grid-template-columns: 1fr; } }
   .staff-grid img.portrait {
     width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius);
-    box-shadow: 0 16px 36px rgba(15,60,42,.22);
   }
   .staff-big-heading {
     font-size: clamp(26px, 3.6vw, 36px); font-weight: 900; line-height: 1.45; margin-bottom: 20px;
@@ -431,8 +430,7 @@
   }
 
   /* ---------- S5 サービス（イントロ2件＋ショーケース2件） ---------- */
-  .pillar-intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 56px; }
-  @media (max-width: 720px) { .pillar-intro-row { grid-template-columns: 1fr; gap: 24px; } }
+  .pillar-intro-row { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; }
   .pillar-mini { display: grid; grid-template-columns: 88px 1fr; gap: 16px; align-items: start; }
   .pillar-mini-ph { aspect-ratio: 1/1; border-radius: 10px; font-size: 12px; padding: 4px; }
   .pillar-mini-body { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: start; }
@@ -469,7 +467,7 @@
   .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
   .voice-card {
     background: var(--white); border-radius: var(--radius); overflow: hidden;
-    box-shadow: 0 12px 28px rgba(31,122,85,.14); border-top: 4px solid var(--green-accent);
+    box-shadow: 0 12px 28px rgba(31,122,85,.14);
   }
   .voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
   .voice-card .voice-body { padding: 24px 28px 28px; position: relative; }
@@ -669,7 +667,6 @@
       <h2 class="problem-heading">そのホームページ、<span class="underline">新しい<span style="white-space:nowrap;">患者さん</span>に届いていますか？</span></h2>
     </div>
     <p class="lead" style="margin-top:36px; text-align:center;">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
-    <div class="ph" style="aspect-ratio:21/9; margin-bottom:32px;">ここに写真を入れる（例：スマホで見づらい・古いホームページの実例）</div>
     <div class="problem-grid">
       <div class="problem-card">
         <span class="no">✕ 問題 1</span>
