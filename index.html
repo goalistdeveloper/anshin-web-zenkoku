@@ -269,11 +269,10 @@
   .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .05s; }
-  .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .18s; }
-  .hero-grid .hero-price-card { animation: heroFadeUp .7s ease-out both .3s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .42s; }
-  .hero-grid .hero-capacity { animation: heroFadeUp .7s ease-out both .52s; }
-  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .6s; }
+  .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .2s; }
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .34s; }
+  .hero-grid .hero-capacity { animation: heroFadeUp .7s ease-out both .46s; }
+  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .54s; }
   h1 { font-size: clamp(34px, 5.8vw, 52px); line-height: 1.4; margin-bottom: 28px; color: #fff;
     font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
   }
@@ -281,36 +280,18 @@
     color: #fff; text-decoration: underline; text-decoration-color: var(--green-accent);
     text-decoration-thickness: 5px; text-underline-offset: 8px;
   }
-  .hero-badges { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 30px; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 32px; }
   .hero-badge {
-    display: flex; flex-direction: column; align-items: center; gap: 8px; width: 130px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px; width: 148px;
   }
   .hero-badge-icon {
     width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.14);
     border: 1.5px solid rgba(255,255,255,.4); display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
   .hero-badge-icon svg { width: 26px; height: 26px; }
   .hero-badge span:last-child { color: #fff; font-size: 12.5px; font-weight: 700; line-height: 1.35; }
-  .hero-price-card {
-    display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 10px;
-    background: #fff; border-radius: 18px; padding: 16px 28px; margin-bottom: 28px;
-    box-shadow: 0 14px 32px rgba(0,0,0,.25);
-  }
-  .hero-price-label {
-    display: inline-block; background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 800;
-    padding: 5px 14px; border-radius: 999px; align-self: center;
-  }
-  .hero-price-num {
-    color: var(--green-deep); font-size: 36px; font-weight: 900; line-height: 1; letter-spacing: -.01em;
-  }
-  .hero-price-num small { font-size: 17px; font-weight: 800; margin-left: 1px; }
-  .hero-price-sub {
-    color: var(--text-sub); font-size: 16px; font-weight: 800;
-  }
-  .hero-price-note {
-    display: block; width: 100%; color: var(--text-sub); font-size: 13.5px; font-weight: 700;
-    line-height: 1.5; margin-top: 4px;
-  }
+  .hero-badge-label { white-space: nowrap; }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
   .hero-capacity {
     margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.85); font-weight: 600;
@@ -687,7 +668,13 @@
         <span class="hero-badge-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="#fff" stroke-width="1.8"/></svg>
         </span>
-        <span>東京23区・近郊エリア対応</span>
+        <span class="hero-badge-label">東京23区・近郊エリア対応</span>
+      </div>
+      <div class="hero-badge">
+        <span class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/><path d="M12 7v10M9.2 9.3c0-1.1 1.1-2 2.8-2s2.8.7 2.8 1.8c0 2.4-5.6 1.1-5.6 3.5 0 1.1 1.1 1.8 2.8 1.8s2.8-.9 2.8-2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+        <span>初期費用99,000円<br>／月額9,000円〜</span>
       </div>
       <div class="hero-badge">
         <span class="hero-badge-icon">
@@ -695,12 +682,6 @@
         </span>
         <span>対面訪問相談</span>
       </div>
-    </div>
-    <div class="hero-price-card">
-      <span class="hero-price-label">初期費用</span>
-      <span class="hero-price-num">99,000<small>円</small></span>
-      <span class="hero-price-sub">／月額9,000円〜</span>
-      <span class="hero-price-note">ホームページを丸ごとおまかせ</span>
     </div>
     <div class="hero-cta">
       <div class="cta-with-badge">
