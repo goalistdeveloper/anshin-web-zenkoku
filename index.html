@@ -268,24 +268,22 @@
   }
   .hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-grid .hero-kicker { animation: heroFadeUp .7s ease-out both .05s; }
-  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .14s; }
-  .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .24s; }
-  .hero-grid .hero-price-card { animation: heroFadeUp .7s ease-out both .34s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .46s; }
-  .hero-grid .hero-capacity { animation: heroFadeUp .7s ease-out both .56s; }
-  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .64s; }
-  .hero-kicker {
-    color: rgba(255,255,255,.85); font-size: 15px; font-weight: 700; letter-spacing: .06em;
-    margin-bottom: 14px;
-  }
-  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.4; margin-bottom: 28px; color: #fff;
+  .hero-grid h1 { animation: heroFadeUp .7s ease-out both .05s; }
+  .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .18s; }
+  .hero-grid .hero-price-card { animation: heroFadeUp .7s ease-out both .3s; }
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .42s; }
+  .hero-grid .hero-capacity { animation: heroFadeUp .7s ease-out both .52s; }
+  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .6s; }
+  h1 { font-size: clamp(34px, 5.8vw, 52px); line-height: 1.4; margin-bottom: 28px; color: #fff;
     font-weight: 900; text-shadow: 0 2px 16px rgba(0,0,0,.4); text-wrap: balance;
   }
-  h1 .em-red { color: #FF5252; text-shadow: 0 2px 16px rgba(0,0,0,.5); }
+  h1 .em-underline {
+    color: #fff; text-decoration: underline; text-decoration-color: var(--green-accent);
+    text-decoration-thickness: 5px; text-underline-offset: 8px;
+  }
   .hero-badges { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 30px; }
   .hero-badge {
-    display: flex; flex-direction: column; align-items: center; gap: 8px; width: 108px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px; width: 130px;
   }
   .hero-badge-icon {
     width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.14);
@@ -295,7 +293,7 @@
   .hero-badge span:last-child { color: #fff; font-size: 12.5px; font-weight: 700; line-height: 1.35; }
   .hero-price-card {
     display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 10px;
-    background: #fff; border-radius: 18px; padding: 18px 30px; margin-bottom: 28px;
+    background: #fff; border-radius: 18px; padding: 16px 28px; margin-bottom: 28px;
     box-shadow: 0 14px 32px rgba(0,0,0,.25);
   }
   .hero-price-label {
@@ -303,9 +301,12 @@
     padding: 5px 14px; border-radius: 999px; align-self: center;
   }
   .hero-price-num {
-    color: var(--green-deep); font-size: 52px; font-weight: 900; line-height: 1; letter-spacing: -.01em;
+    color: var(--green-deep); font-size: 36px; font-weight: 900; line-height: 1; letter-spacing: -.01em;
   }
-  .hero-price-num small { font-size: 22px; font-weight: 800; margin-left: 1px; }
+  .hero-price-num small { font-size: 17px; font-weight: 800; margin-left: 1px; }
+  .hero-price-sub {
+    color: var(--text-sub); font-size: 16px; font-weight: 800;
+  }
   .hero-price-note {
     display: block; width: 100%; color: var(--text-sub); font-size: 13.5px; font-weight: 700;
     line-height: 1.5; margin-top: 4px;
@@ -680,18 +681,13 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <p class="hero-kicker">東京23区・近郊エリア対応</p>
-    <h1>整骨院・接骨院専門、<br>ホームページも<span style="white-space:nowrap;">Googleマップ</span>も<span class="em-red" style="white-space:nowrap;">まるごとおまかせ。</span></h1>
+    <h1>整骨院・接骨院専門、<br>ホームページも<span style="white-space:nowrap;">Googleマップ</span>も<span class="em-underline" style="white-space:nowrap;">まるごとおまかせ。</span></h1>
     <div class="hero-badges">
       <div class="hero-badge">
         <span class="hero-badge-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="#fff" stroke-width="1.8"/></svg>
         </span>
-        <span>Googleマップ対策</span>
-      </div>
-      <div class="hero-badge">
-        <span class="hero-badge-icon"><img src="assets/img/icon-seikotsu-bandage.png" alt="" style="filter:brightness(0) invert(1); width:60%;"></span>
-        <span>整骨院・接骨院特化</span>
+        <span>東京23区・近郊エリア対応</span>
       </div>
       <div class="hero-badge">
         <span class="hero-badge-icon">
@@ -703,7 +699,8 @@
     <div class="hero-price-card">
       <span class="hero-price-label">初期費用</span>
       <span class="hero-price-num">99,000<small>円</small></span>
-      <span class="hero-price-note">で、ホームページもGoogleマップも<br>まるごとおまかせ</span>
+      <span class="hero-price-sub">／月額9,000円〜</span>
+      <span class="hero-price-note">ホームページを丸ごとおまかせ</span>
     </div>
     <div class="hero-cta">
       <div class="cta-with-badge">
@@ -711,10 +708,9 @@
         <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
       </div>
     </div>
-    <p class="hero-capacity">担当者が直接訪問するため、<strong>月3社限定</strong>で対応しています</p>
+    <p class="hero-capacity">担当者が丁寧に相談に乗るため、<strong>月3社限定</strong>でご対応しています</p>
     <p class="hero-micro">
-      月額9,000円〜
-      <span class="sep">｜</span><a href="tel:0343612643">☎ 03-4361-2643</a>
+      <a href="tel:0343612643">☎ 03-4361-2643</a>
     </p>
   </div>
 </div>
