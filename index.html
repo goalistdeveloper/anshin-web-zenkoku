@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】</title>
-<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京都内なら全域訪問、埼玉・神奈川・千葉など近郊エリアもまずはご相談ください。">
+<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京23区・近郊エリア対応、月3社限定で担当者が直接訪問します。">
 <meta name="robots" content="index,follow">
 <meta name="format-detection" content="telephone=no">
 <!-- [仮] 本番ドメイン確定後に置き換え -->
@@ -13,7 +13,7 @@
 <!-- OGP（FVのコピー・写真を使った専用カード。1200x630） -->
 <meta property="og:site_name" content="安診Web｜整骨院・接骨院専門のホームページ制作">
 <meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】">
-<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京都内なら全域訪問、近郊エリアもご相談ください。">
+<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京23区・近郊エリア対応、月3社限定で担当者が直接訪問します。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
 <meta property="og:image" content="assets/img/og-fv-card.jpg">
@@ -45,7 +45,7 @@
   "areaServed": {
     "@type": "State",
     "name": "東京都",
-    "description": "東京都内は全域訪問対応。埼玉県・神奈川県・千葉県など近郊エリアもご相談に応じて訪問可能です。"
+    "description": "東京23区を中心に訪問対応。埼玉県・神奈川県・千葉県など近郊エリアもご相談に応じて訪問可能です。"
   },
   "priceRange": "¥33,000〜¥99,000",
   "telephone": "+81-3-4361-2643",
@@ -81,7 +81,7 @@
     {
       "@type": "Question",
       "name": "対応エリアを教えてください",
-      "acceptedAnswer": { "@type": "Answer", "text": "東京都内なら、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "東京23区を中心に、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。" }
     },
     {
       "@type": "Question",
@@ -270,8 +270,10 @@
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-grid .hero-kicker { animation: heroFadeUp .7s ease-out both .05s; }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .16s; }
-  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .32s; }
-  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .44s; }
+  .hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .28s; }
+  .hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .4s; }
+  .hero-grid .hero-capacity { animation: heroFadeUp .7s ease-out both .5s; }
+  .hero-grid .hero-micro { animation: heroFadeUp .7s ease-out both .58s; }
   .hero-kicker {
     color: rgba(255,255,255,.85); font-size: 15px; font-weight: 700; letter-spacing: .06em;
     margin-bottom: 14px;
@@ -285,6 +287,10 @@
   }
   .hero-sub { font-size: 17px; color: rgba(255,255,255,.92); margin-bottom: 32px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
+  .hero-capacity {
+    margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.85); font-weight: 600;
+  }
+  .hero-capacity strong { color: var(--green-accent); font-weight: 800; }
   .hero-micro {
     margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,.72);
     display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; justify-content: center;
@@ -650,14 +656,16 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <p class="hero-kicker">整骨院、接骨院の先生へ</p>
-    <h1>東京都内なら、<br><span class="em">どこへでも会いに行きます。</span></h1>
+    <p class="hero-kicker">東京23区・近郊エリア対応</p>
+    <h1>整骨院・接骨院専門、<br><span class="em">ホームページもGoogleマップも、まるごとおまかせ。</span></h1>
+    <p class="hero-sub">サイト制作から日々の運用まで、新しい患者様に見つかるお店へ。</p>
     <div class="hero-cta">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
         <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
       </div>
     </div>
+    <p class="hero-capacity">担当者が直接訪問するため、<strong>月3社限定</strong>で対応しています</p>
     <p class="hero-micro">
       初期費用99,000円・月額9,000円〜
       <span class="sep">｜</span><a href="tel:0343612643">☎ 03-4361-2643</a>
@@ -775,7 +783,7 @@
       </div>
     </div>
     <div class="reason-area-banner">
-      東京都内なら、どこへでも伺います。
+      東京23区を中心に、どこへでも伺います。
       <span>埼玉・神奈川・千葉など近郊エリアの先生も、まずはお気軽にご相談ください。</span>
     </div>
   </div>
@@ -945,7 +953,7 @@
         </thead>
         <tbody>
           <tr><td>対応業界</td><td class="us">整骨院・接骨院専門</td><td>整骨院・接骨院専門の場合が多い</td><td>治療院全般を含む場合が多い</td></tr>
-          <tr><td>訪問対応</td><td class="us">東京都内は全域、近郊エリアも相談可</td><td>非対面が中心の場合が多い</td><td>対応エリアが限定的な場合がある</td></tr>
+          <tr><td>訪問対応</td><td class="us">東京23区中心、近郊エリアも相談可</td><td>非対面が中心の場合が多い</td><td>対応エリアが限定的な場合がある</td></tr>
           <tr><td>初期費用の傾向</td><td class="us">99,000円（税込）</td><td>比較的抑えめな傾向</td><td>個別見積もりが多い傾向</td></tr>
           <tr><td>接点</td><td class="us">月1回訪問・同じ担当者が継続対応</td><td>オンライン中心の場合が多い</td><td>体制が大きく分業対応の場合がある</td></tr>
           <tr><td>実務代行</td><td class="us">撮影・投稿・口コミ返信まで丸ごと</td><td>更新のみのプランが多い</td><td>制作・取材込みのプランが多い</td></tr>
@@ -979,7 +987,7 @@
     <div class="faq-list">
       <details>
         <summary>対応エリアを教えてください</summary>
-        <p class="faq-a">東京都内なら、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。</p>
+        <p class="faq-a">東京23区を中心に、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。</p>
       </details>
       <details>
         <summary>今、他社のHP/MEO運用サービスと契約中ですが相談できますか？</summary>
@@ -1014,7 +1022,7 @@
   <div class="inner">
     <span class="sec-label" style="background:transparent;color:#fff;border-color:#fff;">CONTACT</span>
     <h2>まずは、無料相談から。</h2>
-    <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。しつこい営業は一切いたしません。<br>担当者が直接訪問する形でお付き合いするため、同時にご案内できる院数には限りがございます。</p>
+    <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。しつこい営業は一切いたしません。<br>担当者が直接訪問する形でお付き合いするため、<strong>月3社限定</strong>でのご案内となります。</p>
     <div class="contact-grid">
       <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【無料相談】お問い合わせがありました">
