@@ -255,7 +255,7 @@
     h1 { font-size: 7.6vw; }
   }
   .hero-bg-video {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% 32%;
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 95% 28%;
     opacity: 0; transform: scale(1.08);
     animation: heroBgReveal 1.8s ease-out both .1s;
   }
@@ -266,15 +266,18 @@
   @media (prefers-reduced-motion: reduce) { .hero-bg-video { animation: none; opacity: 1; transform: scale(1); } }
   .hero-bg-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(100deg, rgba(11,43,30,.95) 0%, rgba(11,43,30,.88) 32%, rgba(11,43,30,.4) 52%, rgba(11,43,30,0) 68%);
+    background: linear-gradient(100deg, rgba(11,43,30,.95) 0%, rgba(11,43,30,.9) 46%, rgba(11,43,30,.15) 56%, rgba(11,43,30,0) 61%);
   }
   @media (max-width: 860px) {
     .hero-bg-overlay {
       background: linear-gradient(180deg, rgba(11,43,30,.55) 0%, rgba(11,43,30,.35) 45%, rgba(11,43,30,.68) 100%);
     }
   }
-  .hero-grid { position: relative; z-index: 2; max-width: 720px; margin: 0; text-align: left; animation: heroFadeUp .9s ease-out both; }
-  @media (max-width: 860px) { .hero-grid { max-width: 100%; margin: 0 auto; text-align: center; } }
+  .hero-grid {
+    position: relative; z-index: 2; max-width: 720px; margin: 0; text-align: left; animation: heroFadeUp .9s ease-out both;
+    padding-left: 80px;
+  }
+  @media (max-width: 860px) { .hero-grid { max-width: 100%; margin: 0 auto; text-align: center; padding-left: 0; } }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .05s; }
   .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .2s; }
@@ -289,6 +292,8 @@
     color: #fff; text-decoration: underline; text-decoration-color: var(--green-accent);
     text-decoration-thickness: 5px; text-underline-offset: 8px;
   }
+  h1 .h1-lg { font-size: 1.18em; }
+  h1 .h1-sm { font-size: 0.66em; font-weight: 800; }
   .hero-badges { display: flex; flex-wrap: wrap; gap: 18px; justify-content: flex-start; margin-bottom: 32px; }
   @media (max-width: 860px) { .hero-badges { justify-content: center; } }
   .hero-badge {
@@ -303,6 +308,7 @@
   .hero-badge span:last-child { color: #fff; font-size: 13.5px; font-weight: 800; line-height: 1.35; }
   .hero-badge-label { white-space: nowrap; }
   .hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: flex-start; position: relative; }
+  .hero-cta-center { justify-content: center; }
   @media (max-width: 860px) { .hero-cta { justify-content: center; } }
   .hero-capacity {
     margin-top: 20px; font-size: 14px; color: rgba(255,255,255,.85); font-weight: 600;
@@ -673,7 +679,7 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <h1><span style="white-space:nowrap;">整骨院・接骨院専門、</span><br>ホームページも<span style="white-space:nowrap;">Googleマップ</span>も<span class="em-underline" style="white-space:nowrap;">まるごとおまかせ。</span></h1>
+    <h1><span class="h1-lg" style="white-space:nowrap;">整骨院・接骨院専門、</span><br><span class="h1-sm">ホームページも<span style="white-space:nowrap;">Googleマップ</span>も</span><span class="h1-lg em-underline" style="white-space:nowrap;">まるごとおまかせ。</span></h1>
     <div class="hero-badges">
       <div class="hero-badge">
         <span class="hero-badge-icon">
@@ -694,7 +700,7 @@
         <span>対面訪問相談</span>
       </div>
     </div>
-    <div class="hero-cta">
+    <div class="hero-cta hero-cta-center">
       <div class="cta-with-badge">
         <span class="cta-badge">1分で簡単入力</span>
         <a href="#contact" class="btn btn-cta btn-cta-hero">
@@ -702,7 +708,7 @@
         </a>
       </div>
     </div>
-    <p class="hero-capacity">※担当者が丁寧に相談に乗るため、<strong>先着月3社限定</strong>でご対応します</p>
+    <p class="hero-capacity" style="text-align:center;">※担当者が丁寧に相談に乗るため、<strong>先着月3社限定</strong>でご対応します</p>
   </div>
 </div>
 
@@ -784,7 +790,6 @@
       <h3>なぜ、<span class="em" style="color:var(--green-deep);">「人」</span>にこだわるのか。</h3>
       <p>正直に言うと、価格の安さだけで比べれば、もっと安いサービスは他にもあります。それでも安診Webを選んでいただいているのは、担当者が直接お会いする「距離の近さ」があるからです。</p>
     </div>
-    <div class="ph" style="aspect-ratio:21/9; margin:32px 0;">ここに写真を入れる（例：担当者が院を訪問し、院長と話している様子）</div>
     <div class="reason-grid">
       <div class="reason-card">
         <div class="reason-num">01</div>
