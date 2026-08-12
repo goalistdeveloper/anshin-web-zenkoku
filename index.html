@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】</title>
-<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京23区・近郊エリア対応、月3社限定で担当者が直接訪問します。">
+<title>安診Web｜整骨院・接骨院専門のホームページ制作＋Googleマップ集客対策</title>
+<meta name="description" content="整骨院・接骨院専門のホームページ制作。2026年7月の療養費改定をきっかけに、自費メニュー対応とその先の集客まで担当者が直接サポートします。初期費用99,000円〜、東京23区・近郊エリア対応、月3社限定。">
 <meta name="robots" content="index,follow">
 <meta name="format-detection" content="telephone=no">
 <!-- [仮] 本番ドメイン確定後に置き換え -->
@@ -12,8 +12,8 @@
 
 <!-- OGP（FVのコピー・写真を使った専用カード。1200x630） -->
 <meta property="og:site_name" content="安診Web｜整骨院・接骨院専門のホームページ制作">
-<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【担当者が直接お伺いします】">
-<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京23区・近郊エリア対応、月3社限定で担当者が直接訪問します。">
+<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作＋Googleマップ集客対策">
+<meta property="og:description" content="2026年7月の療養費改定をきっかけに、自費メニュー対応とその先の集客まで担当者が直接サポート。初期99,000円〜、東京23区・近郊エリア対応、月3社限定。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
 <meta property="og:image" content="assets/img/og-fv-card.jpg">
@@ -539,16 +539,24 @@
   }
 
   /* ---------- S6 実績・声 ---------- */
-  .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 12px; max-width: 560px; margin-left: auto; margin-right: auto; }
-  @media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } }
-  .kpi-tile {
-    background: #fff; border: 2px solid #FFECEC; border-radius: 14px; padding: 22px 14px; text-align: center;
-    box-shadow: 0 4px 14px rgba(31,122,85,.08);
+  .kpi-panel {
+    background: #fff; border-radius: var(--radius); padding: 32px 36px 20px; max-width: 640px; margin: 0 auto 12px;
+    box-shadow: 0 8px 24px rgba(31,122,85,.1);
   }
+  .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } }
+  .kpi-tile { text-align: center; padding: 0 12px; position: relative; }
+  .kpi-tile:first-child::after {
+    content: ""; position: absolute; top: 4px; right: 0; bottom: 4px; width: 1px; background: var(--green-line);
+  }
+  @media (max-width: 640px) { .kpi-tile:first-child::after { display: none; } }
   .kpi-num { color: var(--red-accent); font-weight: 900; font-size: 40px; line-height: 1; }
   .kpi-num small { font-size: 16px; font-weight: 800; margin-left: 2px; }
   .kpi-label { font-size: 13px; color: var(--text-sub); font-weight: 700; margin-top: 8px; }
-  .kpi-note { font-size: 12.5px; color: var(--text-sub); margin-bottom: 8px; }
+  .kpi-note {
+    font-size: 12px; color: var(--text-sub); margin-top: 18px; padding-top: 14px;
+    border-top: 1px solid var(--green-line); text-align: left;
+  }
   .sec-sample {
     background: var(--green-pale);
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
@@ -853,7 +861,7 @@
         <span class="hero-badge-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18l5-6 4 3 7-9" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
-        <span>導入院 月平均+2.3件</span>
+        <span>導入院の予約、月平均+2.3件</span>
       </div>
     </div>
     <div class="hero-price-reveal">
@@ -958,12 +966,12 @@
     <div class="why-wrap">
       <div class="why-photo"><img loading="lazy" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="ホームページで自費メニューを説明している様子"></div>
       <ul class="why-list">
-        <li><span class="why-check">✓</span>スマホで見た瞬間に、自費メニューの魅力が伝わるから</li>
+        <li><span class="why-check">✓</span>スマホで見た瞬間に「相談してみたい」と思われる、集客に強いホームページだから</li>
         <li><span class="why-check">✓</span>指名検索だけでなく、「地域名＋整骨院」の検索でも見つかるようになるから</li>
         <li><span class="why-check">✓</span>投稿・口コミへの返信で、「ちゃんとやっている院」だと伝わるから</li>
       </ul>
     </div>
-    <p class="why-close">この3つがそろって、はじめて自費メニューは「知ってもらえる」ようになります。</p>
+    <p class="why-close">この3つがそろって、はじめて安定した集客につながります。</p>
   </div>
 </section>
 
@@ -1026,11 +1034,13 @@
     <span class="sec-label">SAMPLE</span>
     <p class="lead center" style="margin-top:0;">同じお悩みを持っていた院長先生も、<span class="em">Googleマップ経由の来院</span>を増やしています。</p>
     <h2>数字で見る、<span class="em">安診Webの実績</span></h2>
-    <div class="kpi-grid">
-      <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div></div>
-      <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
+    <div class="kpi-panel">
+      <div class="kpi-grid">
+        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div></div>
+        <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
+      </div>
+      <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
     </div>
-    <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
     <h2 style="margin-top:56px;">院の皆様から<span class="em">寄せられた声</span></h2>
     <div class="voice-grid">
       <div class="voice-card">
@@ -1237,7 +1247,7 @@
     <h2>さあ、<span class="em">動き出すなら今</span>です。</h2>
     <p class="lead">自費メニューへの切り替えは、多くの院が同じタイミングで進めています。<br>「知ってもらう」準備が早い院ほど、地域で選ばれやすくなります。</p>
     <div class="urgency-note">
-      <p>担当者が一院ずつ丁寧に対応するため、<strong>ご案内は月3社限定</strong>とさせていただいております。</p>
+      <p><strong>無料相談は月3社限定</strong>。担当者が一院ずつ丁寧に対応するためです。</p>
     </div>
   </div>
 </section>
@@ -1247,7 +1257,7 @@
   <div class="inner">
     <div class="final-cta-card">
       <p class="final-cta-badge">ホームページ ＋ Googleマップ対策</p>
-      <h2 class="final-cta-heading">まずは、<span class="em-underline2">無料相談</span>から<br>始められます。</h2>
+      <h2 class="final-cta-heading">その先の<span class="em-underline2">「集客」</span>、<br>ここから始めませんか？</h2>
       <ul class="final-cta-bullets">
         <li>初期費用 99,000円〜／月額9,000円〜（税込）</li>
         <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
