@@ -460,6 +460,17 @@
     text-decoration-color: var(--red-accent);
   }
 
+  /* ---------- S2.4 安診Webのサービス紹介（再掲） ---------- */
+  .sec-service-recap { background: var(--green-pale); }
+  .service-recap-eyebrow { font-size: 14px; font-weight: 800; color: var(--green-deep); margin-bottom: 10px; }
+  .service-recap-icons { display: flex; justify-content: center; gap: 56px; margin-top: 36px; flex-wrap: wrap; }
+  .service-recap-icon {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    font-size: 15px; font-weight: 800; color: var(--text-main);
+  }
+  .service-recap-icon .ts-icon { width: 56px; height: 56px; font-size: 24px; }
+  @media (max-width: 640px) { .service-recap-icons { gap: 32px; } }
+
   /* ---------- S3 担当者・理念 ---------- */
   .sec-about { background: var(--green-pale); }
   .staff-grid { display: grid; grid-template-columns: 380px 1fr; gap: 44px; align-items: center; }
@@ -540,23 +551,25 @@
 
   /* ---------- S6 実績・声 ---------- */
   .kpi-panel {
-    background: #fff; border-radius: var(--radius); padding: 32px 36px 20px; max-width: 640px; margin: 0 auto 12px;
+    background: #fff; border-radius: var(--radius); padding: 36px 40px 22px; margin-bottom: 12px;
     box-shadow: 0 8px 24px rgba(31,122,85,.1);
   }
-  .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } }
-  .kpi-tile { text-align: center; padding: 0 12px; position: relative; }
-  .kpi-tile:first-child::after {
-    content: ""; position: absolute; top: 4px; right: 0; bottom: 4px; width: 1px; background: var(--green-line);
+  .kpi-grid { display: flex; justify-content: center; flex-wrap: wrap; }
+  .kpi-tile { text-align: center; padding: 0 48px; }
+  .kpi-tile:first-child { border-right: 1px solid var(--green-line); }
+  @media (max-width: 640px) {
+    .kpi-grid { flex-direction: column; align-items: center; gap: 20px; }
+    .kpi-tile { padding: 0; }
+    .kpi-tile:first-child { border-right: none; border-bottom: 1px solid var(--green-line); padding-bottom: 20px; }
   }
-  @media (max-width: 640px) { .kpi-tile:first-child::after { display: none; } }
   .kpi-num { color: var(--red-accent); font-weight: 900; font-size: 40px; line-height: 1; }
   .kpi-num small { font-size: 16px; font-weight: 800; margin-left: 2px; }
-  .kpi-label { font-size: 13px; color: var(--text-sub); font-weight: 700; margin-top: 8px; }
+  .kpi-label { font-size: 13px; color: var(--text-sub); font-weight: 700; margin-top: 8px; white-space: nowrap; }
   .kpi-note {
     font-size: 12px; color: var(--text-sub); margin-top: 18px; padding-top: 14px;
     border-top: 1px solid var(--green-line); text-align: left;
   }
+  @media (max-width: 900px) { .kpi-label { white-space: normal; } }
   .sec-sample {
     background: var(--green-pale);
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
@@ -865,7 +878,7 @@
       </div>
     </div>
     <div class="hero-price-reveal">
-      <span class="hero-price-reveal-tag">ホームページプラン　まずは</span>
+      <span class="hero-price-reveal-tag">ホームページプラン</span>
       <span class="hero-price-reveal-num">初期費用 99,000<small>円</small></span>
       <span class="hero-price-reveal-sub">／月額9,000円〜（税込）</span>
     </div>
@@ -955,6 +968,18 @@
       </div>
     </div>
     <p class="problem-close">お任せください。<br>「保険料改定でどうしよう」という先生に<span class="em problem-em-red">ピッタリの進め方</span>があります。</p>
+  </div>
+</section>
+
+<!-- S2.4 安診Webのサービス紹介（再掲） -->
+<section class="sec-service-recap">
+  <div class="inner">
+    <p class="service-recap-eyebrow center">安診Webがご提供するのは</p>
+    <h2 class="center">「ホームページ制作」と<br>「Googleマップ運用」の2つです。</h2>
+    <div class="service-recap-icons">
+      <div class="service-recap-icon"><span class="ts-icon">🌐</span>ホームページ制作</div>
+      <div class="service-recap-icon"><span class="ts-icon">📍</span>Googleマップ運用</div>
+    </div>
   </div>
 </section>
 
@@ -1257,7 +1282,7 @@
   <div class="inner">
     <div class="final-cta-card">
       <p class="final-cta-badge">ホームページ ＋ Googleマップ対策</p>
-      <h2 class="final-cta-heading">その先の<span class="em-underline2">「集客」</span>、<br>ここから始めませんか？</h2>
+      <h2 class="final-cta-heading">自費メニュー対応の<span class="em-underline2">その先の集客</span>、<br>ここから始めませんか？</h2>
       <ul class="final-cta-bullets">
         <li>初期費用 99,000円〜／月額9,000円〜（税込）</li>
         <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
