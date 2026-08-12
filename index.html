@@ -263,7 +263,7 @@
 
   /* ---------- S1 ファーストビュー（左テキスト・右写真） ---------- */
   .hero {
-    position: relative; overflow: hidden; padding: 48px 0 40px; background: #0F3C2A;
+    position: relative; overflow: hidden; padding: 48px 0 96px; background: #0F3C2A;
     min-height: 620px; display: flex; align-items: center;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     margin-bottom: -80px;
@@ -379,11 +379,6 @@
   .plan-combo-photo img { width: 100%; height: 100%; object-fit: cover; }
   .plan-combo-box h3 { font-size: 17px; margin-bottom: 6px; }
   .plan-combo-box p { font-size: 13.5px; color: var(--text-sub); }
-  .plan-combo-and { font-size: 18px; font-weight: 900; color: var(--green-deep); }
-  .doubt-bridge {
-    background: var(--green-pale); text-align: center; padding: 32px 20px; font-size: clamp(18px, 3vw, 24px);
-    font-weight: 800; color: var(--text-main);
-  }
   .sec-why { background: #fff; }
   .why-wrap { display: flex; gap: 40px; align-items: center; margin-top: 36px; flex-wrap: wrap; }
   .why-photo { flex: 1 1 320px; border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 24px rgba(31,122,85,.15); }
@@ -690,14 +685,17 @@
   .sec-urgency h2 { color: #fff; text-wrap: balance; }
   .sec-urgency h2 .em { color: var(--green-accent); }
   .urgency-eyebrow {
-    font-size: 14px; font-weight: 800; letter-spacing: .04em; color: var(--green-accent); margin-bottom: 10px;
+    font-size: 14px; font-weight: 800; letter-spacing: .04em; color: rgba(255,255,255,.85); margin-bottom: 10px;
   }
   .sec-urgency .lead { color: rgba(255,255,255,.88); max-width: 620px; margin: 0 auto; }
   .urgency-note {
     margin: 26px auto 0; display: inline-block; background: rgba(255,255,255,.1);
     border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 12px 26px; font-size: 15px;
   }
-  .urgency-note strong { color: var(--green-accent); }
+  .urgency-note strong {
+    color: #fff; text-decoration: underline; text-decoration-color: var(--green-accent);
+    text-decoration-thickness: 3px; text-underline-offset: 3px;
+  }
 
   /* ---------- S10.7 最終CTAカード ---------- */
   .sec-final-cta { background: var(--green-pale); }
@@ -708,7 +706,7 @@
   }
   .final-cta-badge {
     display: inline-block; background: rgba(255,255,255,.15); border-radius: 999px;
-    padding: 6px 20px; font-size: 13px; font-weight: 800; margin-bottom: 18px; color: var(--green-accent);
+    padding: 6px 20px; font-size: 13px; font-weight: 800; margin-bottom: 18px; color: #fff;
   }
   .final-cta-heading { color: #fff; font-size: clamp(24px, 4vw, 34px); font-weight: 900; line-height: 1.55; text-wrap: balance; }
   .final-cta-heading .em-underline2 {
@@ -836,7 +834,7 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
-    <p class="hero-kicker">自費メニューに変えるだけでは、新しい患者さんは増えません。</p>
+    <p class="hero-kicker">2026年7月の療養費改定。自費メニューへの対応、その先の「集客」まで考えていますか？</p>
     <h1><span class="h1-lg" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページ制作会社です。</span></h1>
     <p class="hero-sub" style="color:#fff; font-size:17px; font-weight:700; margin:16px 0 0;">ホームページ制作からGoogleマップ運用まで、担当者が直接お伺いしてサポートします。</p>
     <div class="hero-badges" style="margin-top:28px;">
@@ -884,7 +882,6 @@
         <h3>ホームページ制作</h3>
         <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
       </div>
-      <div class="plan-combo-and">と</div>
       <div class="plan-combo-box">
         <div class="plan-combo-photo"><img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="Googleマップ運用"></div>
         <h3>Googleマップ運用</h3>
@@ -910,17 +907,14 @@
   </div>
 </section>
 
-<!-- 疑問ブリッジ -->
-<p class="doubt-bridge">それでも、<span class="em-red">本当に集客効率は変わるの…？</span></p>
-
 <!-- S2 問題提起 -->
 <section class="sec-problem" id="problem">
   <div class="inner">
+    <p class="lead center" style="margin-bottom:22px;">2026年7月の療養費改定をきっかけに、自費メニューへの切り替えを進める先生が増えています。</p>
     <div class="alert-bubble">
       <p class="alert-shout">こんなお悩みありませんか？</p>
       <h2 class="problem-heading">自費メニューに変えただけでは、<br><span class="underline">正直、<span style="white-space:nowrap;">集客は増えません。</span></span></h2>
     </div>
-    <p class="lead" style="margin-top:36px; text-align:center;">2026年7月の療養費改定をきっかけに動き出した先生ほど、そう感じています。</p>
     <div class="problem-grid">
       <div class="problem-card">
         <span class="no">✕ 問題 1</span>
