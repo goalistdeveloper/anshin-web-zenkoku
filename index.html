@@ -460,17 +460,6 @@
     text-decoration-color: var(--red-accent);
   }
 
-  /* ---------- S2.4 安診Webのサービス紹介（再掲） ---------- */
-  .sec-service-recap { background: var(--green-pale); }
-  .service-recap-eyebrow { font-size: 14px; font-weight: 800; color: var(--green-deep); margin-bottom: 10px; }
-  .service-recap-icons { display: flex; justify-content: center; gap: 56px; margin-top: 36px; flex-wrap: wrap; }
-  .service-recap-icon {
-    display: flex; flex-direction: column; align-items: center; gap: 12px;
-    font-size: 15px; font-weight: 800; color: var(--text-main);
-  }
-  .service-recap-icon .ts-icon { width: 56px; height: 56px; font-size: 24px; }
-  @media (max-width: 640px) { .service-recap-icons { gap: 32px; } }
-
   /* ---------- S3 担当者・理念 ---------- */
   .sec-about { background: var(--green-pale); }
   .staff-grid { display: grid; grid-template-columns: 380px 1fr; gap: 44px; align-items: center; }
@@ -554,13 +543,16 @@
     background: #fff; border-radius: var(--radius); padding: 36px 40px 22px; margin-bottom: 12px;
     box-shadow: 0 8px 24px rgba(31,122,85,.1);
   }
-  .kpi-grid { display: flex; justify-content: center; flex-wrap: wrap; }
-  .kpi-tile { text-align: center; padding: 0 48px; }
-  .kpi-tile:first-child { border-right: 1px solid var(--green-line); }
+  .kpi-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .kpi-tile { text-align: center; padding: 0 48px; position: relative; }
+  .kpi-tile:first-child::after {
+    content: ""; position: absolute; top: -22px; bottom: -22px; right: 0; width: 1px; background: var(--green-line);
+  }
   @media (max-width: 640px) {
     .kpi-grid { flex-direction: column; align-items: center; gap: 20px; }
     .kpi-tile { padding: 0; }
-    .kpi-tile:first-child { border-right: none; border-bottom: 1px solid var(--green-line); padding-bottom: 20px; }
+    .kpi-tile:first-child::after { display: none; }
+    .kpi-tile:first-child { border-bottom: 1px solid var(--green-line); padding-bottom: 20px; }
   }
   .kpi-num { color: var(--red-accent); font-weight: 900; font-size: 40px; line-height: 1; }
   .kpi-num small { font-size: 16px; font-weight: 800; margin-left: 2px; }
@@ -708,14 +700,6 @@
     font-size: 14px; font-weight: 800; letter-spacing: .04em; color: rgba(255,255,255,.85); margin-bottom: 10px;
   }
   .sec-urgency .lead { color: rgba(255,255,255,.88); max-width: 620px; margin: 0 auto; }
-  .urgency-note {
-    margin: 26px auto 0; display: inline-block; background: rgba(255,255,255,.1);
-    border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 12px 26px; font-size: 15px;
-  }
-  .urgency-note strong {
-    color: #fff; text-decoration: underline; text-decoration-color: var(--green-accent);
-    text-decoration-thickness: 3px; text-underline-offset: 3px;
-  }
 
   /* ---------- S10.7 最終CTAカード ---------- */
   .sec-final-cta { background: var(--green-pale); }
@@ -856,7 +840,7 @@
   <div class="inner hero-grid">
     <p class="hero-kicker">2026年7月の療養費改定。<br>自費メニュー対応、その先の「集客」まで考えていますか？</p>
     <h1><span class="h1-lg" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページ制作会社です。</span></h1>
-    <p class="hero-sub" style="color:#fff; font-size:17px; font-weight:700; margin:16px 0 0;">その集客まで、ホームページ制作とGoogleマップ運用で担当者が直接お伺いしてサポートします。</p>
+    <p class="hero-sub" style="color:#fff; font-size:17px; font-weight:700; margin:16px 0 0;">集客まで、ホームページ制作とGoogleマップ運用で担当者が直接お伺いしてサポートします。</p>
     <div class="hero-badges" style="margin-top:28px;">
       <div class="hero-badge">
         <span class="hero-badge-icon">
@@ -971,14 +955,38 @@
   </div>
 </section>
 
-<!-- S2.4 安診Webのサービス紹介（再掲） -->
-<section class="sec-service-recap">
+<!-- S2.4 プラン紹介（再掲） -->
+<section class="sec-plan">
   <div class="inner">
-    <p class="service-recap-eyebrow center">安診Webがご提供するのは</p>
-    <h2 class="center">「ホームページ制作」と<br>「Googleマップ運用」の2つです。</h2>
-    <div class="service-recap-icons">
-      <div class="service-recap-icon"><span class="ts-icon">🌐</span>ホームページ制作</div>
-      <div class="service-recap-icon"><span class="ts-icon">📍</span>Googleマップ運用</div>
+    <p class="plan-eyebrow center">整骨院・接骨院専門だから、どちらも安心してお任せいただけます</p>
+    <h2 class="center">「ホームページ」も「Googleマップ」も、<br>どちらも集客には大事です。</h2>
+    <div class="plan-combo">
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="ホームページ制作"></div>
+        <h3>ホームページ制作</h3>
+        <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
+      </div>
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="Googleマップ運用"></div>
+        <h3>Googleマップ運用</h3>
+        <p>投稿・口コミ返信までまるごと代行</p>
+      </div>
+    </div>
+    <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
+    <div class="plan-price-row">
+      <div class="plan-price-card">
+        <span class="plan-price-tag">ホームページプラン</span>
+        <span class="plan-price-num">初期99,000<small>円</small></span>
+        <span class="plan-price-sub">月額9,000円〜（税込）</span>
+      </div>
+      <div class="plan-price-card">
+        <span class="plan-price-tag">Googleマップ対策プラン</span>
+        <span class="plan-price-num">初期33,000<small>円</small></span>
+        <span class="plan-price-sub">月額11,000円〜（税込）</span>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px;">
+      <a href="#contact" class="btn btn-cta">無料相談する</a>
     </div>
   </div>
 </section>
@@ -1271,9 +1279,6 @@
     <p class="urgency-eyebrow">2026年7月の療養費改定 対応中の今だからこそ</p>
     <h2>さあ、<span class="em">動き出すなら今</span>です。</h2>
     <p class="lead">自費メニューへの切り替えは、多くの院が同じタイミングで進めています。<br>「知ってもらう」準備が早い院ほど、地域で選ばれやすくなります。</p>
-    <div class="urgency-note">
-      <p><strong>無料相談は月3社限定</strong>。担当者が一院ずつ丁寧に対応するためです。</p>
-    </div>
   </div>
 </section>
 
