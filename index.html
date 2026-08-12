@@ -242,20 +242,40 @@
     nav.gnav .btn-cta { display: none; }
   }
 
-  .trust-strip { background: var(--cta-orange); padding: 9px 0; overflow-x: auto; }
+  .trust-strip { background: var(--green-deep); padding: 14px 0; overflow-x: auto; }
   .trust-strip-inner {
-    display: flex; gap: 10px; justify-content: center; align-items: center;
-    color: #3D2200; font-size: 13.5px; font-weight: 700; white-space: nowrap;
+    display: flex; gap: 22px; justify-content: center; align-items: center; flex-wrap: nowrap;
   }
-  .trust-strip-inner strong { font-weight: 900; font-size: 15px; }
-  .trust-strip-inner .sep { opacity: .5; }
-  @media (max-width: 640px) { .trust-strip-inner { justify-content: flex-start; overflow-x: auto; } }
+  .ts-item {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: #fff; font-size: 11.5px; font-weight: 700; white-space: nowrap;
+  }
+  .ts-icon {
+    width: 40px; height: 40px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+  }
+  @media (max-width: 640px) { .trust-strip-inner { justify-content: flex-start; } }
 
   /* ---------- S1 ファーストビュー（左テキスト・右写真） ---------- */
   .hero {
-    position: relative; overflow: hidden; padding: 48px 0 40px; background: #0F3C2A;
+    position: relative; overflow: hidden; padding: 48px 0 80px; background: #0F3C2A;
     min-height: 620px; display: flex; align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
+  @media (max-width: 860px) { .hero { clip-path: none; padding: 40px 0 32px; } }
+  .hero-callout {
+    position: absolute; z-index: 3; background: #fff; color: var(--green-deep);
+    font-size: 13px; font-weight: 800; padding: 10px 16px; border-radius: 999px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.25);
+  }
+  .hero-callout::after {
+    content: ""; position: absolute; left: 22px; bottom: -7px; width: 0; height: 0;
+    border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid #fff;
+  }
+  .hero-callout-1 { top: 90px; right: 60px; transform: rotate(-4deg); }
+  .hero-callout-2 { top: 200px; right: 10px; transform: rotate(3deg); }
+  @media (max-width: 860px) { .hero-callout { display: none; } }
   @media (max-width: 860px) {
     .hero { padding: 40px 0 32px; min-height: 0; }
     .hero-cta { gap: 12px; }
@@ -354,6 +374,31 @@
     display: flex; align-items: center; justify-content: center; text-align: center;
     color: var(--green-deep); font-size: 13px; font-weight: 700; padding: 12px;
   }
+
+  /* ---------- S1.5 プラン紹介 ---------- */
+  .sec-plan { background: var(--green-pale); padding-top: 88px; }
+  .plan-eyebrow { color: var(--green-deep); font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+  .center { text-align: center; }
+  .plan-combo { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 36px; flex-wrap: wrap; }
+  .plan-combo-box {
+    background: #fff; border-radius: var(--radius); padding: 20px; width: 280px; text-align: center;
+    box-shadow: 0 8px 20px rgba(31,122,85,.12);
+  }
+  .plan-combo-photo { border-radius: 10px; overflow: hidden; margin-bottom: 12px; aspect-ratio: 4/3; }
+  .plan-combo-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .plan-combo-box h3 { font-size: 17px; margin-bottom: 6px; }
+  .plan-combo-box p { font-size: 13.5px; color: var(--text-sub); }
+  .plan-combo-x { font-size: 40px; font-weight: 900; color: var(--green-deep); }
+  .plan-combo-note { text-align: center; font-size: 12.5px; color: var(--text-sub); margin-top: 14px; }
+  .plan-price-row { display: flex; gap: 20px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+  .plan-price-card {
+    background: var(--green-deep); color: #fff; border-radius: var(--radius); padding: 20px 30px;
+    text-align: center; box-shadow: 0 10px 24px rgba(0,0,0,.18); min-width: 240px;
+  }
+  .plan-price-tag { display: block; font-size: 13px; font-weight: 800; opacity: .9; margin-bottom: 6px; }
+  .plan-price-num { font-size: 28px; font-weight: 900; }
+  .plan-price-num small { font-size: 15px; margin-left: 1px; }
+  .plan-price-sub { display: block; font-size: 13px; font-weight: 700; margin-top: 4px; opacity: .9; }
 
   /* ---------- S2 問題提起 ---------- */
   .sec-problem { background: #FFF1F1; padding-top: 40px; }
@@ -718,11 +763,12 @@
 
 <div class="trust-strip">
   <div class="inner trust-strip-inner">
-    <span>導入院数 <strong>17院</strong></span>
-    <span class="sep">｜</span>
-    <span>Googleマップ経由 月平均 <strong>+2.3件</strong></span>
-    <span class="sep">｜</span>
-    <span>クチコミ平均 <strong>4.7★</strong></span>
+    <div class="ts-item"><span class="ts-icon">🌐</span>ホームページ制作</div>
+    <div class="ts-item"><span class="ts-icon">📍</span>Googleマップ対策</div>
+    <div class="ts-item"><span class="ts-icon">📷</span>写真撮影代行</div>
+    <div class="ts-item"><span class="ts-icon">💬</span>クチコミ返信代行</div>
+    <div class="ts-item"><span class="ts-icon">📊</span>月次レポート</div>
+    <div class="ts-item"><span class="ts-icon">🤝</span>対面訪問サポート</div>
   </div>
 </div>
 
@@ -730,8 +776,10 @@
 <div class="hero">
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
+  <span class="hero-callout hero-callout-1">初めてでも大丈夫！</span>
+  <span class="hero-callout hero-callout-2">実際の画面はこちら→</span>
   <div class="inner hero-grid">
-    <p class="hero-kicker">2026年7月の療養費改定、対応で終わっていませんか？</p>
+    <p class="hero-kicker">2026年7月の療養費改定、対応するだけで終わっていませんか？</p>
     <h1><span class="h1-lg" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span><span class="h1-sm">のホームページ制作会社です。</span></h1>
     <p class="hero-sub" style="color:#fff; font-size:17px; font-weight:700; margin:16px 0 0;">ホームページ制作からGoogleマップ運用まで、担当者が直接お伺いしてサポートします。</p>
     <div class="hero-badges">
@@ -772,6 +820,43 @@
     </div>
   </div>
 </div>
+
+<!-- S1.5 プラン紹介（A×B＋価格リビール） -->
+<section class="sec-plan">
+  <div class="inner">
+    <p class="plan-eyebrow center">整骨院・接骨院専門だから、まとめてお任せいただけます</p>
+    <h2 class="center">Web集客に必要なものが<br>まとめて揃うプラン</h2>
+    <div class="plan-combo">
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="ホームページ制作"></div>
+        <h3>ホームページ制作</h3>
+        <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
+      </div>
+      <div class="plan-combo-x">×</div>
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="Googleマップ運用"></div>
+        <h3>Googleマップ運用</h3>
+        <p>投稿・口コミ返信までまるごと代行</p>
+      </div>
+    </div>
+    <p class="plan-combo-note">※2つは別プランです。まずはどちらかだけご相談いただくことも可能です。</p>
+    <div class="plan-price-row">
+      <div class="plan-price-card">
+        <span class="plan-price-tag">ホームページプラン</span>
+        <span class="plan-price-num">初期99,000<small>円</small></span>
+        <span class="plan-price-sub">月額9,000円〜（税込）</span>
+      </div>
+      <div class="plan-price-card">
+        <span class="plan-price-tag">Googleマップ対策プラン</span>
+        <span class="plan-price-num">初期33,000<small>円</small></span>
+        <span class="plan-price-sub">月額11,000円〜（税込）</span>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px;">
+      <a href="#contact" class="btn btn-cta">無料相談する</a>
+    </div>
+  </div>
+</section>
 
 <!-- S2 問題提起 -->
 <section class="sec-problem" id="problem">
