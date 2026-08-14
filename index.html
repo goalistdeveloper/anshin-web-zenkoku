@@ -275,7 +275,7 @@
     h1 { font-size: 7.6vw; }
   }
   .hero-bg-video {
-    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 90% 40%;
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% 45%;
     opacity: 0; transform: scale(1.08);
     animation: heroBgReveal 1.8s ease-out both .1s;
   }
@@ -379,12 +379,18 @@
   .plan-combo-photo img { width: 100%; height: 100%; object-fit: cover; }
   .plan-combo-box h3 { font-size: 17px; margin-bottom: 6px; }
   .plan-combo-box p { font-size: 13.5px; color: var(--text-sub); }
-  /* ---------- S2.4 広告の前に、まず土台を ---------- */
-  .sec-foundation { background: var(--green-pale); }
-  .foundation-eyebrow {
-    display: inline-block; background: var(--red-accent); color: #fff; font-size: 14px; font-weight: 900;
-    padding: 6px 22px; border-radius: 999px; margin-bottom: 16px;
+  /* ---------- S1.6 広告の前に、まず土台を ---------- */
+  .sec-foundation { background: var(--green-pale); padding-top: 0; }
+  .foundation-slash-wrap {
+    background: var(--red-accent); padding: 40px 0 52px; margin-bottom: -24px;
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+    box-shadow: 0 8px 24px rgba(200,30,30,.25);
   }
+  .foundation-slash {
+    color: #fff; font-weight: 900; text-align: center; letter-spacing: .02em;
+    font-size: clamp(34px, 6vw, 62px); text-shadow: 0 4px 14px rgba(0,0,0,.2);
+  }
+  .sec-foundation h2 { margin-top: 28px; }
   .sec-foundation h2 .em {
     color: var(--green-deep);
     background: linear-gradient(180deg, transparent 58%, rgba(61,187,126,.4) 58%);
@@ -398,8 +404,26 @@
   .foundation-stat-num { font-size: 19px; font-weight: 800; line-height: 1.7; }
   .foundation-stat-num .em-hl { color: var(--cta-orange); font-size: 1.35em; font-weight: 900; }
   .foundation-stat-note { font-size: 12px; color: rgba(255,255,255,.7); margin-top: 10px; }
-  .foundation-note {
-    max-width: 640px; margin: 28px auto 0; text-align: center; font-size: 15px; color: var(--text-sub); line-height: 1.9;
+
+  /* ---------- S1.7 HPとLPの違い ---------- */
+  .sec-hplp { background: #fff; }
+  .sec-hplp h2 .em {
+    color: var(--green-deep);
+    background: linear-gradient(180deg, transparent 58%, rgba(61,187,126,.4) 58%);
+    padding: 0 2px;
+  }
+  .hplp-compare { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
+  .hplp-col {
+    flex: 1; min-width: 260px; background: var(--green-pale); border-radius: var(--radius);
+    padding: 32px 26px; text-align: center;
+  }
+  .hplp-tag { display: inline-block; border-radius: 999px; padding: 6px 18px; font-size: 13px; font-weight: 800; margin-bottom: 18px; }
+  .hplp-tag.lp { background: #FDE8E8; color: var(--red-accent); }
+  .hplp-tag.hp { background: #DCF3E7; color: var(--green-deep); }
+  .hplp-icon { font-size: 42px; margin-bottom: 16px; }
+  .hplp-col p { font-size: 14.5px; color: var(--text-sub); line-height: 1.8; }
+  .hplp-conclusion {
+    text-align: center; font-size: 17px; font-weight: 800; color: var(--green-deep); margin-top: 36px; line-height: 1.8;
   }
 
   .sec-why { background: #fff; }
@@ -858,12 +882,11 @@
 
 <!-- S1 ファーストビュー -->
 <div class="hero">
-  <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo-v2.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
+  <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo-v3.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="inner hero-grid">
     <p class="hero-kicker">2026年7月の療養費改定。<br>自費メニュー対応、その先の「集客」まで考えていますか？</p>
     <h1><span class="h1-lg" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページとGoogleマップの集客サービスです。</span></h1>
-    <p class="hero-sub" style="color:#fff; font-size:17px; font-weight:700; margin:16px 0 0;">集客まで、ホームページ制作とGoogleマップ運用で担当者が直接お伺いしてサポートします。</p>
     <div class="hero-badges" style="margin-top:28px;">
       <div class="hero-badge">
         <span class="hero-badge-icon">
@@ -897,6 +920,42 @@
   <a href="#contact" class="btn btn-cta">無料相談する</a>
   <p class="floating-cta-note">※先着<strong>月3社限定</strong>でご対応します</p>
 </div>
+
+<!-- S1.6 広告の前に、まず土台を -->
+<section class="sec-foundation">
+  <div class="foundation-slash-wrap">
+    <p class="foundation-slash">ちょっと待った！</p>
+  </div>
+  <div class="inner">
+    <h2 class="center">広告を打つ前に、<br><span class="em">「ホームページ」と「Googleマップ」</span>から。</h2>
+    <p class="lead center">SNS運用も、広告出稿も、土台があってこそ活きるもの。<br>安診Webがつくるのは、患者さんが最後に来院を決める「土台」そのものです。</p>
+    <div class="foundation-stat">
+      <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+2.3件</span>の予約増加</p>
+      <p class="foundation-stat-note">※導入院の実績（詳しい実績は後ほどご紹介します）</p>
+    </div>
+  </div>
+</section>
+
+<!-- S1.7 HPとLPの違い -->
+<section class="sec-hplp">
+  <div class="inner">
+    <span class="sec-label">HP or LP？</span>
+    <h2 class="center">そもそも、<span class="em">「ホームページ」と「LP」</span>は別物です。</h2>
+    <div class="hplp-compare">
+      <div class="hplp-col">
+        <span class="hplp-tag lp">広告のLP（ランディングページ）の場合</span>
+        <div class="hplp-icon">🎯</div>
+        <p>広告のクリック1回のためだけに作られた、その場限りの1枚ページ。<br>広告を止めれば、患者さんの目にはもう触れません。</p>
+      </div>
+      <div class="hplp-col">
+        <span class="hplp-tag hp">ホームページの場合</span>
+        <div class="hplp-icon">🏠</div>
+        <p>指名検索でも、地域名検索でも、Googleマップ経由でも。<br>患者さんが院を調べるとき、いつでも必ずたどり着く「本拠地」です。</p>
+      </div>
+    </div>
+    <p class="hplp-conclusion">だからこそ安診Webは、一時的な広告のLPではなく、<br>ずっと使われ続ける「ホームページ」と「Googleマップ」に力を入れています。</p>
+  </div>
+</section>
 
 <!-- S1.5 プラン紹介（A×B＋価格リビール） -->
 <section class="sec-plan">
@@ -978,27 +1037,13 @@
   </div>
 </section>
 
-<!-- S2.4 広告の前に、まず土台を -->
-<section class="sec-foundation">
-  <div class="inner">
-    <p class="foundation-eyebrow center">ちょっと待った！</p>
-    <h2 class="center">広告を打つ前に、<br><span class="em">「ホームページ」と「Googleマップ」</span>から。</h2>
-    <p class="lead center">SNS運用も、広告出稿も、土台があってこそ活きるもの。<br>安診Webがつくるのは、患者さんが最後に来院を決める「土台」そのものです。</p>
-    <div class="foundation-stat">
-      <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+2.3件</span>の予約増加</p>
-      <p class="foundation-stat-note">※導入院の実績（詳しい実績は後ほどご紹介します）</p>
-    </div>
-    <p class="foundation-note">「広告用のLP」は、その場限りの入り口にすぎません。ずっと患者さんに見られ続けるのは、院の「ホームページ」です。<br>だからこそ安診Webは、一時的な広告のLPではなく、本体のホームページとGoogleマップに力を入れています。</p>
-  </div>
-</section>
-
 <!-- S2.5 なぜ集客できるのか -->
 <section class="sec-why">
   <div class="inner">
     <span class="sec-label">WHY</span>
     <h2 class="center">なぜ、ホームページ制作と<br>Googleマップ運用で<span class="em">集客ができるのか？</span></h2>
     <div class="why-wrap">
-      <div class="why-photo"><img loading="lazy" src="assets/img/seikotsuin-fv-consultation-photo-v2.jpg" alt="ホームページで自費メニューを説明している様子"></div>
+      <div class="why-photo"><img loading="lazy" src="assets/img/seikotsuin-fv-consultation-photo-v3.jpg" alt="ホームページで自費メニューを説明している様子"></div>
       <ul class="why-list">
         <li><span class="why-check">✓</span>スマホで見た瞬間に「相談してみたい」と思われる、集客に強いホームページだから</li>
         <li><span class="why-check">✓</span>指名検索だけでなく、「地域名＋整骨院」の検索でも見つかるようになるから</li>
