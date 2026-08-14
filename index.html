@@ -399,6 +399,9 @@
   .plan-combo-box p { font-size: 13.5px; color: var(--text-sub); }
   /* ---------- S1.6 広告の前に、まず土台を ---------- */
   .sec-foundation { background: var(--green-pale); padding-top: 0; }
+  .foundation-preface {
+    font-size: 17px; font-weight: 700; color: var(--text-main); padding: 36px 20px 24px;
+  }
   .foundation-slash-wrap {
     background: var(--red-accent); padding: 40px 0 52px; margin-bottom: -24px;
     clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
@@ -460,15 +463,6 @@
   }
   .why-close { text-align: center; font-size: 16px; font-weight: 700; color: var(--green-deep); margin-top: 32px; }
   .plan-combo-note { text-align: center; font-size: 12.5px; color: var(--text-sub); margin-top: 14px; }
-  .plan-price-row { display: flex; gap: 20px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
-  .plan-price-card {
-    background: var(--green-deep); color: #fff; border-radius: var(--radius); padding: 20px 30px;
-    text-align: center; box-shadow: 0 10px 24px rgba(0,0,0,.18); min-width: 240px;
-  }
-  .plan-price-tag { display: block; font-size: 13px; font-weight: 800; opacity: .9; margin-bottom: 6px; }
-  .plan-price-num { font-size: 28px; font-weight: 900; }
-  .plan-price-num small { font-size: 15px; margin-left: 1px; }
-  .plan-price-sub { display: block; font-size: 13px; font-weight: 700; margin-top: 4px; opacity: .9; }
 
   /* ---------- S2 問題提起 ---------- */
   .sec-problem { background: #FFF1F1; padding-top: 40px; }
@@ -944,6 +938,7 @@
 
 <!-- S1.6 広告の前に、まず土台を -->
 <section class="sec-foundation">
+  <p class="foundation-preface center">「集客」と聞くと、まず広告を思い浮かべていませんか？</p>
   <div class="foundation-slash-wrap">
     <p class="foundation-slash">ちょっと待った！</p>
   </div>
@@ -975,18 +970,6 @@
       </div>
     </div>
     <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
-    <div class="plan-price-row">
-      <div class="plan-price-card">
-        <span class="plan-price-tag">ホームページプラン</span>
-        <span class="plan-price-num">初期99,000<small>円</small></span>
-        <span class="plan-price-sub">月額9,000円〜（税込）</span>
-      </div>
-      <div class="plan-price-card">
-        <span class="plan-price-tag">Googleマップ対策プラン</span>
-        <span class="plan-price-num">初期33,000<small>円</small></span>
-        <span class="plan-price-sub">月額11,000円〜（税込）</span>
-      </div>
-    </div>
     <div class="center" style="margin-top:28px;">
       <a href="#contact" class="btn btn-cta">無料相談する</a>
     </div>
@@ -1124,18 +1107,6 @@
       </div>
     </div>
     <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
-    <div class="plan-price-row">
-      <div class="plan-price-card">
-        <span class="plan-price-tag">ホームページプラン</span>
-        <span class="plan-price-num">初期99,000<small>円</small></span>
-        <span class="plan-price-sub">月額9,000円〜（税込）</span>
-      </div>
-      <div class="plan-price-card">
-        <span class="plan-price-tag">Googleマップ対策プラン</span>
-        <span class="plan-price-num">初期33,000<small>円</small></span>
-        <span class="plan-price-sub">月額11,000円〜（税込）</span>
-      </div>
-    </div>
     <div class="center" style="margin-top:28px;">
       <a href="#contact" class="btn btn-cta">無料相談する</a>
     </div>
@@ -1195,22 +1166,22 @@
   </div>
 </section>
 
-<!-- S6.5 HPとLPの違い -->
+<!-- S6.5 広告とホームページ・Googleマップの違い -->
 <section class="sec-hplp">
   <div class="inner">
-    <span class="sec-label">HP or LP？</span>
-    <h2 class="center">そもそも、<span class="em">ホームページ</span>とは？<br>LPとどう違うの？</h2>
+    <span class="sec-label">広告 or 土台？</span>
+    <h2 class="center">広告は、<span class="em">瞬間風速</span>。<br>ホームページ・Googleマップは、ずっと続く力に。</h2>
     <div class="hplp-compare">
       <div class="hplp-col">
-        <span class="hplp-tag lp">LPの場合</span>
-        <p>広告からのアクセスを1件でも多く成約させるために作られた、1ページだけの入り口。<br>指名検索や地域名検索で自然に見つけてもらうことは想定されていません。</p>
+        <span class="hplp-tag lp">広告の場合</span>
+        <p>出稿している間だけ、患者さんの目に触れる「瞬間風速」。<br>広告費を止めた瞬間、効果もゼロに戻ります。</p>
       </div>
       <div class="hplp-col">
-        <span class="hplp-tag hp">ホームページの場合</span>
-        <p>指名検索でも、地域名検索でも、Googleマップ経由でも。<br>患者さんが院を調べるとき、いつでも必ずたどり着く「本拠地」です。</p>
+        <span class="hplp-tag hp">ホームページ・Googleマップの場合</span>
+        <p>一度整えれば、指名検索でも地域名検索でも、ずっと働き続ける「積み上げ型」の土台。<br>広告を止めても、患者さんはたどり着けます。</p>
       </div>
     </div>
-    <p class="hplp-conclusion">だからこそ安診Webは、一時的なLPではなく、<br>ずっと使われ続ける「ホームページ」と「Googleマップ」に力を入れています。</p>
+    <p class="hplp-conclusion">だからこそ安診Webは、瞬間風速で終わる広告ではなく、<br>ずっと使われ続ける「ホームページ」と「Googleマップ」に力を入れています。</p>
   </div>
 </section>
 
@@ -1385,7 +1356,7 @@
         <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
         <li>無料相談は月3社限定、担当者が直接ご案内</li>
       </ul>
-      <a href="#contact" class="btn btn-cta final-cta-btn">今すぐ無料相談する</a>
+      <a href="#contact" class="btn btn-cta final-cta-btn">まずは相談してみる</a>
       <p class="final-cta-fine">しつこい営業は一切いたしません。まずはお話だけでも歓迎です。</p>
     </div>
   </div>
