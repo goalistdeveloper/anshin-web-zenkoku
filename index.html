@@ -243,6 +243,7 @@
   }
 
   .trust-strip { background: var(--green-deep); padding: 14px 0; overflow-x: auto; }
+  @media (min-width: 861px) { .trust-strip { display: none; } }
   .trust-strip-inner {
     display: flex; gap: 22px; justify-content: center; align-items: center; flex-wrap: nowrap;
   }
@@ -251,13 +252,15 @@
     color: #fff; font-size: 11.5px; font-weight: 700; white-space: nowrap;
   }
   .ts-icon {
-    width: 40px; height: 40px; border-radius: 50%; background: #fff;
-    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    width: 40px; height: 40px; border-radius: 50%; background: #fff; color: var(--green-deep);
+    display: flex; align-items: center; justify-content: center;
     box-shadow: 0 3px 8px rgba(0,0,0,.2);
   }
+  .ts-icon svg { width: 20px; height: 20px; }
   @media (max-width: 640px) {
     .trust-strip-inner { justify-content: flex-start; gap: 18px; padding-right: 24px; }
-    .ts-icon { width: 36px; height: 36px; font-size: 16px; }
+    .ts-icon { width: 36px; height: 36px; }
+    .ts-icon svg { width: 18px; height: 18px; }
     .ts-item { font-size: 10.5px; }
   }
 
@@ -298,6 +301,18 @@
     padding-left: 80px;
   }
   @media (max-width: 860px) { .hero-grid { max-width: 100%; margin: 0 auto; text-align: center; padding-left: 0; } }
+  .hero-services {
+    display: none; position: absolute; top: 28px; right: 32px; z-index: 3;
+    grid-template-columns: repeat(2, 1fr); gap: 8px; max-width: 340px;
+  }
+  @media (min-width: 861px) { .hero-services { display: grid; } }
+  .hero-service-item {
+    display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,.94);
+    border-radius: 999px; padding: 7px 14px 7px 8px; font-size: 12px; font-weight: 700; color: var(--green-deep);
+    white-space: nowrap; box-shadow: 0 3px 10px rgba(0,0,0,.15);
+  }
+  .hs-icon { width: 20px; height: 20px; flex-shrink: 0; display: flex; }
+  .hs-icon svg { width: 100%; height: 100%; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .05s; }
   .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .2s; }
@@ -402,7 +417,11 @@
     text-align: center; max-width: 640px; margin: 32px auto 0; box-shadow: 0 12px 28px rgba(31,122,85,.22);
   }
   .foundation-stat-num { font-size: 19px; font-weight: 800; line-height: 1.7; }
-  .foundation-stat-num .em-hl { color: var(--cta-orange); font-size: 1.35em; font-weight: 900; }
+  .foundation-stat-num .em-hl {
+    color: #fff; font-size: 1.35em; font-weight: 900;
+    text-decoration: underline; text-decoration-color: var(--green-accent);
+    text-decoration-thickness: 4px; text-underline-offset: 4px;
+  }
   .foundation-stat-note { font-size: 12px; color: rgba(255,255,255,.7); margin-top: 10px; }
 
   /* ---------- S1.7 HPとLPの違い ---------- */
@@ -603,6 +622,7 @@
   .kpi-num { color: var(--red-accent); font-weight: 900; font-size: 40px; line-height: 1; }
   .kpi-num small { font-size: 16px; font-weight: 800; margin-left: 2px; }
   .kpi-label { font-size: 13px; color: var(--text-sub); font-weight: 700; margin-top: 8px; white-space: nowrap; }
+  .kpi-caption { font-size: 11.5px; color: var(--green-deep); font-weight: 800; margin-top: 6px; }
   .kpi-note {
     font-size: 12px; color: var(--text-sub); margin-top: 18px; padding-top: 14px;
     border-top: 1px solid var(--green-line); text-align: left;
@@ -865,12 +885,12 @@
 
 <div class="trust-strip">
   <div class="inner trust-strip-inner">
-    <div class="ts-item"><span class="ts-icon">🌐</span>ホームページ制作</div>
-    <div class="ts-item"><span class="ts-icon">📍</span>Googleマップ対策</div>
-    <div class="ts-item"><span class="ts-icon">📷</span>写真撮影代行</div>
-    <div class="ts-item"><span class="ts-icon">💬</span>クチコミ返信代行</div>
-    <div class="ts-item"><span class="ts-icon">📊</span>月次レポート</div>
-    <div class="ts-item"><span class="ts-icon">🤝</span>対面訪問サポート</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span>ホームページ制作</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>Googleマップ対策</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span>写真撮影代行</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>クチコミ返信代行</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>月次レポート</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>対面訪問サポート</div>
   </div>
 </div>
 
@@ -878,8 +898,15 @@
 <div class="hero">
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo-v4.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
+  <div class="hero-services">
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span>ホームページ制作</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>Googleマップ対策</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span>写真撮影代行</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>クチコミ返信代行</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>月次レポート</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>対面訪問サポート</div>
+  </div>
   <div class="inner hero-grid">
-    <p class="hero-kicker">2026年7月の療養費改定。<br>自費メニュー対応、その先の「集客」まで考えていますか？</p>
     <h1><span class="h1-lg" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページとGoogleマップの<br>集客サービスです。</span></h1>
     <div class="hero-badges" style="margin-top:28px;">
       <div class="hero-badge">
@@ -921,7 +948,7 @@
     <p class="foundation-slash">ちょっと待った！</p>
   </div>
   <div class="inner">
-    <h2 class="center">広告を打つ前に、<br>まずは<span class="em">「ホームページ」と「Googleマップ」</span>を整えましょう。</h2>
+    <h2 class="center">広告を打つ前に、まずは<br><span class="em">「ホームページ」と「Googleマップ」</span>を<br>整えましょう。</h2>
     <p class="lead center">SNS運用も、広告出稿も、土台があってこそ活きるもの。<br>安診Webがつくるのは、患者さんが最後に来院を決める「土台」そのものです。</p>
     <div class="foundation-stat">
       <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+2.3件</span>の予約増加</p>
@@ -972,7 +999,7 @@
     <p class="lead center" style="margin-bottom:22px;">2026年7月の療養費改定をきっかけに、自費メニューへの切り替えを進める先生が増えています。</p>
     <div class="alert-bubble">
       <p class="alert-shout">こんなお悩みありませんか？</p>
-      <h2 class="problem-heading">自費メニューに変えただけでは、<br><span class="underline">正直、<span style="white-space:nowrap;">集客は増えません。</span></span></h2>
+      <h2 class="problem-heading">土台が整っていなければ、<br><span class="underline">広告を打っても、<span style="white-space:nowrap;">集客は増えません。</span></span></h2>
     </div>
     <div class="problem-grid">
       <div class="problem-card">
@@ -1006,7 +1033,7 @@
         <p>高い費用を払い続けたのに新規は増えず、そのまま「もう業者は信用できない」と感じている。</p>
       </div>
     </div>
-    <p class="problem-close">お任せください。<br>「保険料改定でどうしよう」という先生に<span class="em problem-em-red">ピッタリの進め方</span>があります。</p>
+    <p class="problem-close">お任せください。<br>広告より先に整えるべき「土台」には、<span class="em problem-em-red">明確な理由</span>があります。</p>
   </div>
 </section>
 
@@ -1124,7 +1151,7 @@
     <h2>数字で見る、<span class="em">安診Webの実績</span></h2>
     <div class="kpi-panel">
       <div class="kpi-grid">
-        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div></div>
+        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">土台を整えるだけで、ここまで変わります</div></div>
         <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
       </div>
       <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
@@ -1177,7 +1204,7 @@
     <div class="hplp-compare">
       <div class="hplp-col">
         <span class="hplp-tag lp">LPの場合</span>
-        <p>クリック1回のためだけに作られた、その場限りの1枚ページ。<br>広告を止めれば、患者さんの目にはもう触れません。</p>
+        <p>広告を出稿している間だけ機能する、その場限りの1枚ページ。<br>広告を止めれば、患者さんの目にはもう触れません。</p>
       </div>
       <div class="hplp-col">
         <span class="hplp-tag hp">ホームページの場合</span>
@@ -1354,7 +1381,7 @@
       <p class="final-cta-badge">ホームページ ＋ Googleマップ対策</p>
       <p class="final-cta-eyebrow">2026年7月の療養費改定 対応中の今だからこそ</p>
       <h2 class="final-cta-heading">広告より先に、<span class="em-underline2">まず土台</span>を。<br>動き出すなら、今です。</h2>
-      <p class="final-cta-lead">自費メニューへの切り替えは、多くの院が同じタイミングで進めています。<br>「知ってもらう」準備が早い院ほど、地域で選ばれやすくなります。</p>
+      <p class="final-cta-lead">土台を整えるのが早い院ほど、この先かける広告費も無駄になりません。<br>まずは土台から、地域で選ばれる準備を始めませんか。</p>
       <ul class="final-cta-bullets">
         <li>初期費用 99,000円〜／月額9,000円〜（税込）</li>
         <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
