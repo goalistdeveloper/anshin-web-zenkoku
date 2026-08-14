@@ -400,8 +400,10 @@
   /* ---------- S1.6 広告の前に、まず土台を ---------- */
   .sec-foundation { background: var(--green-pale); padding-top: 0; }
   .foundation-preface {
-    font-size: 17px; font-weight: 700; color: var(--text-main); padding: 36px 20px 24px;
+    font-size: 17px; font-weight: 700; color: var(--text-main); padding: 112px 20px 24px;
+    position: relative; z-index: 2;
   }
+  @media (max-width: 860px) { .foundation-preface { padding-top: 36px; } }
   .foundation-slash-wrap {
     background: var(--red-accent); padding: 40px 0 52px; margin-bottom: -24px;
     clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
@@ -463,6 +465,15 @@
   }
   .why-close { text-align: center; font-size: 16px; font-weight: 700; color: var(--green-deep); margin-top: 32px; }
   .plan-combo-note { text-align: center; font-size: 12.5px; color: var(--text-sub); margin-top: 14px; }
+  .plan-price-row { display: flex; gap: 20px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+  .plan-price-card {
+    background: var(--green-deep); color: #fff; border-radius: var(--radius); padding: 20px 30px;
+    text-align: center; box-shadow: 0 10px 24px rgba(0,0,0,.18); min-width: 240px;
+  }
+  .plan-price-tag { display: block; font-size: 13px; font-weight: 800; opacity: .9; margin-bottom: 6px; }
+  .plan-price-num { font-size: 28px; font-weight: 900; }
+  .plan-price-num small { font-size: 15px; margin-left: 1px; }
+  .plan-price-sub { display: block; font-size: 13px; font-weight: 700; margin-top: 4px; opacity: .9; }
 
   /* ---------- S2 問題提起 ---------- */
   .sec-problem { background: #FFF1F1; padding-top: 40px; }
@@ -919,7 +930,7 @@
         <span class="hero-badge-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18l5-6 4 3 7-9" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
-        <span>導入院の予約、月平均+2.3件</span>
+        <span>導入院の予約、月平均+3.2件</span>
       </div>
     </div>
     <div class="hero-price-reveal">
@@ -946,7 +957,7 @@
     <h2 class="center">広告を打つ前に、まずは<br><span class="em">「ホームページ」と「Googleマップ」</span>を<br>整えましょう。</h2>
     <p class="lead center">SNS運用も、広告出稿も、土台があってこそ活きるもの。<br>安診Webがつくるのは、患者さんが来院を決める「土台」そのものです。</p>
     <div class="foundation-stat">
-      <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+2.3件</span>の予約増加</p>
+      <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+3.2件</span>の予約増加</p>
       <p class="foundation-stat-note">※導入院の実績（詳しい実績は後ほどご紹介します）</p>
     </div>
   </div>
@@ -1107,8 +1118,20 @@
       </div>
     </div>
     <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
+    <div class="plan-price-row">
+      <div class="plan-price-card">
+        <span class="plan-price-tag">ホームページプラン</span>
+        <span class="plan-price-num">初期99,000<small>円</small></span>
+        <span class="plan-price-sub">月額9,000円〜（税込）</span>
+      </div>
+      <div class="plan-price-card">
+        <span class="plan-price-tag">Googleマップ対策プラン</span>
+        <span class="plan-price-num">初期33,000<small>円</small></span>
+        <span class="plan-price-sub">月額11,000円〜（税込）</span>
+      </div>
+    </div>
     <div class="center" style="margin-top:28px;">
-      <a href="#contact" class="btn btn-cta">無料相談する</a>
+      <a href="#contact" class="btn btn-cta">まずは相談してみる</a>
     </div>
   </div>
 </section>
@@ -1121,7 +1144,7 @@
     <h2>数字で見る、<span class="em">安診Webの実績</span></h2>
     <div class="kpi-panel">
       <div class="kpi-grid">
-        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">広告費0円で予約数が増えています！</div></div>
+        <div class="kpi-tile"><div class="kpi-num">3.2<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">広告費0円で予約数が増えています！</div></div>
         <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
       </div>
       <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
