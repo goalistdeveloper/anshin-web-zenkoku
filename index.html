@@ -437,8 +437,15 @@
   .hplp-compare { display: flex; gap: 24px; margin-top: 40px; flex-wrap: wrap; }
   .hplp-col {
     flex: 1; min-width: 260px; background: var(--green-pale); border-radius: var(--radius);
-    padding: 32px 26px; text-align: center;
+    padding: 32px 26px; text-align: left;
   }
+  .hplp-icon {
+    width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .hplp-icon svg { width: 24px; height: 24px; }
+  .hplp-icon.lp { background: #FDE8E8; color: var(--red-accent); }
+  .hplp-icon.hp { background: #DCF3E7; color: var(--green-deep); }
   .hplp-tag { display: inline-block; border-radius: 999px; padding: 6px 18px; font-size: 13px; font-weight: 800; margin-bottom: 18px; }
   .hplp-tag.lp { background: #FDE8E8; color: var(--red-accent); }
   .hplp-tag.hp { background: #DCF3E7; color: var(--green-deep); }
@@ -1009,7 +1016,7 @@
       <div class="problem-card">
         <span class="no">✕ 問題 2</span>
         <h3>2026年7月の療養費改定で、自費メニューへ移行中</h3>
-        <p>保険だけに頼れず、自費メニューへ切り替える院が急増中。ただメニューを変えただけでは伝わらず、あらためて集客への取り組みが欠かせません。</p>
+        <p>保険だけに頼れず、自費メニューへ切り替える院が急増中。ただメニューを変えただけでは伝わらず、集客への取り組みも必要です。</p>
       </div>
       <div class="problem-card">
         <span class="no">✕ 問題 3</span>
@@ -1032,7 +1039,7 @@
         <p>高い費用を払い続けたのに新規は増えず、そのまま「もう業者は信用できない」と感じている。</p>
       </div>
     </div>
-    <p class="problem-close">お任せください。<br>広告より先に、ホームページとGoogleマップという「土台」を整えるべき<span class="em problem-em-red">明確な理由</span>があります。</p>
+    <p class="problem-close">広告より先に、ホームページとGoogleマップという<br>「土台」を整えるべき<span class="em problem-em-red">明確な理由</span>があります。</p>
   </div>
 </section>
 
@@ -1150,7 +1157,7 @@
     <h2>数字で見る、<span class="em">安診Webの実績</span></h2>
     <div class="kpi-panel">
       <div class="kpi-grid">
-        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">地味に見えても、広告費0円でこの数字です</div></div>
+        <div class="kpi-tile"><div class="kpi-num">2.3<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">広告費0円で予約数が増えています！</div></div>
         <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
       </div>
       <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
@@ -1202,10 +1209,12 @@
     <h2 class="center">そもそも、<span class="em">ホームページ</span>とは？<br>LPとどう違うの？</h2>
     <div class="hplp-compare">
       <div class="hplp-col">
+        <span class="hplp-icon lp"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg></span>
         <span class="hplp-tag lp">LPの場合</span>
         <p>広告からのアクセスを1件でも多く成約させるために作られた、1ページだけの入り口。<br>指名検索や地域名検索で自然に見つけてもらうことは想定されていません。</p>
       </div>
       <div class="hplp-col">
+        <span class="hplp-icon hp"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5L12 4l8 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9a1 1 0 001 1h3v-5h4v5h3a1 1 0 001-1v-9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span class="hplp-tag hp">ホームページの場合</span>
         <p>指名検索でも、地域名検索でも、Googleマップ経由でも。<br>患者さんが院を調べるとき、いつでも必ずたどり着く「本拠地」です。</p>
       </div>
@@ -1379,7 +1388,7 @@
     <div class="final-cta-card">
       <p class="final-cta-badge">ホームページ ＋ Googleマップ対策</p>
       <h2 class="final-cta-heading">広告より先に、<span class="em-underline2">まず土台</span>を。<br>動き出すなら、今です。</h2>
-      <p class="final-cta-lead">土台を整えるのが早い院ほど、この先かける広告費も無駄になりません。<br>まずは土台から、地域で選ばれる準備を始めませんか。</p>
+      <p class="final-cta-lead">土台を整えるのが早いほど、この先かける広告費も無駄になりません。<br>まずは土台から、地域で選ばれる準備を始めませんか。</p>
       <ul class="final-cta-bullets">
         <li>初期費用 99,000円〜／月額9,000円〜（税込）</li>
         <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
@@ -1469,7 +1478,7 @@
 <footer>
   <div class="inner">
     <div style="display:flex; align-items:center; gap:10px;">
-      <img src="assets/img/logo.svg" alt="安診Web" height="24" style="filter:brightness(0) invert(1);">
+      <img src="assets/img/logo.svg" alt="安診Web" height="38" style="filter:brightness(0) invert(1);">
       <span>（運営：HumAIn Co.,Ltd.）</span>
     </div>
     <div>
