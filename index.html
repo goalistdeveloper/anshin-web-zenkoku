@@ -297,22 +297,25 @@
     }
   }
   .hero-grid {
-    position: relative; z-index: 2; max-width: 720px; margin: 0; text-align: left; animation: heroFadeUp .9s ease-out both;
+    position: relative; z-index: 2; max-width: 720px; margin: -32px 0 0; text-align: left; animation: heroFadeUp .9s ease-out both;
     padding-left: 80px;
   }
   @media (max-width: 860px) { .hero-grid { max-width: 100%; margin: 0 auto; text-align: center; padding-left: 0; } }
   .hero-services {
-    display: none; position: absolute; top: 28px; right: 32px; z-index: 3;
-    grid-template-columns: repeat(2, 1fr); gap: 8px; max-width: 340px;
+    display: none; position: absolute; top: 40px; right: 40px; z-index: 3;
+    grid-template-columns: repeat(3, 1fr); gap: 10px; width: 380px;
   }
   @media (min-width: 861px) { .hero-services { display: grid; } }
   .hero-service-item {
-    display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,.94);
-    border-radius: 999px; padding: 7px 14px 7px 8px; font-size: 12px; font-weight: 700; color: var(--green-deep);
-    white-space: nowrap; box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    display: flex; flex-direction: column; align-items: center; gap: 5px; background: rgba(255,255,255,.95);
+    border-radius: 12px; padding: 10px 4px 8px; box-shadow: 0 3px 10px rgba(0,0,0,.18);
   }
-  .hs-icon { width: 20px; height: 20px; flex-shrink: 0; display: flex; }
-  .hs-icon svg { width: 100%; height: 100%; }
+  .hs-icon {
+    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; display: flex;
+    align-items: center; justify-content: center; background: var(--green-pale); color: var(--green-deep);
+  }
+  .hs-icon svg { width: 18px; height: 18px; }
+  .hs-label { font-size: 10px; font-weight: 700; color: var(--green-deep); text-align: center; line-height: 1.3; }
   @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   .hero-grid h1 { animation: heroFadeUp .7s ease-out both .05s; }
   .hero-grid .hero-badges { animation: heroFadeUp .7s ease-out both .2s; }
@@ -896,12 +899,12 @@
   <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo-v4.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
   <div class="hero-bg-overlay"></div>
   <div class="hero-services">
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span>ホームページ制作</div>
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>Googleマップ対策</div>
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span>写真撮影代行</div>
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>クチコミ返信代行</div>
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>月次レポート</div>
-    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>対面訪問サポート</div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">ホームページ<br>制作</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">Googleマップ<br>対策</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">写真撮影<br>代行</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="hs-label">クチコミ<br>返信代行</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="hs-label">月次<br>レポート</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="hs-label">対面訪問<br>サポート</span></div>
   </div>
   <div class="inner hero-grid">
     <h1><span class="h1-sm" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページとGoogleマップの<br>集客サービスです。</span></h1>
