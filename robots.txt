@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goalistdeveloper.github.io/anshin-web-zenkoku/sitemap.xml

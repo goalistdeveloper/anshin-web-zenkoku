@@ -13,7 +13,9 @@ body {
   padding-bottom: 64px; /* スマホ固定CTAバー分 */
 }
 
-img { max-width: 100%; }
+/* height:auto は必須。各imgにCLS対策の width/height 属性を入れているため、
+   これがないと属性値そのままの高さで描画され画像が歪む */
+img { max-width: 100%; height: auto; }
 a { color: var(--green-deep); }
 
 /* ---------- 見出し・リード文 ---------- */
