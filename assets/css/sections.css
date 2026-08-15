@@ -178,7 +178,15 @@ h2.voice-sub-heading { font-size: 20px; margin-top: 48px; }
 /* ---------- S7 料金 ---------- */
 .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 28px; }
 .price-card {
+  position: relative;  /* .price-ribbon の基準 */
   border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
+}
+/* 「おすすめ」— カード右上の帯 */
+.price-ribbon {
+  position: absolute; top: 0; right: 0; z-index: 2;
+  background: var(--cta-orange); color: #fff;
+  font-size: 12px; font-weight: 800; letter-spacing: .04em;
+  padding: 6px 16px; border-bottom-left-radius: 10px;
 }
 .price-card.main { border-color: var(--green-deep); }
 .price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
@@ -244,3 +252,370 @@ details[open] summary::after { content: "−"; }
 .contact-alt .tel small { display: block; font-size: 14px; font-weight: 500; opacity: .85; }
 
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   以下は S1〜S11 の後から追加された小数点セクション（S1.5 等）。
+   HTML には存在するが CSS が未実装だったため、既存トークンに
+   合わせて追加している。並び順は index.html の登場順。
+============================================================ */
+
+/* ---------- S1.6 広告の前に、まず土台を ---------- */
+.sec-foundation { background: var(--white); padding-top: 56px; }
+.foundation-preface { font-size: 17px; font-weight: 600; color: var(--text-sub); margin-bottom: 14px; }
+/* 「ちょっと待った！」— 帯状に目立たせる */
+.foundation-slash-wrap { display: flex; justify-content: center; margin-bottom: 28px; }
+.foundation-slash {
+  display: inline-block; position: relative;
+  font-size: clamp(22px, 3.6vw, 30px); font-weight: 800; color: var(--red-accent);
+  padding: 0 42px;
+}
+/* 左右の斜線 */
+.foundation-slash::before,
+.foundation-slash::after {
+  content: ""; position: absolute; top: 50%; width: 26px; height: 2px;
+  background: var(--red-accent); border-radius: 2px;
+}
+.foundation-slash::before { left: 0; transform: translateY(-50%) rotate(58deg); }
+.foundation-slash::after  { right: 0; transform: translateY(-50%) rotate(-58deg); }
+/* 実績数値のパネル */
+.foundation-stat {
+  max-width: 720px; margin: 8px auto 0; text-align: center;
+  background: var(--green-pale); border: 1px solid var(--green-line);
+  border-radius: var(--radius); padding: 24px 26px;
+}
+.foundation-stat-num { font-size: clamp(17px, 2.4vw, 21px); font-weight: 700; line-height: 1.7; color: var(--text-main); }
+.foundation-stat-note { font-size: 13px; color: var(--text-sub); margin-top: 10px; }
+/* マーカー風ハイライト（下半分だけ塗る） */
+.em-hl {
+  color: var(--green-deep); font-weight: 800; font-size: 1.25em;
+  background: linear-gradient(transparent 62%, rgba(61,187,126,.28) 62%);
+  padding: 0 2px;
+}
+
+@media (max-width: 640px) {
+  .sec-foundation { padding-top: 40px; }
+  .foundation-preface { font-size: 15px; }
+  .foundation-slash { padding: 0 32px; }
+  .foundation-slash::before, .foundation-slash::after { width: 20px; }
+  .foundation-stat { padding: 20px 18px; }
+}
+
+/* ---------- S1.5 / S5.5 プラン紹介（2枚組・価格カード） ---------- */
+.sec-plan { background: var(--gray-bg); }
+.plan-eyebrow { font-size: 15px; font-weight: 600; color: var(--green-deep); margin-bottom: 12px; }
+.plan-combo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.plan-combo-box {
+  background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
+  padding: 20px; text-align: center; box-shadow: 0 2px 12px rgba(31,122,85,.08);
+}
+.plan-combo-photo { border-radius: 10px; overflow: hidden; margin-bottom: 16px; }
+.plan-combo-photo img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.plan-combo-box h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 8px; }
+.plan-combo-box p { font-size: 15px; color: var(--text-sub); }
+.plan-combo-note { text-align: center; font-size: 14px; color: var(--text-sub); margin-top: 18px; }
+
+/* 価格カード（S5.5 のみ） */
+.plan-price-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+.plan-price-card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: var(--white); border: 2px solid var(--green-accent); border-radius: var(--radius);
+  padding: 20px 18px; text-align: center;
+}
+.plan-price-tag {
+  background: var(--green-deep); color: #fff; font-size: 13px; font-weight: 700;
+  border-radius: 999px; padding: 4px 16px;
+}
+.plan-price-num { font-size: clamp(24px, 3.4vw, 30px); font-weight: 800; color: var(--green-deep); letter-spacing: .02em; }
+.plan-price-num small { font-size: .55em; font-weight: 700; margin-left: 2px; }
+.plan-price-sub { font-size: 14px; color: var(--text-sub); }
+
+@media (max-width: 780px) {
+  .plan-combo { grid-template-columns: 1fr; gap: 18px; }
+  .plan-price-row { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ---------- S2.5 なぜ集客できるのか ---------- */
+.sec-why { background: var(--white); }
+.why-wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 32px; align-items: center; }
+.why-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); display: block; }
+.why-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.why-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 16px; line-height: 1.8; color: var(--text-main);
+  background: var(--green-pale); border-radius: 10px; padding: 16px 18px;
+}
+/* チェック記号は丸バッジに */
+.why-check {
+  flex-shrink: 0; width: 24px; height: 24px; margin-top: 2px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--green-accent); color: #fff; border-radius: 50%;
+  font-size: 14px; font-weight: 700; line-height: 1;
+}
+.why-close { text-align: center; font-size: 17px; font-weight: 700; color: var(--green-deep); margin-top: 32px; }
+
+@media (max-width: 780px) {
+  .why-wrap { grid-template-columns: 1fr; gap: 22px; }
+  .why-list li { font-size: 15px; padding: 14px 15px; }
+  .why-close { font-size: 15px; margin-top: 24px; }
+}
+
+/* ---------- S6.5 広告とホームページ・Googleマップの違い ---------- */
+.sec-hplp { background: var(--gray-bg); }
+.hplp-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hplp-col {
+  background: var(--white); border: 1px solid var(--gray-border); border-radius: var(--radius);
+  padding: 24px 26px;
+}
+.hplp-col p { font-size: 15px; line-height: 1.9; color: var(--text-sub); }
+.hplp-tag {
+  display: inline-block; font-size: 14px; font-weight: 700; color: #fff;
+  border-radius: 999px; padding: 5px 18px; margin-bottom: 14px;
+}
+/* .lp = 広告（短期・赤系）／.hp = 土台（継続・緑系） */
+.hplp-tag.lp { background: var(--gray-line-strong); }
+.hplp-tag.hp { background: var(--green-deep); }
+/* 土台側を推したいので枠線で強調 */
+.hplp-col:has(.hplp-tag.hp) { border-color: var(--green-accent); border-width: 2px; }
+.hplp-conclusion {
+  text-align: center; font-size: 16px; font-weight: 700; line-height: 1.9;
+  color: var(--green-deep); margin-top: 28px;
+}
+
+@media (max-width: 780px) {
+  .hplp-compare { grid-template-columns: 1fr; gap: 16px; }
+  .hplp-col { padding: 20px 18px; }
+  .hplp-conclusion { font-size: 14px; margin-top: 22px; }
+}
+
+/* ---------- S10.5 担当者・理念（追加分） ----------
+   .sec-about / .staff-grid / .about-copy-* は S3 で定義済み。
+   ここでは後から追加された要素だけを補う。 */
+.staff-big-heading { font-size: clamp(22px, 3.4vw, 30px); line-height: 1.5; margin-bottom: 20px; }
+.about-video-small { width: 100%; border-radius: 10px; margin-top: 16px; display: block; }
+
+/* ---------- S10.6 今がチャンス＋最終CTAカード ---------- */
+.sec-final-cta { background: var(--green-pale); }
+.final-cta-card {
+  max-width: 760px; margin: 0 auto; text-align: center;
+  background: var(--white); border: 2px solid var(--green-accent); border-radius: var(--radius);
+  padding: 40px 40px 34px; box-shadow: 0 4px 20px rgba(31,122,85,.12);
+}
+.final-cta-badge {
+  display: inline-block; background: var(--green-deep); color: #fff;
+  font-size: 13px; font-weight: 700; border-radius: 999px; padding: 6px 20px; margin-bottom: 18px;
+}
+.final-cta-heading { font-size: clamp(22px, 3.6vw, 32px); line-height: 1.5; margin-bottom: 18px; }
+/* 見出し内の強調（下線ではなくマーカー） */
+.em-underline2 {
+  color: var(--green-deep);
+  background: linear-gradient(transparent 64%, rgba(61,187,126,.3) 64%);
+  padding: 0 2px;
+}
+.final-cta-lead { font-size: 16px; line-height: 1.9; color: var(--text-sub); margin-bottom: 24px; }
+.final-cta-bullets {
+  list-style: none; display: inline-flex; flex-direction: column; gap: 10px;
+  text-align: left; margin-bottom: 28px;
+}
+.final-cta-bullets li {
+  position: relative; padding-left: 26px;
+  font-size: 15px; font-weight: 600; color: var(--text-main);
+}
+.final-cta-bullets li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--green-accent); font-weight: 800;
+}
+.final-cta-btn { font-size: 18px; padding: 16px 44px; }
+.final-cta-fine { font-size: 13px; color: var(--text-sub); margin-top: 14px; }
+
+@media (max-width: 640px) {
+  .final-cta-card { padding: 28px 20px 24px; }
+  .final-cta-lead { font-size: 15px; }
+  .final-cta-btn { font-size: 16px; padding: 14px 28px; width: 100%; }
+}
+
+/* ============================================================
+   既存 S1〜S11 の中に後から追加された要素（同じく CSS 未実装だった分）
+============================================================ */
+
+/* ---------- S1 ヒーロー内の追加要素 ---------- */
+/* 見出しの大小 */
+.h1-sm { font-size: .62em; font-weight: 700; }
+.h1-lg { display: inline-block; }
+/* 「整骨院・接骨院専門」の下線強調（暗背景なので明るい緑） */
+.em-underline {
+  color: var(--green-accent);
+  background: linear-gradient(transparent 68%, rgba(61,187,126,.42) 68%);
+  padding: 0 2px;
+}
+
+/* 背景上に浮かぶサービスアイコン列（画像の上・見出しの上） */
+.hero-services {
+  position: relative; z-index: 2;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
+  max-width: 1040px; margin: 0 auto 20px; padding: 0 20px;
+}
+.hero-service-item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: #fff; font-size: 12px; font-weight: 700; line-height: 1.35; text-align: center;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+}
+/* SVGは寸法を持たないため必ずサイズ指定 */
+.hs-icon { display: inline-flex; }
+.hs-icon svg { width: 26px; height: 26px; display: block; }
+.hs-label { display: block; }
+
+/* 実績バッジ3種 */
+.hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px; padding: 7px 16px;
+  color: #fff; font-size: 13px; font-weight: 700; white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+.hero-badge-icon { display: inline-flex; flex-shrink: 0; }
+.hero-badge-icon svg { width: 16px; height: 16px; display: block; }
+.hero-badge-label { display: inline-block; }
+
+/* 価格リビール */
+.hero-price-reveal {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 6px 12px;
+  margin-top: 26px; padding: 14px 26px;
+  background: rgba(15,60,42,.55); border: 1px solid rgba(61,187,126,.5); border-radius: var(--radius);
+  animation: heroFadeUp .7s ease-out both .5s;
+}
+.hero-price-reveal-tag {
+  background: var(--green-accent); color: var(--hero-dark);
+  font-size: 12px; font-weight: 800; border-radius: 999px; padding: 4px 14px;
+}
+.hero-price-reveal-num { font-size: clamp(22px, 3.2vw, 28px); font-weight: 800; color: #fff; letter-spacing: .02em; }
+.hero-price-reveal-num small { font-size: .55em; font-weight: 700; margin-left: 2px; }
+.hero-price-reveal-sub { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.85); }
+
+@media (max-width: 640px) {
+  .hero-services { gap: 8px 12px; margin-bottom: 16px; }
+  .hero-service-item { font-size: 10px; }
+  .hs-icon svg { width: 21px; height: 21px; }
+  .hero-badge { font-size: 11px; padding: 6px 12px; }
+  .hero-price-reveal { padding: 12px 18px; margin-top: 20px; }
+}
+
+/* 右下固定CTA（デスクトップのみ。スマホは .fixed-cta を使う） */
+.floating-cta {
+  position: fixed; right: 24px; bottom: 24px; z-index: 150;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.96); border: 1px solid var(--green-line); border-radius: var(--radius);
+  padding: 14px 18px; box-shadow: 0 6px 24px rgba(0,0,0,.16);
+}
+.floating-cta-note { font-size: 11px; color: var(--text-sub); text-align: center; }
+.floating-cta-note strong { color: var(--red-accent); }
+/* スマホ固定バーと重なるため隠す */
+@media (max-width: 860px) { .floating-cta { display: none; } }
+
+/* ---------- S2 問題提起の追加要素 ---------- */
+.alert-bubble { text-align: center; margin-bottom: 36px; }
+.alert-shout {
+  display: inline-block; position: relative;
+  font-size: clamp(18px, 2.8vw, 24px); font-weight: 800; color: var(--red-accent);
+  margin-bottom: 12px; padding: 0 36px;
+}
+/* 左右の斜線（S1.6 と同じ意匠） */
+.alert-shout::before,
+.alert-shout::after {
+  content: ""; position: absolute; top: 50%; width: 22px; height: 2px;
+  background: var(--red-accent); border-radius: 2px;
+}
+.alert-shout::before { left: 0; transform: translateY(-50%) rotate(58deg); }
+.alert-shout::after  { right: 0; transform: translateY(-50%) rotate(-58deg); }
+.problem-em-red { color: var(--red-accent) !important; }
+
+/* ---------- S4 資料ダウンロードの追加要素 ---------- */
+.online-text { min-width: 0; }
+
+/* ---------- S5 サービス（交互レイアウト） ---------- */
+.showcase { display: flex; flex-direction: column; gap: 48px; }
+.showcase-row { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+/* 偶数行は写真とテキストを左右反転 */
+.showcase-row.reverse .showcase-media { order: 2; }
+.showcase-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); display: block; }
+.showcase-text { min-width: 0; }
+.showcase-num {
+  display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .08em;
+  color: var(--green-accent); margin-bottom: 8px;
+}
+.showcase-text h3 { font-size: 21px; color: var(--green-deep); line-height: 1.5; margin-bottom: 12px; }
+.showcase-text p { font-size: 16px; color: var(--text-sub); line-height: 1.9; }
+
+@media (max-width: 780px) {
+  .showcase { gap: 32px; }
+  .showcase-row { grid-template-columns: 1fr; gap: 18px; }
+  /* 1カラムでは常に写真を先頭に */
+  .showcase-row.reverse .showcase-media { order: 0; }
+  .showcase-text h3 { font-size: 18px; }
+}
+
+/* ---------- S6 実績（KPIパネル） ---------- */
+.kpi-panel {
+  background: var(--green-pale); border: 1px solid var(--green-line);
+  border-radius: var(--radius); padding: 28px;
+}
+.kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.kpi-tile {
+  background: var(--white); border-radius: var(--radius); padding: 24px 20px; text-align: center;
+  box-shadow: 0 2px 12px rgba(31,122,85,.08);
+}
+.kpi-num { font-size: clamp(34px, 6vw, 48px); font-weight: 800; color: var(--green-deep); line-height: 1.1; }
+.kpi-num small { font-size: .34em; font-weight: 700; margin-left: 4px; }
+.kpi-label { font-size: 14px; font-weight: 600; color: var(--text-main); margin-top: 10px; }
+.kpi-caption { font-size: 13px; font-weight: 700; color: var(--green-accent); margin-top: 8px; }
+.kpi-note { font-size: 12px; color: var(--text-sub); line-height: 1.7; margin-top: 16px; }
+
+@media (max-width: 640px) {
+  .kpi-panel { padding: 18px; }
+  .kpi-grid { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ---------- S8 比較表の追加要素 ---------- */
+.brand-shout { color: var(--green-deep); }
+/* 横スクロール可能なことを伝える案内。スクロール不要な幅では隠す */
+.compare-scroll-hint { font-size: 13px; color: var(--text-sub); margin-bottom: 10px; text-align: right; }
+@media (min-width: 861px) { .compare-scroll-hint { display: none; } }
+.us-pop { display: inline-block; white-space: nowrap; }
+
+/* ---------- S9 導入の流れ（縦タイムライン） ---------- */
+.timeline { list-style: none; position: relative; padding-left: 8px; }
+.timeline li { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding-bottom: 32px; }
+/* 番号どうしをつなぐ縦線 */
+.timeline li::before {
+  content: ""; position: absolute; left: 27px; top: 56px; bottom: 0; width: 2px;
+  background: var(--green-line);
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child::before { display: none; }
+.tl-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--green-deep); color: #fff; font-size: 18px; font-weight: 800;
+}
+.tl-body { padding-top: 6px; min-width: 0; }
+.tl-body h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 6px; }
+.tl-body p { font-size: 15px; color: var(--text-sub); line-height: 1.85; }
+
+@media (max-width: 640px) {
+  .timeline li { grid-template-columns: 44px 1fr; gap: 14px; padding-bottom: 26px; }
+  .timeline li::before { left: 21px; top: 44px; }
+  .tl-num { width: 44px; height: 44px; font-size: 15px; }
+  .tl-body h3 { font-size: 17px; }
+}
+
+/* ---------- S11 CTA・フォームの追加要素 ---------- */
+/* 暗い背景の上に置くパネル */
+.consult-detail { background: rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px; }
+.consult-detail h3 { font-size: 17px; margin-bottom: 14px; }
+.consult-detail ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.consult-detail li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.75; }
+.consult-detail li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--green-accent); font-weight: 800;
+}
+.consult-detail-note { font-size: 13px; color: var(--text-lead-on-dark); margin-top: 16px; line-height: 1.8; }

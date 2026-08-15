@@ -36,6 +36,26 @@ nav.gnav .btn { padding: 10px 22px; font-size: 15px; margin-left: 18px; white-sp
 @media (max-width: 1320px) { .header-tel { display: none; } }
 @media (max-width: 960px) { nav.gnav a:not(.btn) { display: none; } }
 
+/* ---------- 提供サービスの帯（ヘッダー直下・S1の上） ---------- */
+.trust-strip { background: var(--green-pale); border-bottom: 1px solid var(--green-line); }
+.trust-strip-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 10px 26px; padding-top: 12px; padding-bottom: 12px;
+}
+.ts-item {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 14px; font-weight: 700; color: var(--green-deep); white-space: nowrap;
+}
+/* SVGは viewBox のみで寸法を持たないため、ここで必ずサイズを与える */
+.ts-icon { display: inline-flex; flex-shrink: 0; }
+.ts-icon svg { width: 18px; height: 18px; display: block; }
+
+@media (max-width: 640px) {
+  .trust-strip-inner { gap: 8px 16px; padding-top: 10px; padding-bottom: 10px; }
+  .ts-item { font-size: 12px; gap: 5px; }
+  .ts-icon svg { width: 15px; height: 15px; }
+}
+
 /* ---------- フッター ---------- */
 footer { background: var(--green-darkest); color: var(--text-on-dark); padding: 40px 0 100px; font-size: 14px; }
 footer .inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
@@ -46,12 +66,16 @@ footer a { color: var(--text-on-dark); margin-right: 18px; }
 /* ---------- スマホ固定CTAバー ---------- */
 .fixed-cta {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; display: none;
-  grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px;
+  grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 10px 12px;
   background: rgba(255,255,255,.96); border-top: 1px solid var(--green-line);
 }
 .fixed-cta a { text-decoration: none; text-align: center; font-weight: 800; font-size: 14px; border-radius: 10px; padding: 13px 6px; }
 .fixed-cta .f-consult { background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark)); color: #fff; }
+.fixed-cta .f-line { background: #06C755; color: #fff; }  /* LINEブランドカラー */
 .fixed-cta .f-tel { background: var(--green-deep); color: #fff; }
+
+/* 3ボタンだと狭いので文字を詰める */
+@media (max-width: 400px) { .fixed-cta a { font-size: 12px; padding: 12px 2px; } }
 
 @media (max-width: 860px) { .fixed-cta { display: grid; } }
 @media (min-width: 861px) { body { padding-bottom: 0; } }
