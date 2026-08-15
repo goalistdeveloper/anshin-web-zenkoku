@@ -43,6 +43,7 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://goalistdeveloper.github.io/anshin-web-zenkoku/#business",
   "name": "安診Web",
   "description": "整骨院・接骨院専門のホームページ制作。撮影・更新・Googleマップ対策まで、月1回の訪問で丸ごと代行します。",
   "areaServed": {
@@ -52,28 +53,104 @@
   },
   "priceRange": "¥33,000〜¥99,000",
   "telephone": "+81-3-4361-2643",
+  "email": "anshin.web.meo@gmail.com",
   "image": "https://goalistdeveloper.github.io/anshin-web-zenkoku/assets/img/og-fv-card.jpg",
+  "logo": "https://goalistdeveloper.github.io/anshin-web-zenkoku/assets/img/logo.svg",
   "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/",
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "HumAIn Co.,Ltd.",
+    "url": "https://humain.co.jp/company"
+  },
+  "sameAs": [
+    "https://page.line.me/553svzvc",
+    "https://humain.co.jp/company"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+81-3-4361-2643",
+      "email": "anshin.web.meo@gmail.com",
+      "availableLanguage": "ja",
+      "areaServed": "JP"
+    }
+  ],
   "makesOffer": [
     {
       "@type": "Offer",
       "name": "HPリニューアルプラン",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "99000",
-        "priceCurrency": "JPY"
-      }
+      "description": "ご訪問インタビュー・写真撮影、ホームページ制作（ドメイン・サーバー取得込み）、公式LINEの設定、公開後の運用・保守、コンテンツ更新（月1回訪問）。",
+      "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/#price",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "JPY",
+      "priceSpecification": [
+        {
+          "@type": "UnitPriceSpecification",
+          "name": "初期費用",
+          "price": "99000",
+          "priceCurrency": "JPY"
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          "name": "月額",
+          "price": "9000",
+          "priceCurrency": "JPY",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": "1",
+            "unitCode": "MON"
+          }
+        }
+      ]
     },
     {
       "@type": "Offer",
       "name": "Googleマップ対策プラン",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "33000",
-        "priceCurrency": "JPY"
-      }
+      "description": "ご訪問インタビュー、Googleクチコミ訴求アイテムの作成・お届け、Googleマップ（ビジネスプロフィール）初期設定・更新、クチコミへの返信代行。",
+      "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/#price",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "JPY",
+      "priceSpecification": [
+        {
+          "@type": "UnitPriceSpecification",
+          "name": "初期費用",
+          "price": "33000",
+          "priceCurrency": "JPY"
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          "name": "月額",
+          "price": "11000",
+          "priceCurrency": "JPY",
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": "1",
+            "unitCode": "MON"
+          }
+        }
+      ]
     }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://goalistdeveloper.github.io/anshin-web-zenkoku/#website",
+  "name": "安診Web",
+  "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/",
+  "inLanguage": "ja",
+  "publisher": { "@id": "https://goalistdeveloper.github.io/anshin-web-zenkoku/#business" }
 }
 </script>
 <script type="application/ld+json">
@@ -94,7 +171,7 @@
     {
       "@type": "Question",
       "name": "Googleマップの口コミ返信や投稿は、広告のルールに違反しませんか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "厚生労働省のあはき柔整広告ガイドラインに沿った表現でのみ作成しますので安心です。効果を断定する表現は使用しません。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "厚労省のあはき柔整広告ガイドラインに沿った表現でのみ作成しますので安心です。「〇〇が治りました」のような効果を断定する表現は使用しません。" }
     },
     {
       "@type": "Question",
@@ -109,7 +186,7 @@
     {
       "@type": "Question",
       "name": "契約期間の縛りはありますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "お申し込みから6ヶ月間のご契約をお願いしています。7ヶ月目以降は自動更新となり、前月末日までのお申し出でいつでも解約いただけます。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "お申し込みから6ヶ月間のご契約をお願いしています。Googleからの評価が上がるまでに最低6ヶ月の取り組みが必要なためです。7ヶ月目以降は自動更新となり、前月末日までのお申し出でいつでも解約いただけます。" }
     },
     {
       "@type": "Question",
@@ -127,7 +204,16 @@
   "description": "安診Web発足の背景と、対面・訪問にこだわる理由についての紹介動画。",
   "thumbnailUrl": "https://goalistdeveloper.github.io/anshin-web-zenkoku/assets/img/staff-message-video-poster.jpg",
   "contentUrl": "https://goalistdeveloper.github.io/anshin-web-zenkoku/assets/img/staff-message-video-taimen-houmon-kodawari.mp4",
-  "uploadDate": "2026-01-01"
+  "duration": "PT2M18S",
+  "uploadDate": "2026-07-17",
+  "publisher": {
+    "@type": "Organization",
+    "name": "安診Web",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/assets/img/logo.svg"
+    }
+  }
 }
 </script>
 
@@ -143,7 +229,7 @@
 <!-- ヘッダー -->
 <header>
   <div class="inner header-inner">
-    <a class="logo" href="#"><img src="assets/img/logo.svg" alt="安診Web" width="101" height="50"><span>整骨院・接骨院専門 ホームページ制作</span></a>
+    <a class="logo" href="#"><img src="assets/img/logo.svg" alt="安診Web" width="97" height="48"><span>整骨院・接骨院専門 ホームページ制作</span></a>
     <nav class="gnav">
       <a href="#about">私たちについて</a>
       <a href="#service">サービス内容</a>
@@ -237,7 +323,7 @@
     <h2 class="center">「ホームページ」も「Googleマップ」も、<br>どちらも集客には大事です。</h2>
     <div class="plan-combo">
       <div class="plan-combo-box">
-        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内で施術ベッドが並ぶ様子" width="1920" height="1280"></div>
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内で施術ベッドが並ぶ様子" width="1000" height="666"></div>
         <h3>ホームページ制作</h3>
         <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
       </div>
@@ -351,7 +437,7 @@
     <div class="showcase">
       <div class="showcase-row">
         <div class="showcase-media">
-          <img loading="lazy" src="assets/img/stock-photo-desk-review-unused.jpg" alt="ホームページ・Googleマップの運用作業をしている様子" width="7000" height="4000">
+          <img loading="lazy" src="assets/img/stock-photo-desk-review-unused.jpg" alt="ホームページ・Googleマップの運用作業をしている様子" width="1000" height="571">
         </div>
         <div class="showcase-text">
           <span class="showcase-num">01</span>
@@ -361,7 +447,7 @@
       </div>
       <div class="showcase-row reverse">
         <div class="showcase-media">
-          <img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内の様子" width="1920" height="1280">
+          <img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内の様子" width="1000" height="666">
         </div>
         <div class="showcase-text">
           <span class="showcase-num">02</span>
@@ -407,7 +493,7 @@
     <h2 class="center">「ホームページ」も「Googleマップ」も、<br>どちらも集客には大事です。</h2>
     <div class="plan-combo">
       <div class="plan-combo-box">
-        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内で施術ベッドが並ぶ様子" width="1920" height="1280"></div>
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内で施術ベッドが並ぶ様子" width="1000" height="666"></div>
         <h3>ホームページ制作</h3>
         <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
       </div>
@@ -454,7 +540,7 @@
       <div class="voice-card">
         <img loading="lazy" class="site-shot" src="assets/img/seikotsuin-fv-wakan-sekkotsuin.jpg" alt="和漢整体院 サイトトップページ" width="1400" height="631">
         <div class="voice-body">
-          <img loading="lazy" class="client-logo" src="assets/img/client-logo-wakan-sekkotsuin.png" alt="和漢整体院" width="auto" height="151">
+          <img loading="lazy" class="client-logo" src="assets/img/client-logo-wakan-sekkotsuin.png" alt="和漢整体院" width="260" height="60">
           <h3>「決め手は担当者の親身な対応！」</h3>
           <p>ホームページ制作にとどまらず、LINEやSNSでの院の発信方法など提案してくれました。いつでも電話や対面で相談できる専任パートナーの存在が大きな安心感に繋がっています。Webが苦手な方や、信頼関係を重視する先生に最適です。</p>
           <p class="voice-source">和漢整骨院　運営責任者　高橋様　<a href="https://wakan-sekkotsu.com/" target="_blank" rel="noopener">wakan-sekkotsu.com</a></p>
@@ -645,7 +731,7 @@
   <div class="inner">
     <span class="sec-label">MESSAGE</span>
     <div class="staff-grid">
-      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa-nobg.png" alt="安診Web担当 牛谷梓" width="900" height="1006">
+      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa-nobg.png" alt="安診Web担当 牛谷梓" width="447" height="500">
       <div class="staff-msg">
         <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
         <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
@@ -763,7 +849,7 @@
 <footer>
   <div class="inner">
     <div class="footer-brand">
-      <img class="footer-logo" src="assets/img/logo.svg" alt="安診Web" width="49" height="24">
+      <img class="footer-logo" src="assets/img/logo.svg" alt="安診Web" width="97" height="48">
       <span>（運営：HumAIn Co.,Ltd.）</span>
     </div>
     <div>

@@ -165,7 +165,8 @@ h2.problem-heading { font-size: clamp(28px, 5vw, 40px); }
 .voice-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
 .voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
 .voice-card .voice-body { padding: 24px 28px 28px; }
-.voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; }
+/* width:auto でwidth属性（CLS対策の内寸）を打ち消し、高さ基準の原寸比表示に戻す */
+.voice-card .client-logo { width: auto; height: 24px; margin-bottom: 12px; display: block; }
 .voice-card h3 { font-size: 17px; margin-bottom: 8px; }
 .voice-card p { font-size: 16px; color: var(--text-sub); }
 .voice-card .voice-source { font-size: 14px; margin-top: 10px; }
