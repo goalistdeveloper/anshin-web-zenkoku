@@ -1,0 +1,27 @@
+/* ============================================================
+   base.css — リセット・基本タイポグラフィ・ユーティリティ
+============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic Medium", YuGothic, sans-serif;
+  color: var(--text-main);
+  line-height: 1.8;
+  background: var(--white);
+  padding-bottom: 64px; /* スマホ固定CTAバー分 */
+}
+
+img { max-width: 100%; }
+a { color: var(--green-deep); }
+
+/* ---------- 見出し・リード文 ---------- */
+h2 { font-size: clamp(24px, 4vw, 34px); line-height: 1.45; margin-bottom: 36px; }
+h2 .em { color: var(--green-deep); }
+.em-red { color: var(--red-accent); }
+.lead { color: var(--text-sub); margin: -20px 0 36px; }
+
+/* ---------- ユーティリティ ---------- */
+.center { text-align: center; }
+.mt-40 { margin-top: 40px; }

@@ -1,0 +1,246 @@
+/* ============================================================
+   sections.css — 各セクション固有のスタイル
+   index.html の S1〜S11 のコメントと対応している
+============================================================ */
+
+/* ---------- S1 ファーストビュー（背景ビジュアルのみ・中央寄せ） ---------- */
+.hero { position: relative; overflow: hidden; padding: 40px 0 32px; background: var(--hero-dark); }
+
+/* ⚠ 既知の不具合（元の <style> の記述順をそのまま維持しています）
+   .hero-sub / .hero-price / .hero-cta はこのブロックより後で再定義されているため、
+   下記のスマホ用の余白指定は実際には効いていません（.hero の padding だけが効く）。
+   効かせたい場合は、このブロックを S1 の末尾（.hero-tel-note の後）へ移動してください。
+   見た目が変わる修正のため、CSS分割時は意図的に手を付けていません。 */
+@media (max-width: 640px) {
+  .hero { padding: 28px 0 20px; }
+  .hero-sub { margin-bottom: 10px; }
+  .hero-price { margin-bottom: 16px; }
+  .hero-cta { gap: 12px; }
+}
+
+/* 背景ビジュアル（クラス名は動画差し替えを想定した名残。現在は静止画） */
+.hero-bg-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%;
+  opacity: 0; transform: scale(1.08);
+  animation: heroBgReveal 1.8s ease-out both .1s;
+}
+@keyframes heroBgReveal {
+  from { opacity: 0; transform: scale(1.08); }
+  to   { opacity: .8; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-bg-video { animation: none; opacity: .8; transform: scale(1); } }
+.hero-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,46,32,.62) 0%, rgba(13,46,32,.42) 45%, rgba(13,46,32,.68) 100%);
+}
+.hero-grid { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; text-align: center; animation: heroFadeUp .9s ease-out both; }
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+/* 要素ごとに少しずつ遅らせて順に出す */
+.hero-grid .badges { animation: heroFadeUp .7s ease-out both .1s; }
+.hero-grid h1 { animation: heroFadeUp .7s ease-out both .2s; }
+.hero-grid .hero-sub { animation: heroFadeUp .7s ease-out both .32s; }
+.hero-grid .hero-price { animation: heroFadeUp .7s ease-out both .42s; }
+.hero-grid .hero-cta { animation: heroFadeUp .7s ease-out both .52s; }
+.hero-grid .hero-tel { animation: heroFadeUp .7s ease-out both .62s; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
+.badge {
+  background: var(--green-accent); color: var(--hero-dark); font-size: 13px; font-weight: 700;
+  padding: 4px 14px; border-radius: 999px;
+}
+.badge.alt { background: rgba(255,255,255,.16); color: #fff; }
+h1 {
+  font-size: clamp(30px, 5vw, 46px); line-height: 1.35; margin-bottom: 16px; color: #fff;
+  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+}
+h1 .em { color: var(--green-accent); }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,.9); margin-bottom: 14px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.hero-price { font-size: 14px; color: rgba(255,255,255,.75); font-weight: 600; margin-bottom: 24px; }
+.hero-price strong { font-size: 18px; color: var(--green-accent); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: center; position: relative; }
+.hero-tel {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 10px;
+  margin-top: 16px; text-decoration: none; color: #fff;
+}
+.hero-tel-icon { font-size: 20px; }
+.hero-tel-num { font-size: 26px; font-weight: 800; letter-spacing: .02em; }
+.hero-tel-note { font-size: 13px; color: rgba(255,255,255,.75); width: 100%; text-align: center; }
+
+@media (min-width: 561px) { .hero-tel-note { width: auto; } }
+
+/* ---------- S2 問題提起 ---------- */
+.sec-problem { background: var(--white); padding-top: 20px; }
+.problem-hook-label {
+  background: var(--red-accent); color: #fff; border-color: var(--red-accent);
+  font-size: 13px; font-weight: 800;
+}
+h2.problem-heading { font-size: clamp(28px, 5vw, 40px); }
+.problem-heading .underline {
+  color: var(--red-accent); text-decoration: underline; text-decoration-thickness: 4px;
+  text-underline-offset: 6px; text-decoration-color: var(--red-underline);
+}
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.problem-card {
+  background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: var(--radius); padding: 24px;
+}
+.problem-card .no { color: var(--red-accent); font-weight: 800; font-size: 14px; }
+.problem-card h3 { font-size: 18px; margin: 6px 0 8px; }
+.problem-card p { font-size: 16px; color: var(--text-sub); }
+.problem-close {
+  margin-top: 40px; text-align: center; font-size: clamp(16px, 2.6vw, 20px); font-weight: 700;
+}
+.problem-close .em { color: var(--green-deep); }
+
+/* ---------- S3 担当者・理念 ---------- */
+.sec-about { background: var(--green-pale); }
+.staff-grid {
+  display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: center;
+  background: var(--white); border-radius: var(--radius); padding: 28px;
+  box-shadow: 0 2px 12px rgba(31,122,85,.08);
+}
+.staff-grid img.portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); }
+.staff-msg h3 { font-size: 22px; margin-bottom: 12px; line-height: 1.5; }
+.staff-msg p { font-size: 16px; color: var(--text-sub); margin-bottom: 10px; }
+.staff-name { font-weight: 700; color: var(--text-main); }
+.about-copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.about-copy-card { background: var(--white); border-radius: var(--radius); padding: 24px 26px; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+.about-copy-card h3 { font-size: 17px; color: var(--green-deep); margin-bottom: 10px; }
+.about-copy-card p { font-size: 16px; color: var(--text-sub); }
+.about-video-small {
+  width: 100%; max-width: 260px; border-radius: 10px; margin-top: 14px; display: block;
+  box-shadow: 0 6px 16px rgba(31,122,85,.15); background: #000;
+}
+
+@media (max-width: 720px) { .staff-grid { grid-template-columns: 1fr; } }
+@media (max-width: 780px) { .about-copy-grid { grid-template-columns: 1fr; } }
+
+/* ---------- S4 資料ダウンロード ---------- */
+.sec-online { background: var(--white); }
+.online-list { display: grid; gap: 28px; }
+.online-item {
+  display: grid; grid-template-columns: 1fr 380px; gap: 32px; align-items: center;
+  background: var(--green-pale); border-radius: var(--radius); padding: 32px;
+  box-shadow: 0 2px 12px rgba(31, 122, 85, .08); position: relative;
+}
+.online-item h3 { font-size: 19px; color: var(--green-deep); margin-bottom: 10px; white-space: nowrap; }
+.online-item p { font-size: 16px; }
+.online-item .guide-img { width: 100%; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(31,122,85,.18); }
+
+/* 資料DLフォーム（問い合わせフォームより簡易な縦積みレイアウト） */
+.download-form { display: grid; gap: 10px; margin-top: 16px; max-width: 420px; }
+.download-form .btn-cta { font-size: 15px; }
+
+@media (max-width: 860px) { .online-item { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .online-item h3 { font-size: 16px; white-space: normal; } }
+
+/* ---------- S5 サービス4本柱 ---------- */
+.pillar { display: grid; gap: 22px; }
+.pillar-card {
+  background: var(--white); border: 1px solid var(--green-line); border-radius: var(--radius);
+  padding: 32px; display: grid; grid-template-columns: 72px 1fr; gap: 24px;
+}
+.pillar-num {
+  font-size: 30px; font-weight: 800; color: var(--green-accent); border-right: 2px solid var(--green-line);
+  padding-right: 20px;
+}
+.pillar-card h3 { font-size: 20px; margin-bottom: 8px; }
+.pillar-card p { font-size: 16px; color: var(--text-sub); }
+.pillar-note {
+  background: var(--green-pale); border-radius: 8px; padding: 10px 16px; margin-top: 12px;
+  font-size: 15px; color: var(--text-main);
+}
+/* 補足枠の中に置く画像（クチコミカード見本など） */
+.pillar-img { width: 100%; max-width: 420px; border-radius: 8px; margin-top: 10px; }
+/* 同じく補足枠内のレポート見本（やや大きめ） */
+.pillar-img-report { width: 100%; max-width: 520px; border-radius: 8px; }
+
+@media (max-width: 640px) {
+  .pillar-card { grid-template-columns: 1fr; }
+  .pillar-num { border-right: none; padding-right: 0; }
+}
+
+/* ---------- S6 実績・お客様の声 ---------- */
+.sec-sample { background: var(--green-pale); }
+.voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.voice-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 12px rgba(31,122,85,.08); }
+.voice-card .site-shot { width: 100%; display: block; border-bottom: 1px solid var(--green-line); }
+.voice-card .voice-body { padding: 24px 28px 28px; }
+.voice-card .client-logo { height: 24px; margin-bottom: 12px; display: block; }
+.voice-card h3 { font-size: 17px; margin-bottom: 8px; }
+.voice-card p { font-size: 16px; color: var(--text-sub); }
+.voice-card .voice-source { font-size: 14px; margin-top: 10px; }
+/* 「他にもこのようなご意見を」の小見出し */
+h2.voice-sub-heading { font-size: 20px; margin-top: 48px; }
+.mini-voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
+.mini-voice-card { background: var(--white); border-radius: 10px; padding: 18px 20px; font-size: 15px; box-shadow: 0 2px 8px rgba(31,122,85,.06); }
+.mini-voice-card .area { color: var(--green-deep); font-weight: 700; margin-top: 8px; display: block; }
+
+/* ---------- S7 料金 ---------- */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 28px; }
+.price-card {
+  border: 2px solid var(--green-line); border-radius: var(--radius); overflow: hidden; background: var(--white);
+}
+.price-card.main { border-color: var(--green-deep); }
+.price-head { background: var(--green-deep); color: #fff; text-align: center; padding: 16px; font-size: 18px; font-weight: 800; }
+.price-card.sub .price-head { background: var(--green-accent); }
+.price-body { padding: 28px; }
+.price-fig { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center; }
+.price-fig .cell { background: var(--green-pale); border-radius: 10px; padding: 14px 10px; }
+.price-fig .cell .label { font-size: 14px; color: var(--text-sub); font-weight: 700; margin-bottom: 4px; }
+.price-fig .cell .num { font-size: 27px; font-weight: 800; color: var(--green-deep); }
+.price-fig .cell .num .unit { font-size: 15px; font-weight: 700; margin-left: 2px; }
+.price-body ul { list-style: none; }
+.price-body li { font-size: 16px; padding: 8px 0 8px 28px; border-bottom: 1px dashed var(--green-line); position: relative; }
+.price-body li::before { content: "✓"; position: absolute; left: 4px; color: var(--green-accent); font-weight: 800; }
+.price-banner {
+  background: var(--green-pale); border: 2px solid var(--green-deep); border-radius: var(--radius);
+  text-align: center; padding: 20px; font-size: 18px; font-weight: 800; color: var(--green-deep); margin-bottom: 16px;
+}
+.price-fine { font-size: 14px; color: var(--text-sub); }
+
+/* ---------- S8 比較表 ----------
+   テーブル本体のスタイルは components.css を参照 */
+.sec-compare { padding-top: 0; } /* S7 料金セクションと続けて見せる */
+
+/* ---------- S9 導入の流れ ---------- */
+.sec-flow { background: var(--green-pale); }
+.flow-list { list-style: none; counter-reset: flow; display: grid; gap: 14px; }
+.flow-list li {
+  counter-increment: flow; background: var(--white); border-radius: var(--radius); padding: 22px 24px 22px 76px;
+  position: relative; box-shadow: 0 2px 10px rgba(31,122,85,.07);
+}
+.flow-list li::before {
+  content: counter(flow, decimal-leading-zero); position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
+  color: var(--green-accent); font-size: 24px; font-weight: 800;
+}
+.flow-list h3 { font-size: 17px; }
+.flow-list p { font-size: 16px; color: var(--text-sub); }
+
+/* ---------- S10 FAQ ---------- */
+.sec-faq { background: var(--white); }
+.faq-list { display: grid; gap: 12px; }
+details {
+  background: var(--green-pale); border-radius: var(--radius); padding: 0; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(31,122,85,.07);
+}
+summary {
+  cursor: pointer; list-style: none; padding: 20px 52px 20px 52px; font-weight: 700; font-size: 16px; position: relative;
+}
+summary::before { content: "Q"; position: absolute; left: 20px; color: var(--green-deep); font-weight: 800; }
+summary::after { content: "＋"; position: absolute; right: 20px; color: var(--green-accent); font-weight: 800; }
+details[open] summary::after { content: "−"; }
+.faq-a { padding: 0 24px 20px 52px; font-size: 16px; color: var(--text-sub); position: relative; }
+.faq-a::before { content: "A"; position: absolute; left: 20px; color: var(--cta-orange); font-weight: 800; }
+
+/* ---------- S11 CTA・フォーム ----------
+   フォーム部品のスタイルは components.css を参照 */
+.sec-contact { background: linear-gradient(180deg, var(--green-deep), var(--green-contact-end)); color: #fff; }
+.sec-contact h2 { color: #fff; text-align: center; }
+.sec-contact .lead { color: var(--text-lead-on-dark); text-align: center; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.contact-alt { background: rgba(255,255,255,.08); border-radius: var(--radius); padding: 28px; }
+.contact-alt h3 { font-size: 17px; margin-bottom: 14px; }
+.contact-alt .tel { font-size: 30px; font-weight: 800; letter-spacing: .04em; }
+.contact-alt .tel small { display: block; font-size: 14px; font-weight: 500; opacity: .85; }
+
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }

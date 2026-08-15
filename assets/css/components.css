@@ -1,0 +1,79 @@
+/* ============================================================
+   components.css — 複数セクションで使い回す部品
+   セクションラベル／ボタン／CTAバッジ／画像プレースホルダー／
+   比較テーブル／フォーム
+============================================================ */
+
+/* ---------- セクションラベル（SERVICE / PRICE など） ---------- */
+.sec-label {
+  display: inline-block; color: var(--green-deep); font-size: 13px; font-weight: 700;
+  letter-spacing: .12em; border: 1px solid var(--green-accent); border-radius: 999px;
+  padding: 2px 14px; margin-bottom: 14px; background: var(--white);
+}
+/* 濃い背景のセクションに置く場合（S11 CONTACT） */
+.sec-label.on-dark { background: transparent; color: #fff; border-color: #fff; }
+
+/* ---------- ボタン ---------- */
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700; text-align: center;
+  border-radius: 999px; transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-cta {
+  background: linear-gradient(180deg, var(--cta-orange), var(--cta-orange-dark));
+  color: #fff; padding: 17px 40px; font-size: 17px; position: relative; z-index: 1;
+  box-shadow: 0 6px 18px rgba(217, 119, 6, .35);
+}
+.btn-cta small { display: block; font-size: 12px; font-weight: 500; opacity: .95; }
+.btn-sub {
+  background: var(--white); color: var(--green-deep); border: 2px solid var(--green-deep);
+  padding: 16px 36px; font-size: 15px;
+}
+
+/* ---------- CTAボタン上の吹き出しバッジ ---------- */
+.cta-with-badge { position: relative; display: inline-block; padding-top: 22px; }
+.cta-with-badge.full { width: 100%; }
+.cta-badge {
+  display: inline-block; background: var(--green-deep); color: #fff;
+  font-size: 12px; font-weight: 800; padding: 7px 18px; border-radius: 999px;
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; white-space: nowrap;
+}
+.cta-badge::after {
+  content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 0; height: 0;
+  border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid var(--green-deep);
+}
+
+/* ---------- 画像プレースホルダー（一部未確定要素のみ使用） ---------- */
+.ph {
+  background: repeating-linear-gradient(45deg, #DCEFE6, #DCEFE6 12px, #E9F5EF 12px, #E9F5EF 24px);
+  border: 2px dashed var(--green-accent); border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--green-deep); font-size: 13px; font-weight: 700; padding: 12px;
+}
+
+/* ---------- 比較テーブル（S8で使用） ---------- */
+.compare-wrap { overflow-x: auto; }
+table.compare { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px; }
+table.compare th, table.compare td { border: 1px solid var(--green-line); padding: 14px 12px; text-align: center; }
+table.compare thead th { background: var(--green-pale); }
+table.compare thead th.us { background: var(--green-deep); color: #fff; font-size: 17px; }
+table.compare td.us { background: #F4FBF7; font-weight: 700; color: var(--green-deep); }
+table.compare td:first-child, table.compare th:first-child { text-align: left; font-weight: 700; background: var(--gray-bg); }
+.compare-note { font-size: 13.5px; color: var(--text-sub); margin-top: 12px; }
+
+/* ---------- フォーム（S4 資料DL・S11 問い合わせで使用） ---------- */
+form { background: var(--white); border-radius: var(--radius); padding: 32px; color: var(--text-main); }
+.form-row { margin-bottom: 18px; }
+.form-row label { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.req { color: var(--red-accent); font-size: 12px; border: 1px solid var(--red-accent); border-radius: 4px; padding: 0 6px; margin-left: 8px; }
+.opt { color: var(--text-sub); font-size: 12px; border: 1px solid var(--gray-line-strong); border-radius: 4px; padding: 0 6px; margin-left: 8px; }
+input[type=text], input[type=tel], input[type=email], select, textarea {
+  width: 100%; border: 1px solid var(--gray-line); border-radius: 8px; padding: 12px; font-size: 16px; font-family: inherit;
+}
+.radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.radio-group label {
+  font-weight: 500; font-size: 15px; border: 1px solid var(--gray-line); border-radius: 999px;
+  padding: 8px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin: 0;
+}
+form .btn-cta { width: 100%; border: none; cursor: pointer; font-family: inherit; }
+.form-fine { font-size: 12px; color: var(--text-sub); margin-top: 12px; text-align: center; }
