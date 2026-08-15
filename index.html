@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】</title>
-<meta name="description" content="整骨院・接骨院専門のホームページ制作。初期費用99,000円・月額9,000円で撮影から毎月の更新まで丸ごとおまかせ。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で先生のそばで伴走します。">
+<title>安診Web｜整骨院・接骨院専門のホームページ制作＋Googleマップ集客対策</title>
+<meta name="description" content="整骨院・接骨院専門のホームページ制作。2026年7月の療養費改定をきっかけに、自費メニュー対応とその先の集客まで担当者が直接サポートします。初期費用99,000円〜、東京23区・近郊エリア対応、月3社限定。">
 <meta name="robots" content="index,follow">
+<meta name="format-detection" content="telephone=no">
 <!-- [仮] 本番ドメイン確定後に置き換え -->
 <link rel="canonical" href="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
 
-<!-- OGP（現行anshin-hp.comの構成に準拠。画像は現行サイトのOGP画像を流用） -->
+<!-- OGP（FVのコピー・写真を使った専用カード。1200x630） -->
 <meta property="og:site_name" content="安診Web｜整骨院・接骨院専門のホームページ制作">
-<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作【東京・埼玉・神奈川・千葉対応】">
-<meta property="og:description" content="整骨院・接骨院専門のホームページ制作。初期99,000円・月額9,000円。東京・埼玉・神奈川・千葉エリア対応、月1回の訪問で伴走します。">
+<meta property="og:title" content="安診Web｜整骨院・接骨院専門のホームページ制作＋Googleマップ集客対策">
+<meta property="og:description" content="2026年7月の療養費改定をきっかけに、自費メニュー対応とその先の集客まで担当者が直接サポート。初期99,000円〜、東京23区・近郊エリア対応、月3社限定。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://goalistdeveloper.github.io/anshin-web-zenkoku/">
-<meta property="og:image" content="assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png">
+<meta property="og:image" content="assets/img/og-fv-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png">
+<meta name="twitter:image" content="assets/img/og-fv-card.jpg">
 
 <!-- favicon（現行anshin-hp.comのファビコンを流用） -->
 <link rel="icon" type="image/png" href="assets/img/favicon-anshin-web-mark.png">
@@ -39,15 +42,14 @@
   "@type": "ProfessionalService",
   "name": "安診Web",
   "description": "整骨院・接骨院専門のホームページ制作。撮影・更新・Googleマップ対策まで、月1回の訪問で丸ごと代行します。",
-  "areaServed": [
-    { "@type": "State", "name": "東京都" },
-    { "@type": "State", "name": "埼玉県" },
-    { "@type": "State", "name": "神奈川県" },
-    { "@type": "State", "name": "千葉県" }
-  ],
+  "areaServed": {
+    "@type": "State",
+    "name": "東京都",
+    "description": "東京23区を中心に訪問対応。埼玉県・神奈川県・千葉県など近郊エリアもご相談に応じて訪問可能です。"
+  },
   "priceRange": "¥33,000〜¥99,000",
   "telephone": "+81-3-4361-2643",
-  "image": "assets/img/og-fv-snapshot-seikotsuin-hp-99000yen.png",
+  "image": "assets/img/og-fv-card.jpg",
   "url": "https://goalistdeveloper.github.io/anshin-web-zenkoku/",
   "makesOffer": [
     {
@@ -78,8 +80,8 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "訪問エリア外ですが、相談できますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています。エリア外の場合もまずはご相談ください。" }
+      "name": "対応エリアを教えてください",
+      "acceptedAnswer": { "@type": "Answer", "text": "東京23区を中心に、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。" }
     },
     {
       "@type": "Question",
@@ -138,62 +140,134 @@
 <!-- ヘッダー -->
 <header>
   <div class="inner header-inner">
-    <a class="logo" href="#"><img src="assets/img/logo.svg" alt="安診Web" height="30"><span>整骨院・接骨院専門 ホームページ制作</span></a>
+    <a class="logo" href="#"><img src="assets/img/logo.svg" alt="安診Web" height="50"><span>整骨院・接骨院専門 ホームページ制作</span></a>
     <nav class="gnav">
       <a href="#about">私たちについて</a>
       <a href="#service">サービス内容</a>
       <a href="#price">料金</a>
       <a href="#faq">よくある質問</a>
       <a href="tel:0343612643" class="header-tel"><span class="tel-icon">☎</span>03-4361-2643<small>平日10-19時</small></a>
-      <a href="#check" class="btn btn-sub">資料ダウンロード</a>
       <a href="#contact" class="btn btn-cta">無料相談する</a>
     </nav>
   </div>
 </header>
 
-<!-- S1 ファーストビュー -->
-<div class="hero">
-  <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
-  <div class="hero-bg-overlay"></div>
-  <div class="inner hero-grid">
-    <div class="badges">
-      <span class="badge">整骨院・接骨院専門</span>
-      <span class="badge alt">東京・埼玉・神奈川・千葉訪問！</span>
-      <span class="badge alt">月1回の訪問サポート</span>
-    </div>
-    <h1>先生の代わりに、<br>Webから<span class="em">選ばれる理由をつくる。</span></h1>
-    <p class="hero-sub">東京・埼玉・神奈川・千葉の整骨院・接骨院専門。ホームページも、Googleマップも、担当者が毎月お伺いして丸ごとおまかせできます。</p>
-    <p class="hero-price">初期費用 <strong>99,000円</strong>（税込）／ 月額 9,000円（税込）</p>
-    <div class="hero-cta">
-      <div class="cta-with-badge">
-        <span class="cta-badge">1分で簡単入力</span>
-        <a href="#contact" class="btn btn-cta">無料相談する<small>対面・電話でご相談いただけます</small></a>
-      </div>
-      <a href="#check" class="btn btn-sub">無料の資料をダウンロードする</a>
-    </div>
-    <a href="tel:0343612643" class="hero-tel">
-      <span class="hero-tel-icon">☎</span>
-      <span class="hero-tel-num">03-4361-2643</span>
-      <span class="hero-tel-note">お電話でのご相談も歓迎です（平日10:00〜19:00）</span>
-    </a>
+<div class="trust-strip">
+  <div class="inner trust-strip-inner">
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span>ホームページ制作</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span>Googleマップ対策</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span>写真撮影代行</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>クチコミ返信代行</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>月次レポート</div>
+    <div class="ts-item"><span class="ts-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>対面訪問サポート</div>
   </div>
 </div>
+
+<!-- S1 ファーストビュー -->
+<div class="hero">
+  <img class="hero-bg-video" src="assets/img/seikotsuin-fv-consultation-photo-v4.jpg" alt="安診Web担当者が院長にホームページ案をご案内している様子" fetchpriority="high">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-services">
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.4 2.6 3.8 5.6 3.8 9s-1.4 6.4-3.8 9c-2.4-2.6-3.8-5.6-3.8-9s1.4-6.4 3.8-9z" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">ホームページ<br>制作</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">Googleマップ<br>対策</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8a1 1 0 011-1h2.2l1-1.6a1 1 0 01.86-.4h5.9a1 1 0 01.85.4L16.8 7H19a1 1 0 011 1v10a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="hs-label">写真撮影<br>代行</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.5 5.5h15a1 1 0 011 1v9a1 1 0 01-1 1H10l-4 3.4v-3.4H4.5a1 1 0 01-1-1v-9a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="hs-label">クチコミ<br>返信代行</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V13M10 20V8M16 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="hs-label">月次<br>レポート</span></div>
+    <div class="hero-service-item"><span class="hs-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="2.2" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5M14 19c0-2 1.6-3.6 3.6-3.6s3.4 1.6 3.4 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="hs-label">対面訪問<br>サポート</span></div>
+  </div>
+  <div class="inner hero-grid">
+    <h1><span class="h1-sm" style="white-space:nowrap;">安診Webは、</span><br><span class="h1-lg em-underline" style="white-space:nowrap;">整骨院・接骨院専門</span>の<br><span class="h1-sm">ホームページとGoogleマップの<br>集客サービスです。</span></h1>
+    <div class="hero-badges" style="margin-top:28px;">
+      <div class="hero-badge">
+        <span class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-7.1 7-12.5C19 5.36 15.87 2 12 2S5 5.36 5 9.5C5 14.9 12 22 12 22Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" stroke="#fff" stroke-width="1.8"/></svg>
+        </span>
+        <span class="hero-badge-label">東京23区・近郊エリア対応</span>
+      </div>
+      <div class="hero-badge">
+        <span class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v4M12 17v4M5 12H3M21 12h-2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="#fff" stroke-width="1.8"/></svg>
+        </span>
+        <span>月3社限定・丁寧サポート</span>
+      </div>
+      <div class="hero-badge">
+        <span class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18l5-6 4 3 7-9" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>導入院の予約、月平均+3.2件</span>
+      </div>
+    </div>
+    <div class="hero-price-reveal">
+      <span class="hero-price-reveal-tag">ホームページプラン</span>
+      <span class="hero-price-reveal-num">初期費用 99,000<small>円</small></span>
+      <span class="hero-price-reveal-sub">／月額9,000円〜（税込）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 右下固定CTA（デスクトップ） -->
+<div class="floating-cta">
+  <a href="#contact" class="btn btn-cta">無料相談する</a>
+  <p class="floating-cta-note">※先着<strong>月3社限定</strong>でご対応します</p>
+</div>
+
+<!-- S1.6 広告の前に、まず土台を -->
+<section class="sec-foundation">
+  <p class="foundation-preface center">「集客」と聞くと、まず広告を思い浮かべていませんか？</p>
+  <div class="foundation-slash-wrap">
+    <p class="foundation-slash">ちょっと待った！</p>
+  </div>
+  <div class="inner">
+    <h2 class="center">広告を打つ前に、まずは<br><span class="em">「ホームページ」と「Googleマップ」</span>を<br>整えましょう。</h2>
+    <p class="lead center">SNS運用も、広告出稿も、土台があってこそ活きるもの。<br>安診Webがつくるのは、患者さんが来院を決める「土台」そのものです。</p>
+    <div class="foundation-stat">
+      <p class="foundation-stat-num">広告費をかける前に、この2つを整えるだけで<br><span class="em-hl">月平均+3.2件</span>の予約増加</p>
+      <p class="foundation-stat-note">※導入院の実績（詳しい実績は後ほどご紹介します）</p>
+    </div>
+  </div>
+</section>
+
+<!-- S1.5 プラン紹介（A×B＋価格リビール） -->
+<section class="sec-plan">
+  <div class="inner">
+    <p class="plan-eyebrow center">整骨院・接骨院専門だから、どちらも安心してお任せいただけます</p>
+    <h2 class="center">「ホームページ」も「Googleマップ」も、<br>どちらも集客には大事です。</h2>
+    <div class="plan-combo">
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="ホームページ制作"></div>
+        <h3>ホームページ制作</h3>
+        <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
+      </div>
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="Googleマップ運用"></div>
+        <h3>Googleマップ運用</h3>
+        <p>投稿・口コミ返信までまるごと代行</p>
+      </div>
+    </div>
+    <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
+    <div class="center" style="margin-top:28px;">
+      <a href="#contact" class="btn btn-cta">無料相談する</a>
+    </div>
+  </div>
+</section>
 
 <!-- S2 問題提起 -->
 <section class="sec-problem" id="problem">
   <div class="inner">
-    <h2 class="problem-heading">そのホームページ、<span class="underline">新しい患者さんに届いていますか？</span></h2>
-    <p class="lead">10年前に作ったまま……そのホームページ、患者さんは静かに離れていっているかもしれません。</p>
+    <div class="alert-bubble">
+      <p class="alert-shout">こんなお悩みありませんか？</p>
+      <h2 class="problem-heading">土台が整っていなければ、<br><span class="underline">広告を打っても、<span style="white-space:nowrap;">集客は増えません。</span></span></h2>
+    </div>
     <div class="problem-grid">
       <div class="problem-card">
         <span class="no">✕ 問題 1</span>
-        <h3>休診日のお知らせすら載せられない</h3>
-        <p>お盆や年末年始の案内が出せず、せっかく調べてくれた患者さんを困らせてしまう。</p>
+        <h3>広告を出しても、本当に集客できるのか不安</h3>
+        <p>広告費をかけても、実際に来院につながるのか分からないまま出稿を続けるのは不安です。効果が見えないまま費用だけがかさむのでは、と感じている先生も少なくありません。</p>
       </div>
       <div class="problem-card">
         <span class="no">✕ 問題 2</span>
-        <h3>スマホで見ると字が小さい・崩れる</h3>
-        <p>患者さんの8割以上はスマホで検索。10年前の設計のままでは読む前に閉じられます。</p>
+        <h3>2026年7月の療養費改定で、自費メニューへ移行中</h3>
+        <p>保険だけに頼れず、自費メニューへ切り替える院が急増中。ただメニューを変えただけでは伝わらず、集客への取り組みも必要です。</p>
       </div>
       <div class="problem-card">
         <span class="no">✕ 問題 3</span>
@@ -216,33 +290,24 @@
         <p>高い費用を払い続けたのに新規は増えず、そのまま「もう業者は信用できない」と感じている。</p>
       </div>
     </div>
-    <p class="problem-close">直したい気持ちはあるのに、日々の施術で手が回らない。<br>——それが<span class="em">一番もったいない状態</span>です。</p>
+    <p class="problem-close">広告より先に、ホームページとGoogleマップという<br>「土台」を整えるべき<span class="em problem-em-red">明確な理由</span>があります。</p>
   </div>
 </section>
 
-<!-- S3 担当者・理念 -->
-<section class="sec-about" id="about">
+<!-- S2.5 なぜ集客できるのか -->
+<section class="sec-why">
   <div class="inner">
-    <span class="sec-label">MESSAGE</span>
-    <div class="staff-grid">
-      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa.jpg" alt="安診Web担当 牛谷梓">
-      <div class="staff-msg">
-        <h3>先生の「一番近い相談相手」で<br>あり続けたい。</h3>
-        <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
-        <p class="staff-name">安診Web 担当　牛谷 梓（HumAIn Co.,Ltd.）</p>
-      </div>
+    <span class="sec-label">WHY</span>
+    <h2 class="center">なぜ、ホームページ制作と<br>Googleマップ運用で<span class="em">集客ができるのか？</span></h2>
+    <div class="why-wrap">
+      <div class="why-photo"><img loading="lazy" src="assets/img/seikotsuin-fv-consultation-photo-v4.jpg" alt="ホームページで自費メニューを説明している様子"></div>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span>スマホで見た瞬間に「相談してみたい」と思われる、集客に強いホームページだから</li>
+        <li><span class="why-check">✓</span>指名検索だけでなく、「地域名＋整骨院」の検索でも見つかるようになるから</li>
+        <li><span class="why-check">✓</span>投稿・口コミへの返信で、「ちゃんとやっている院」だと伝わるから</li>
+      </ul>
     </div>
-    <div class="about-copy-grid">
-      <div class="about-copy-card">
-        <h3>安診Web発足の背景</h3>
-        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。実際、上京後に足を痛めて整骨院を探した際、料金や診療時間、先生の情報が分からず不安で、結局は情報が整っている大手に予約しました。本当は近くの院に行きたかったのに、「分からない」という理由だけで選べなかったのです。今は、検索した瞬間に判断される時代です。技術の差ではなく、Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
-      </div>
-      <div class="about-copy-card">
-        <h3>私たちが対面・訪問にこだわる理由</h3>
-        <p>院の強みは、実際に足を運んでこそ見えてきます。導線や雰囲気、先生の人柄は現地でしか分かりませんし、本当の強みは往々にして、雑談の中からこぼれ落ちてくるものです。また、Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、先生と目線を合わせて、長く・深く伴走したいのです。</p>
-        <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
-      </div>
-    </div>
+    <p class="why-close">この3つがそろって、はじめて安定した集客につながります。</p>
   </div>
 </section>
 
@@ -275,30 +340,38 @@
   </div>
 </section>
 
-<!-- S5 サービス4本柱 -->
-<section id="service">
+<!-- S5 サービス -->
+<section id="service" style="background:var(--white);">
   <div class="inner">
     <span class="sec-label">SERVICE</span>
     <h2>「丸投げ」できる安心感と、<span class="em">誠実さ。</span></h2>
-    <div class="pillar">
-      <div class="pillar-card">
-        <div class="pillar-num">01</div>
-        <div>
-          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行します</h3>
-          <p>面倒な写真撮影、週1回の新着投稿、キーワードを含めた口コミ返信文の作成まで、実務はすべてこちらで代行します。先生にお願いするのは、月1回の訪問時に少しお話しいただくことだけ。施術に集中してください。</p>
-          <p class="pillar-note">投稿文・口コミ返信は、厚労省のあはき柔整広告ガイドラインに沿った表現で作成します。「効果を保証するような書き方」はいたしませんのでご安心ください。</p>
+    <div class="showcase">
+      <div class="showcase-row">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/stock-photo-desk-review-unused.jpg" alt="ホームページ・Googleマップの運用作業をしている様子">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">01</span>
+          <h3>写真も、投稿も、口コミ返信も。すべて丸ごと代行</h3>
+          <p>面倒な写真撮影、週1回の新着投稿、口コミ返信文の作成まで実務は全て代行。先生にお願いするのは月1回の訪問時に少しお話しいただくことだけです。</p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">02</div>
-        <div>
-          <h3>大量集客ではなく、悩んでいる患者さんに届ける</h3>
-          <p>「とにかく新規を増やす」広告や、AIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けるための情報発信です。既存の患者さんが来づらくなるような煽り文句も使いません。</p>
+      <div class="showcase-row reverse">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="整骨院の院内の様子">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">02</span>
+          <h3>本当に悩んでいる、近隣の患者さんに届ける</h3>
+          <p>「とにかく新規を増やす」広告やAIによる自動量産、強引な順位上げはしません。本気で悩んでいる近隣の患者さんに、先生の人柄と施術の良さを届けます。</p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">03</div>
-        <div>
+      <div class="showcase-row">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="クチコミ促進カード・卓上POPのサンプル">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">03</span>
           <h3>Googleマップで選ばれる、評判づくり</h3>
           <p>先生も、初めての場所を探すときはGoogleマップを使いませんか？ 患者さんも同じです。マップ上の情報整備とクチコミづくりで、「見つかるだけでなく、選ばれる」院を目指します。</p>
           <p class="pillar-note">クチコミをお願いするためのカード・卓上POPは、月1回の訪問時にお届けします。診察券と一緒にお渡しいただくだけでOKです。<br>
@@ -306,9 +379,12 @@
           </p>
         </div>
       </div>
-      <div class="pillar-card">
-        <div class="pillar-num">04</div>
-        <div>
+      <div class="showcase-row reverse">
+        <div class="showcase-media">
+          <img loading="lazy" src="assets/img/meo-report-sample-dummy-data.jpg" alt="運用成果サマリーレポートのサンプル（数値はダミー）">
+        </div>
+        <div class="showcase-text">
+          <span class="showcase-num">04</span>
           <h3>作りっぱなしにしない、毎月の訪問と作戦会議</h3>
           <p>「何人が見てくれたのか」「来院された方は、何をきっかけに選んでくれたのか」。結果を分かりやすいレポートにまとめ、専門用語を使わずにご報告。月1回の訪問時に、次の一手を先生と一緒に考えます。</p>
           <p class="pillar-note">
@@ -321,11 +397,56 @@
   </div>
 </section>
 
+<!-- S5.5 プラン紹介（再掲） -->
+<section class="sec-plan">
+  <div class="inner">
+    <p class="plan-eyebrow center">整骨院・接骨院専門だから、どちらも安心してお任せいただけます</p>
+    <h2 class="center">「ホームページ」も「Googleマップ」も、<br>どちらも集客には大事です。</h2>
+    <div class="plan-combo">
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/seikotsuin-shisetsu-naibu-shashin.jpg" alt="ホームページ制作"></div>
+        <h3>ホームページ制作</h3>
+        <p>自費メニューの魅力も伝わる、スマホ対応のホームページ</p>
+      </div>
+      <div class="plan-combo-box">
+        <div class="plan-combo-photo"><img loading="lazy" src="assets/img/google-review-qr-card-sample.jpg" alt="Googleマップ運用"></div>
+        <h3>Googleマップ運用</h3>
+        <p>投稿・口コミ返信までまるごと代行</p>
+      </div>
+    </div>
+    <p class="plan-combo-note">それぞれ独立したプランです。まずはどちらか一つだけのご相談も歓迎します。</p>
+    <div class="plan-price-row">
+      <div class="plan-price-card">
+        <span class="plan-price-tag">ホームページプラン</span>
+        <span class="plan-price-num">初期99,000<small>円</small></span>
+        <span class="plan-price-sub">月額9,000円〜（税込）</span>
+      </div>
+      <div class="plan-price-card">
+        <span class="plan-price-tag">Googleマップ対策プラン</span>
+        <span class="plan-price-num">初期33,000<small>円</small></span>
+        <span class="plan-price-sub">月額11,000円〜（税込）</span>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px;">
+      <a href="#contact" class="btn btn-cta">まずは相談してみる</a>
+    </div>
+  </div>
+</section>
+
 <!-- S6 実績・お客様の声 -->
 <section class="sec-sample" id="sample">
   <div class="inner">
     <span class="sec-label">SAMPLE</span>
-    <h2>院の皆様から<span class="em">寄せられた声</span></h2>
+    <p class="lead center" style="margin-top:0;">同じお悩みを持っていた院長先生も、<span class="em">Googleマップ経由の来院</span>を増やしています。</p>
+    <h2>数字で見る、<span class="em">安診Webの実績</span></h2>
+    <div class="kpi-panel">
+      <div class="kpi-grid">
+        <div class="kpi-tile"><div class="kpi-num">3.2<small>件／月</small></div><div class="kpi-label">Googleマップ経由 平均予約数（1院あたり）</div><div class="kpi-caption">広告費0円で予約数が増えています！</div></div>
+        <div class="kpi-tile"><div class="kpi-num">4.7<small>★</small></div><div class="kpi-label">クチコミ平均評価</div></div>
+      </div>
+      <p class="kpi-note">※導入中の院を対象に集計（特定の院を抜き出した数値ではありません）。運用期間・院の規模により結果は異なります。</p>
+    </div>
+    <h2 style="margin-top:56px;">院の皆様から<span class="em">寄せられた声</span></h2>
     <div class="voice-grid">
       <div class="voice-card">
         <img loading="lazy" class="site-shot" src="assets/img/seikotsuin-fv-wakan-sekkotsuin.jpg" alt="和漢整体院 サイトトップページ">
@@ -365,14 +486,34 @@
   </div>
 </section>
 
+<!-- S6.5 広告とホームページ・Googleマップの違い -->
+<section class="sec-hplp">
+  <div class="inner">
+    <span class="sec-label">広告 or 土台？</span>
+    <h2 class="center">広告は、<span class="em">瞬間風速</span>。<br>ホームページ・Googleマップは、ずっと続く力に。</h2>
+    <div class="hplp-compare">
+      <div class="hplp-col">
+        <span class="hplp-tag lp">広告の場合</span>
+        <p>出稿している間だけ、患者さんの目に触れる「瞬間風速」。<br>広告費を止めた瞬間、効果もゼロに戻ります。</p>
+      </div>
+      <div class="hplp-col">
+        <span class="hplp-tag hp">ホームページ・Googleマップの場合</span>
+        <p>一度整えれば、指名検索でも地域名検索でも、ずっと働き続ける「積み上げ型」の土台。<br>広告を止めても、患者さんはたどり着けます。</p>
+      </div>
+    </div>
+    <p class="hplp-conclusion">だからこそ安診Webは、瞬間風速で終わる広告ではなく、<br>ずっと使われ続ける「ホームページ」と「Googleマップ」に力を入れています。</p>
+  </div>
+</section>
+
 <!-- S7 料金 -->
-<section id="price">
+<section id="price" style="background:var(--white);">
   <div class="inner">
     <span class="sec-label">PRICE</span>
-    <h2>料金は、<span class="em">これだけ。</span></h2>
+    <h2><span class="em">追加費用なし</span>の、シンプル料金。</h2>
     <p class="lead">下記の金額にすべて含まれます。遠方の交通費や、更新のたびの追加料金は一切ありません。</p>
     <div class="price-grid">
       <div class="price-card main">
+        <div class="price-ribbon">おすすめ</div>
         <div class="price-head">HPリニューアルプラン</div>
         <div class="price-body">
           <div class="price-fig">
@@ -417,27 +558,29 @@
 <section class="sec-compare">
   <div class="inner">
     <span class="sec-label">COMPARE</span>
-    <h2>安診Webの<span class="em">特徴</span></h2>
+    <h2><span class="brand-shout">安診Web</span>の特徴</h2>
     <p class="lead">価格や規模ではなく、「同じ担当者と、どれだけ近い距離で継続的に伴走できるか」を大切にしています。</p>
+    <p class="compare-scroll-hint">→ 横にスクロールできます</p>
     <div class="compare-wrap">
       <table class="compare">
         <thead>
           <tr>
             <th></th>
-            <th class="us">安診Web</th>
+            <th class="us"><span class="us-pop">★ 安診Web</span></th>
             <th>価格重視型のサービス</th>
             <th>全国展開型のサービス</th>
           </tr>
         </thead>
         <tbody>
           <tr><td>対応業界</td><td class="us">整骨院・接骨院専門</td><td>整骨院・接骨院専門の場合が多い</td><td>治療院全般を含む場合が多い</td></tr>
+          <tr><td>訪問対応</td><td class="us">東京23区中心、近郊エリアも相談可</td><td>非対面が中心の場合が多い</td><td>対応エリアが限定的な場合がある</td></tr>
           <tr><td>初期費用の傾向</td><td class="us">99,000円（税込）</td><td>比較的抑えめな傾向</td><td>個別見積もりが多い傾向</td></tr>
           <tr><td>接点</td><td class="us">月1回訪問・同じ担当者が継続対応</td><td>オンライン中心の場合が多い</td><td>体制が大きく分業対応の場合がある</td></tr>
           <tr><td>実務代行</td><td class="us">撮影・投稿・口コミ返信まで丸ごと</td><td>更新のみのプランが多い</td><td>制作・取材込みのプランが多い</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="compare-note">※他社の情報は一般的な傾向をもとにした参考情報であり、特定の企業を指すものではありません。プラン内容は各社異なりますので、詳しくは各社に直接ご確認ください。</p>
+    <p class="compare-note">※他社の情報は一般的な傾向をもとにした参考情報であり、特定の企業を指すものではありません。</p>
   </div>
 </section>
 
@@ -446,12 +589,12 @@
   <div class="inner">
     <span class="sec-label">FLOW</span>
     <h2>公開までの<span class="em">流れ</span></h2>
-    <ol class="flow-list">
-      <li><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></li>
-      <li><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></li>
-      <li><h3>初回訪問：ヒアリング＋写真撮影</h3><p>院のこだわり・強み・患者さんへの想いをじっくり伺いながら、その場で写真撮影も行います。</p></li>
-      <li><h3>制作・ご確認</h3><p>デザインを一緒に確認しながら仕上げます。修正のご要望もその場で。</p></li>
-      <li><h3>公開＆運用スタート</h3><p>月1回の訪問とレポートで、公開後も伴走します。日々の更新のご依頼はお電話・メールで送るだけ。</p></li>
+    <ol class="timeline">
+      <li><div class="tl-num">01</div><div class="tl-body"><h3>無料相談</h3><p>対面・電話からお好きな方法で。1回30分、診療の空き時間に合わせます。</p></div></li>
+      <li><div class="tl-num">02</div><div class="tl-body"><h3>お申し込み</h3><p>ご契約手続き完了後、初期費用をお振込みください。</p></div></li>
+      <li><div class="tl-num">03</div><div class="tl-body"><h3>初回訪問</h3><p>院のこだわり・強み・患者さんへの想いを伺いながら、その場で写真撮影も行います。</p></div></li>
+      <li><div class="tl-num">04</div><div class="tl-body"><h3>制作・ご確認</h3><p>デザインを一緒に確認しながら仕上げます。修正のご要望もその場で。</p></div></li>
+      <li><div class="tl-num">05</div><div class="tl-body"><h3>公開＆運用スタート</h3><p>月1回の訪問とレポートで、公開後も伴走します。</p></div></li>
     </ol>
   </div>
 </section>
@@ -463,8 +606,8 @@
     <h2>よくある<span class="em">質問</span></h2>
     <div class="faq-list">
       <details>
-        <summary>訪問エリア外ですが、相談できますか？</summary>
-        <p class="faq-a">現在は東京・埼玉・神奈川・千葉エリアを中心に対応しています<em>[仮：要確定]</em>。エリア外の場合もまずはご相談ください。</p>
+        <summary>対応エリアを教えてください</summary>
+        <p class="faq-a">東京23区を中心に、どこへでも直接お伺いします。埼玉・神奈川・千葉など近郊エリアの先生も対応できる場合が多いので、まずはお気軽にご相談ください。</p>
       </details>
       <details>
         <summary>今、他社のHP/MEO運用サービスと契約中ですが相談できますか？</summary>
@@ -494,12 +637,57 @@
   </div>
 </section>
 
+<!-- S10.5 担当者・理念 -->
+<section class="sec-about" id="about">
+  <div class="inner">
+    <span class="sec-label">MESSAGE</span>
+    <div class="staff-grid">
+      <img loading="lazy" class="portrait" src="assets/img/staff-portrait-ushitani-azusa-nobg.png" alt="安診Web担当 牛谷梓">
+      <div class="staff-msg">
+        <h2 class="staff-big-heading">先生の<span class="em">「一番近い相談相手」</span>で<br>あり続けたい。</h2>
+        <p>ホームページは、作って終わりではありません。月1回の訪問で先生と同じ画面を見ながら、「地域で選ばれ続ける院」を一緒に目指します。分からないことは何でも聞いてください。専門用語は使いません。</p>
+        <p>実は私自身、上京後に足を痛めて整骨院を探した際、<strong><u>「分からない」という理由だけで、本当は行きたかった近くの院を選べなかった</u></strong>経験があります。だからこそ、先生の隣で「会いに行く」ことにこだわっています。</p>
+        <p class="staff-name">安診Web 担当　牛谷 梓（HumAIn Co.,Ltd.）</p>
+      </div>
+    </div>
+    <div class="about-copy-grid">
+      <div class="about-copy-card">
+        <h3>安診Web発足の背景</h3>
+        <p>整骨院・接骨院業界には、技術もあり地域に支持されているのに、Web上ではその良さが伝わっていない院が多いと感じています。今は、検索した瞬間に判断される時代です。技術の差ではなく、<strong><u>Web上に「情報があるかどうか」だけで患者さんの選択が決まってしまう。</u></strong>それは、院にとっても、患者さんにとっても、もったいないことだと思うのです。</p>
+      </div>
+      <div class="about-copy-card">
+        <h3>私たちが対面・訪問にこだわる理由</h3>
+        <p>Webは作って終わりではありません。変化に合わせて改善し続けてこそ、はじめて意味を持ちます。だからこそ私たちは、<strong><u>先生と目線を合わせて、長く・深く伴走したい</u></strong>のです。</p>
+        <video class="about-video-small" src="assets/img/staff-message-video-taimen-houmon-kodawari.mp4" poster="assets/img/staff-message-video-poster.jpg" controls playsinline preload="none"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S10.6 今がチャンス＋最終CTAカード -->
+<section class="sec-final-cta">
+  <div class="inner">
+    <div class="final-cta-card">
+      <p class="final-cta-badge">ホームページ ＋ Googleマップ対策</p>
+      <h2 class="final-cta-heading">広告より先に、<span class="em-underline2">まず土台</span>を。<br>動き出すなら、今です。</h2>
+      <p class="final-cta-lead">土台を整えるのが早いほど、この先かける広告費も無駄になりません。<br>まずはホームページとGoogleマップ対策から、地域で選ばれる準備を始めませんか。</p>
+      <ul class="final-cta-bullets">
+        <li>初期費用 99,000円〜／月額9,000円〜（税込）</li>
+        <li>撮影・原稿づくり・口コミ返信もまとめてサポート</li>
+        <li>無料相談は月3社限定、担当者が直接ご案内</li>
+      </ul>
+      <a href="#contact" class="btn btn-cta final-cta-btn">まずは相談してみる</a>
+      <p class="final-cta-fine">まずはお話だけでも歓迎です。</p>
+    </div>
+  </div>
+</section>
+
 <!-- S11 CTA・フォーム -->
 <section class="sec-contact" id="contact">
   <div class="inner">
     <span class="sec-label on-dark">CONTACT</span>
     <h2>まずは、無料相談から。</h2>
-    <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。しつこい営業は一切いたしません。<br>担当者が直接訪問する形でお付き合いするため、同時にご案内できる院数には限りがございます。</p>
+    <p class="lead">「話を聞いてみたいだけ」でも大歓迎です。<br>担当者が直接訪問する形でお付き合いするため、<strong>月3社限定</strong>でのご案内となります。</p>
     <div class="contact-grid">
       <form action="https://formsubmit.co/anshin.web.meo@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【無料相談】お問い合わせがありました">
@@ -548,9 +736,20 @@
         <p class="form-fine">送信いただいた個人情報は<a href="https://anshin-hp.com/privacy" target="_blank" rel="noopener">「個人情報のお取扱いに関する同意事項」</a>に基づき管理します。</p>
       </form>
       <div>
+        <div class="consult-detail">
+          <h3>無料相談で聞けること（約30分）</h3>
+          <ul>
+            <li>今のホームページ・Googleマップの状態のヒアリング</li>
+            <li>新規患者さんが増えない原因の整理</li>
+            <li>安診Webでできること・できないことの説明</li>
+            <li>料金・訪問頻度など、具体的な進め方のご案内</li>
+          </ul>
+          <p class="consult-detail-note">まずはお話だけでも大歓迎です。</p>
+        </div>
         <div class="contact-alt">
           <h3>お電話でのご相談</h3>
-          <p class="tel">03-4361-2643<small>平日 10:00〜19:00（診療の合間でもお気軽に）</small></p>
+          <a class="tel" href="tel:0343612643">03-4361-2643</a>
+          <small>平日 10:00〜19:00（診療の合間でもお気軽に）</small>
         </div>
       </div>
     </div>
@@ -575,6 +774,7 @@
 <!-- スマホ固定CTAバー -->
 <div class="fixed-cta">
   <a href="#contact" class="f-consult">無料相談する</a>
+  <a href="https://page.line.me/553svzvc?oat__id=5872625&openQrModal=true" class="f-line" target="_blank" rel="noopener">LINEで相談</a>
   <a href="tel:0343612643" class="f-tel">電話で相談</a>
 </div>
 
